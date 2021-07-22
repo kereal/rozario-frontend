@@ -1,0 +1,1020 @@
+.coupons-wrapper {
+    width: calc(100% - 320px);
+}
+
+.coupon__heading {
+    margin: 68px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: #330033;
+    font-weight: bold;
+    display: flex;
+    align-items: baseline;
+}
+
+.coupon__heading--rules {
+    margin-top: 38px;
+}
+
+.coupon__heading span {
+    margin-left: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #666;
+    font-weight: normal;
+}
+
+.coupon__heading span > strong {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #330033;
+    font-weight: bold;
+}
+
+.coupon__heading span > strong > strong {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #330033;
+    font-weight: normal;
+}
+
+.coupon__text {
+    margin: 12px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #330033;
+    font-weight: normal;
+}
+
+.coupon__active-coupons .coupon__heading {
+    margin-top: 14px;
+}
+
+.coupon__active-coupons .coupon-btn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.coupon__non-active-coupons .coupon__heading {
+    margin-top: 38px;
+}
+
+.coupon__coupons-list {
+    display: flex;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.coupon__coupons-list > div {
+    margin-bottom: 30px;
+}
+
+.coupon__coupons-list > div:nth-child(4n) {
+    margin-right: 0;
+}
+
+.coupon__list {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.coupon__list li {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #330033;
+    font-weight: normal;
+    margin-top: 8px;
+}
+
+.coupon__list li:first-child {
+    margin-top: 0;
+}
+
+.coupon__list ul li {
+    margin-top: 0;
+}
+
+.coupon__list ul li:first-child {
+    margin-top: 8px;
+}
+
+.coupon__list ul, .coupon__list ol {
+    margin: 8px 0 8px;
+    padding-left: 24px;
+}
+
+.coupon__rules {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.coupon__rules-card {
+    margin-right: 34px;
+    margin-top: 24px;
+}
+
+.coupon__rules-card:last-child {
+    margin-right: 0;
+}
+
+.coupon__coupon-type {
+    margin-top: 24px;
+}
+
+.coupon__coupon-type:last-child {
+    margin-bottom: 46px;
+}
+
+.coupon__coupon-type:nth-child(2n+2) .coupon-type__card {
+    order: 1;
+    margin-right: 0;
+    margin-left: 24px;
+}
+
+.coupon-btn {
+    height: 45px;
+    box-sizing: border-box;
+    padding: 5px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFDC00;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #330033;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.coupon-btn:hover {
+    background-color: #E71F75;
+    color: #fff;
+}
+
+.coupon-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 199px;
+    height: 234px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 12px 12px 23px;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23CECECE'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23CECECE'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23B8AFAF'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card__percent {
+    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 41px;
+    line-height: 55px;
+    color: #330033;
+    font-weight: 600;
+}
+
+.coupon-card__price {
+    margin-top: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 41px;
+    line-height: 55px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.coupon-card__name-text {
+    margin-top: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 25px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coupon-card__text {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.coupon-card__text a {
+    color: #E71F75;
+    border-bottom: 1px dashed #E71F75;
+    line-height: 21px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+.coupon-card__text a:hover {
+    color: #666;
+    border-bottom: 1px dashed #666;
+}
+
+.coupon-card__footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    flex-basis: 34px;
+}
+
+.coupon-card__descr-text {
+    display: inline;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.coupon-card__descr-text strong {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #330033;
+    font-weight: bold;
+}
+
+.coupon-card--green {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%233ECF8E'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%233ECF8E'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%2324B574'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%2324B574'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%2324B574'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%2324B574'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%2324B574'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%2324B574'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%2324B574'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%2324B574'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%2324B574'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%2324B574'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%2324B574'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%2324B574'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%2324B574'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%2324B574'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%2324B574'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%2324B574'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--orange {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23FF890D'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23FF890D'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23DC7100'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23DC7100'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC7100'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC7100'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23DC7100'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23DC7100'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23DC7100'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23DC7100'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23DC7100'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23DC7100'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23DC7100'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23DC7100'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23DC7100'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23DC7100'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23DC7100'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--blue {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%2302B3ED'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%2302B3ED'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%230093C4'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%230093C4'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%230093C4'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%230093C4'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%230093C4'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%230093C4'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%230093C4'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%230093C4'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%230093C4'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%230093C4'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%230093C4'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%230093C4'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%230093C4'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%230093C4'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%230093C4'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%230093C4'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--blue.coupon-card--non-active {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='234' viewBox='0 0 199 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.15' fill-rule='evenodd' clip-rule='evenodd' d='M1.48886e-06 173.994L1.65574e-05 12C1.71349e-05 5.37258 5.3726 -5.81241e-07 12 0L187 1.53479e-05C193.627 1.59292e-05 199 5.3726 199 12L199 190C199 190.02 199 190.041 199 190.061V222C199 228.627 193.627 234 187 234H180.458C178.977 229.36 174.631 226 169.5 226C164.369 226 160.023 229.36 158.542 234H152.458C150.977 229.36 146.631 226 141.5 226C136.369 226 132.023 229.36 130.542 234H124.458C122.977 229.36 118.631 226 113.5 226C108.369 226 104.023 229.36 102.542 234H97.4577C95.977 229.36 91.6309 226 86.5 226C81.3691 226 77.023 229.36 75.5423 234H69.4577C67.977 229.36 63.6309 226 58.5 226C53.3691 226 49.023 229.36 47.5423 234H41.4577C39.977 229.36 35.6309 226 30.5 226C25.3691 226 21.023 229.36 19.5423 234H12C5.37257 234 0 228.627 0 222V190V174C0 173.998 4.96326e-07 173.996 1.48886e-06 173.994Z' fill='%2302B3ED'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--blue.coupon-card--non-active .coupon-card__text {
+    color: #330033;
+    opacity: 0.8;
+}
+
+.coupon-card--blue.coupon-card--non-active .coupon-card__price {
+    margin-top: 4px;
+    color: #E71F75;
+}
+
+.coupon-card--blue.coupon-card--non-active .coupon-card__descr-text {
+    color: #330033;
+    opacity: 0.8;
+}
+
+.coupon-card--purple {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23C555E4'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23C555E4'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23AD34CE'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23AD34CE'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23AD34CE'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23AD34CE'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23AD34CE'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23AD34CE'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23AD34CE'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23AD34CE'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23AD34CE'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23AD34CE'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23AD34CE'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23AD34CE'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23AD34CE'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23AD34CE'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23AD34CE'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--pink {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23E71F75'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23E71F75'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23CD1467'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23CD1467'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23CD1467'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23CD1467'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23CD1467'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23CD1467'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23CD1467'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23CD1467'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23CD1467'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23CD1467'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23CD1467'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23CD1467'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23CD1467'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23CD1467'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23CD1467'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23FFB84E'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23FFB84E'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige .coupon-card__name-text {
+    color: #330033;
+}
+
+.coupon-card--beige .coupon-card__descr-text {
+    color: #330033;
+}
+
+.coupon-card--beige.coupon-card--non-active {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='234' viewBox='0 0 199 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.24581e-06 174L1.46402e-05 12C1.52177e-05 5.37258 5.3726 0 12 0L187 1.6829e-05C193.627 1.74102e-05 199 5.3726 199 12L199 180C199 180.02 199 180.041 199 180.061V222C199 228.628 193.627 234 187 234H180.458C178.977 229.36 174.631 226 169.5 226C164.369 226 160.023 229.36 158.542 234H152.458C150.977 229.36 146.631 226 141.5 226C136.369 226 132.023 229.36 130.542 234H124.458C122.977 229.36 118.631 226 113.5 226C108.369 226 104.023 229.36 102.542 234H97.4577C95.977 229.36 91.6309 226 86.5 226C81.3691 226 77.023 229.36 75.5423 234H69.4577C67.977 229.36 63.6309 226 58.5 226C53.3691 226 49.023 229.36 47.5423 234H41.4577C39.977 229.36 35.6309 226 30.5 226C25.3691 226 21.023 229.36 19.5423 234H12C5.37257 234 3.24581e-06 228.628 3.24581e-06 222V180.009C1.0818e-06 180.006 -2.59159e-10 180.003 0 180L3.24581e-06 174Z' fill='%23FEDBA6'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige.coupon-card--non-active .coupon-card__name-text {
+    color: #666;
+}
+
+.coupon-card--beige.coupon-card--non-active .coupon-card__percent {
+    color: #666;
+}
+
+.coupon-card--beige.coupon-card--non-active .coupon-card__descr-text {
+    color: #666;
+}
+
+.coupon-card--beige-2 {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23CECECE'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23CECECE'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23B8AFAF'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23B8AFAF'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige-2.coupon-card--non-active {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='234' viewBox='0 0 199 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.24581e-06 174L1.46402e-05 12C1.52177e-05 5.37258 5.3726 0 12 0L187 1.6829e-05C193.627 1.74102e-05 199 5.3726 199 12L199 180C199 180.02 199 180.041 199 180.061V222C199 228.628 193.627 234 187 234H180.458C178.977 229.36 174.631 226 169.5 226C164.369 226 160.023 229.36 158.542 234H152.458C150.977 229.36 146.631 226 141.5 226C136.369 226 132.023 229.36 130.542 234H124.458C122.977 229.36 118.631 226 113.5 226C108.369 226 104.023 229.36 102.542 234H97.4577C95.977 229.36 91.6309 226 86.5 226C81.3691 226 77.023 229.36 75.5423 234H69.4577C67.977 229.36 63.6309 226 58.5 226C53.3691 226 49.023 229.36 47.5423 234H41.4577C39.977 229.36 35.6309 226 30.5 226C25.3691 226 21.023 229.36 19.5423 234H12C5.37257 234 3.24581e-06 228.628 3.24581e-06 222V180.009C1.0818e-06 180.006 -2.59159e-10 180.003 0 180L3.24581e-06 174Z' fill='%23EFEBEB'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige-3 {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23FFD127'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23FFD127'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23E1B205'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23E1B205'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23E1B205'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23E1B205'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23E1B205'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23E1B205'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23E1B205'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23E1B205'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23E1B205'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23E1B205'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23E1B205'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23E1B205'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23E1B205'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23E1B205'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23E1B205'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23E1B205'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige-3.coupon-card--non-active {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='234' viewBox='0 0 199 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.24581e-06 174L1.46402e-05 12C1.52177e-05 5.37258 5.3726 0 12 0L187 1.6829e-05C193.627 1.74102e-05 199 5.3726 199 12L199 180C199 180.02 199 180.041 199 180.061V222C199 228.628 193.627 234 187 234H180.458C178.977 229.36 174.631 226 169.5 226C164.369 226 160.023 229.36 158.542 234H152.458C150.977 229.36 146.631 226 141.5 226C136.369 226 132.023 229.36 130.542 234H124.458C122.977 229.36 118.631 226 113.5 226C108.369 226 104.023 229.36 102.542 234H97.4577C95.977 229.36 91.6309 226 86.5 226C81.3691 226 77.023 229.36 75.5423 234H69.4577C67.977 229.36 63.6309 226 58.5 226C53.3691 226 49.023 229.36 47.5423 234H41.4577C39.977 229.36 35.6309 226 30.5 226C25.3691 226 21.023 229.36 19.5423 234H12C5.37257 234 3.24581e-06 228.628 3.24581e-06 222V180.009C1.0818e-06 180.006 -2.59159e-10 180.003 0 180L3.24581e-06 174Z' fill='%23FFE996'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige-4 {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23CACBD2'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23CACBD2'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23B1B3BD'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23B1B3BD'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--beige-4.coupon-card--non-active {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='234' viewBox='0 0 199 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.24581e-06 174L1.46402e-05 12C1.52177e-05 5.37258 5.3726 0 12 0L187 1.6829e-05C193.627 1.74102e-05 199 5.3726 199 12L199 180C199 180.02 199 180.041 199 180.061V222C199 228.628 193.627 234 187 234H180.458C178.977 229.36 174.631 226 169.5 226C164.369 226 160.023 229.36 158.542 234H152.458C150.977 229.36 146.631 226 141.5 226C136.369 226 132.023 229.36 130.542 234H124.458C122.977 229.36 118.631 226 113.5 226C108.369 226 104.023 229.36 102.542 234H97.4577C95.977 229.36 91.6309 226 86.5 226C81.3691 226 77.023 229.36 75.5423 234H69.4577C67.977 229.36 63.6309 226 58.5 226C53.3691 226 49.023 229.36 47.5423 234H41.4577C39.977 229.36 35.6309 226 30.5 226C25.3691 226 21.023 229.36 19.5423 234H12C5.37257 234 3.24581e-06 228.628 3.24581e-06 222V180.009C1.0818e-06 180.006 -2.59159e-10 180.003 0 180L3.24581e-06 174Z' fill='%23E4E5EA'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--light-green {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%230CC6A4'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%230CC6A4'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%230AAB98'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%230AAB98'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%230AAB98'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%230AAB98'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%230AAB98'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%230AAB98'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%230AAB98'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%230AAB98'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%230AAB98'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%230AAB98'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%230AAB98'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%230AAB98'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%230AAB98'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%230AAB98'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%230AAB98'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card--red {
+    background-image: url("data:image/svg+xml,%3Csvg width='199' height='235' viewBox='0 0 199 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H187C193.627 162 199 167.373 199 174V223C199 229.627 193.627 235 187 235H180.458C178.977 230.36 174.631 227 169.5 227C164.369 227 160.023 230.36 158.542 235H152.458C150.977 230.36 146.631 227 141.5 227C136.369 227 132.023 230.36 130.542 235H124.458C122.977 230.36 118.631 227 113.5 227C108.369 227 104.023 230.36 102.542 235H97.4577C95.9769 230.36 91.6309 227 86.5 227C81.3691 227 77.0231 230.36 75.5423 235H69.4577C67.9769 230.36 63.6309 227 58.5 227C53.3691 227 49.0231 230.36 47.5423 235H41.4577C39.9769 230.36 35.6309 227 30.5 227C25.3691 227 21.0231 230.36 19.5423 235H12C5.37258 235 0 229.627 0 223V174Z' fill='%23F54242'/%3E%3Cpath d='M199 152C199 158.627 193.627 164 187 164L12 164C5.37257 164 4.68188e-07 158.627 1.04573e-06 152L1.32459e-05 12C1.38234e-05 5.37259 5.37259 -1.72281e-06 12 -1.14156e-06L187 1.42064e-05C193.627 1.47876e-05 199 5.3726 199 12L199 152Z' fill='%23F54242'/%3E%3Ccircle cx='45' cy='163' r='3' transform='rotate(90 45 163)' fill='%23D81717'/%3E%3Ccircle cx='21' cy='163' r='3' transform='rotate(90 21 163)' fill='%23D81717'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23D81717'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23D81717'/%3E%3Ccircle cx='93' cy='163' r='3' transform='rotate(90 93 163)' fill='%23D81717'/%3E%3Ccircle cx='69' cy='163' r='3' transform='rotate(90 69 163)' fill='%23D81717'/%3E%3Ccircle cx='57' cy='163' r='3' transform='rotate(90 57 163)' fill='%23D81717'/%3E%3Ccircle cx='81' cy='163' r='3' transform='rotate(90 81 163)' fill='%23D81717'/%3E%3Ccircle cx='141' cy='163' r='3' transform='rotate(90 141 163)' fill='%23D81717'/%3E%3Ccircle cx='117' cy='163' r='3' transform='rotate(90 117 163)' fill='%23D81717'/%3E%3Ccircle cx='105' cy='163' r='3' transform='rotate(90 105 163)' fill='%23D81717'/%3E%3Ccircle cx='129' cy='163' r='3' transform='rotate(90 129 163)' fill='%23D81717'/%3E%3Ccircle cx='189' cy='163' r='3' transform='rotate(90 189 163)' fill='%23D81717'/%3E%3Ccircle cx='165' cy='163' r='3' transform='rotate(90 165 163)' fill='%23D81717'/%3E%3Ccircle cx='153' cy='163' r='3' transform='rotate(90 153 163)' fill='%23D81717'/%3E%3Ccircle cx='177' cy='163' r='3' transform='rotate(90 177 163)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big {
+    width: 215px;
+    height: 258px;
+    padding: 0 20px 73px;
+    box-sizing: border-box;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23CECECE'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23CECECE'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23CECECE'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23CECECE'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23CECECE'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23CECECE'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23CECECE'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23CECECE'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23CECECE'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23CECECE'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23CECECE'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23CECECE'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23CECECE'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23CECECE'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23CECECE'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23CECECE'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23CECECE'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23CECECE'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23CECECE'/%3E%3C/svg%3E%0A");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon-card-big__text {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 25px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coupon-card-big--green {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%233ECF8E'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%233ECF8E'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%2324B574'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%2324B574'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%2324B574'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%2324B574'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%2324B574'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%2324B574'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%2324B574'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%2324B574'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%2324B574'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%2324B574'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%2324B574'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%2324B574'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%2324B574'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%2324B574'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%2324B574'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%2324B574'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%2324B574'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--orange {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23FF890D'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23FF890D'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23DC7100'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23DC7100'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23DC7100'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23DC7100'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23DC7100'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23DC7100'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23DC7100'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23DC7100'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23DC7100'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23DC7100'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23DC7100'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23DC7100'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23DC7100'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23DC7100'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23DC7100'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23DC7100'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--blue {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%2302B3ED'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%2302B3ED'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%230093C3'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%230093C3'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%230093C3'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%230093C3'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%230093C3'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%230093C3'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%230093C3'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%230093C3'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%230093C3'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%230093C3'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%230093C3'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%230093C3'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%230093C3'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%230093C3'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%230093C3'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%230093C3'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%230093C3'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--purple {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23C555E4'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23C555E4'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23AD34CE'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23AD34CE'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23AD34CE'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23AD34CE'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23AD34CE'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23AD34CE'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23AD34CE'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23AD34CE'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23AD34CE'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23AD34CE'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23AD34CE'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23AD34CE'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23AD34CE'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23AD34CE'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23AD34CE'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23AD34CE'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--pink {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23E71F75'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23E71F75'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23CD1467'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23CD1467'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23CD1467'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23CD1467'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23CD1467'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23CD1467'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23CD1467'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23CD1467'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23CD1467'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23CD1467'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23CD1467'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23CD1467'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23CD1467'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23CD1467'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23CD1467'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23CD1467'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--yellow {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23FFD127'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23FFD127'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23E1B205'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23E1B205'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23E1B205'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23E1B205'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23E1B205'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23E1B205'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23E1B205'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23E1B205'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23E1B205'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23E1B205'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23E1B205'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23E1B205'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23E1B205'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23E1B205'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23E1B205'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23E1B205'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23E1B205'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--yellow .coupon-card-big__text {
+    color: #330033;
+}
+
+.coupon-card-big--light-green {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%230CC6A4'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%230CC6A4'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%230AAB98'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%230AAB98'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%230AAB98'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%230AAB98'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%230AAB98'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%230AAB98'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%230AAB98'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%230AAB98'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%230AAB98'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%230AAB98'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%230AAB98'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%230AAB98'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%230AAB98'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%230AAB98'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%230AAB98'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%230AAB98'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+}
+
+.coupon-card-big--red {
+    background-image: url("data:image/svg+xml,%3Csvg width='215' height='258' viewBox='0 0 215 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H203C209.627 186 215 191.373 215 198V246C215 252.627 209.627 258 203 258H195.29C193.687 252.979 188.984 249.342 183.432 249.342C177.879 249.342 173.176 252.979 171.573 258H164.988C163.386 252.979 158.683 249.342 153.13 249.342C147.578 249.342 142.874 252.979 141.272 258H134.687C133.085 252.979 128.381 249.342 122.829 249.342C117.276 249.342 112.573 252.979 110.97 258H105.468C103.865 252.979 99.1622 249.342 93.6096 249.342C88.057 249.342 83.3537 252.979 81.7513 258H75.1665C73.5641 252.979 68.8608 249.342 63.3082 249.342C57.7556 249.342 53.0523 252.979 51.4499 258H44.8652C43.2627 252.979 38.5594 249.342 33.0069 249.342C27.4543 249.342 22.751 252.979 21.1485 258H12C5.37259 258 0 252.627 0 246V198Z' fill='%23F54242'/%3E%3Cpath d='M215 174C215 180.627 209.627 186 203 186L12 186C5.37256 186 -3.00495e-05 180.627 -2.94721e-05 174L-1.53577e-05 12C-1.47803e-05 5.37257 5.37257 -3.12993e-06 12 -2.54857e-06L203 1.42061e-05C209.627 1.47875e-05 215 5.3726 215 12L215 174Z' fill='%23F54242'/%3E%3Ccircle cx='59' cy='186' r='3' transform='rotate(90 59 186)' fill='%23D81717'/%3E%3Ccircle cx='35' cy='186' r='3' transform='rotate(90 35 186)' fill='%23D81717'/%3E%3Ccircle cx='24' cy='186' r='3' transform='rotate(90 24 186)' fill='%23D81717'/%3E%3Ccircle cx='13' cy='186' r='3' transform='rotate(90 13 186)' fill='%23D81717'/%3E%3Ccircle cx='47' cy='186' r='3' transform='rotate(90 47 186)' fill='%23D81717'/%3E%3Ccircle cx='107' cy='186' r='3' transform='rotate(90 107 186)' fill='%23D81717'/%3E%3Ccircle cx='83' cy='186' r='3' transform='rotate(90 83 186)' fill='%23D81717'/%3E%3Ccircle cx='71' cy='186' r='3' transform='rotate(90 71 186)' fill='%23D81717'/%3E%3Ccircle cx='95' cy='186' r='3' transform='rotate(90 95 186)' fill='%23D81717'/%3E%3Ccircle cx='155' cy='186' r='3' transform='rotate(90 155 186)' fill='%23D81717'/%3E%3Ccircle cx='131' cy='186' r='3' transform='rotate(90 131 186)' fill='%23D81717'/%3E%3Ccircle cx='119' cy='186' r='3' transform='rotate(90 119 186)' fill='%23D81717'/%3E%3Ccircle cx='143' cy='186' r='3' transform='rotate(90 143 186)' fill='%23D81717'/%3E%3Ccircle cx='203' cy='186' r='3' transform='rotate(90 203 186)' fill='%23D81717'/%3E%3Ccircle cx='179' cy='186' r='3' transform='rotate(90 179 186)' fill='%23D81717'/%3E%3Ccircle cx='167' cy='186' r='3' transform='rotate(90 167 186)' fill='%23D81717'/%3E%3Ccircle cx='191' cy='186' r='3' transform='rotate(90 191 186)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+}
+
+.rules-card {
+    width: 190px;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.rules-card__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    background: radial-gradient(95.46% 87.62% at 50% 87.62%, #FFCCCC 0%, rgba(239, 210, 210, 0.571429) 42.86%, rgba(218, 218, 218, 0) 100%);
+}
+
+.rules-card__footer {
+    height: 59px;
+    padding: 8px 14px 12px 18px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rules-card__text {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #666;
+    font-weight: normal;
+    width: 85%;
+}
+
+.rules-card__arrow {
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+.coupon-type {
+    padding: 30px 34px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.coupon-type__card {
+    flex-shrink: 0;
+    margin-right: 24px;
+}
+
+.coupon-type__text {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #330033;
+    font-weight: normal;
+}
+
+.coupon-type__text ul, .coupon-type__text ol {
+    margin-top: 0;
+}
+
+.coupon__share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.coupon__share-modal--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share-modal {
+    width: 500px;
+    padding: 30px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.share-modal--show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.share-modal__cross {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    cursor: pointer;
+}
+
+.share-modal__cross:hover path {
+    transition: all 0.1s ease-in-out;
+}
+
+.share-modal__cross:hover path {
+    stroke: var(--gray-700);
+}
+
+.share-modal__heading {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #330033;
+    font-weight: 600;
+}
+
+.share-modal__link {
+    display: flex;
+    height: 44px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+.share-modal__link-input {
+    width: 66%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border-top: 1px solid #E9E9E9;
+    border-left: 1px solid #E9E9E9;
+    border-bottom: 1px solid #E9E9E9;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #330033;
+    font-weight: normal;
+    margin: 0;
+    outline: none;
+}
+
+.share-modal__link-button {
+    width: 34%;
+    height: auto;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #FFDC00;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #330033;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+.share-modal__small-heading {
+    margin-top: 34px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    font-weight: normal;
+}
+
+.share-modal__social-items {
+    margin-top: 10px;
+    display: flex;
+}
+
+.share-modal__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.share-modal__social:hover {
+    border-color: #CC6699;
+}
+
+@media screen and (max-width: 1300px) {
+    .coupon__active-coupons .coupon__heading {
+        margin-top: 10px;
+    }
+    .coupon__coupons-list > div:nth-child(3n) {
+        margin-right: 0;
+    }
+    .coupon__heading {
+        margin-top: 68px;
+    }
+
+    .coupon__active-coupons .coupon__heading {
+        margin-top: 0;
+    }
+
+    .coupon__active-coupons .coupon-btn {
+        margin-top: 30px;
+        margin-bottom: 24px;
+    }
+
+    .coupon__heading--rules {
+        margin-top: 44px;
+    }
+
+    .coupon__text {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .coupon__list {
+        margin-top: 24px;
+    }
+
+    .coupon__list li {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .coupon-btn {
+        font-size: 15px;
+        line-height: 20px;
+        padding: 12px 30px;
+    }
+
+    .coupon__coupons-list {
+        margin-top: 18px;
+    }
+
+    .coupon__coupons-list > div {
+        margin-bottom: 24px;
+    }
+
+    .coupon-card {
+        width: 179px;
+        background-size: 100%;
+    }
+
+    .coupon-card--green {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%231DC556'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%231DC556'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%2314A13B'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%2314A13B'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%2314A13B'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%2314A13B'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%2314A13B'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%2314A13B'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%2314A13B'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%2314A13B'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%2314A13B'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--orange {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FF890D'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23FF890D'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC7100'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC7100'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC7100'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC7100'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC7100'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC7100'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC7100'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC7100'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--blue {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%2302B3ED'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%2302B3ED'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%230093C3'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%230093C3'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%230093C3'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%230093C3'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%230093C3'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%230093C3'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%230093C3'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%230093C3'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%230093C3'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%230093C3'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%230093C3'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%230093C3'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%230093C3'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%230093C3'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%230093C3'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--blue.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='234' viewBox='0 0 179 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.15' fill-rule='evenodd' clip-rule='evenodd' d='M179 190V222C179 228.627 173.627 234 167 234H163.894C163.166 228.908 158.787 224.994 153.494 224.994C148.201 224.994 143.822 228.908 143.094 234H138.314C137.586 228.908 133.207 224.994 127.914 224.994C122.62 224.994 118.242 228.908 117.514 234H112.733C112.005 228.908 107.626 224.994 102.333 224.994C97.0402 224.994 92.6613 228.908 91.9334 234H88.0666C87.3387 228.908 82.9598 224.994 77.6667 224.994C72.3735 224.994 67.9946 228.908 67.2668 234H62.4863C61.7585 228.908 57.3796 224.994 52.0864 224.994C46.7933 224.994 42.4144 228.908 41.6865 234H36.9061C36.1782 228.908 31.7993 224.994 26.5062 224.994C21.213 224.994 16.8341 228.908 16.1063 234H12C5.3726 234 1.68085e-05 228.627 1.68085e-05 222V190.02C5.6021e-06 190.014 0 190.007 0 190L1.39348e-05 12C1.45123e-05 5.37258 5.3726 -5.8124e-07 12 0L167 1.35939e-05C173.627 1.41751e-05 179 5.3726 179 12L179 174V190Z' fill='%2302B3ED'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--purple {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23C555E4'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23C555E4'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23AD34CE'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23AD34CE'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23AD34CE'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23AD34CE'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23AD34CE'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23AD34CE'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23AD34CE'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23AD34CE'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--pink {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23E71F75'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23E71F75'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23CD1467'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23CD1467'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23CD1467'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23CD1467'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23CD1467'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23CD1467'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23CD1467'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23CD1467'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FFB84E'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23FFB84E'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='234' viewBox='0 0 179 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M179 180V222C179 228.627 173.627 234 167 234H163.894C163.166 228.908 158.787 224.994 153.494 224.994C148.201 224.994 143.822 228.908 143.094 234H138.314C137.586 228.908 133.207 224.994 127.914 224.994C122.62 224.994 118.242 228.908 117.514 234H112.733C112.005 228.908 107.626 224.994 102.333 224.994C97.0402 224.994 92.6613 228.908 91.9334 234H88.0666C87.3387 228.908 82.9598 224.994 77.6667 224.994C72.3735 224.994 67.9946 228.908 67.2668 234H62.4863C61.7585 228.908 57.3796 224.994 52.0864 224.994C46.7933 224.994 42.4144 228.908 41.6865 234H36.9061C36.1782 228.908 31.7993 224.994 26.5062 224.994C21.213 224.994 16.8341 228.908 16.1063 234H12C5.3726 234 1.68085e-05 228.627 1.68085e-05 222V180.02C5.6021e-06 180.014 0 180.007 0 180L1.30633e-05 12C1.36409e-05 5.37258 5.3726 -5.8124e-07 12 0L167 1.35939e-05C173.627 1.41751e-05 179 5.3726 179 12L179 174V180Z' fill='%23FEDBA6'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-2 {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23CECECE'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23CECECE'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-2.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23EFEBEB'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23EFEBEB'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-3 {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FFD127'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23FFD127'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-3.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FFE996'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23FFE996'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-4 {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23CACBD2'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23CACBD2'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-4.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23E4E5EA'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23E4E5EA'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--light-green {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%230CC6A4'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%230CC6A4'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%230AAB98'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%230AAB98'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%230AAB98'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%230AAB98'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%230AAB98'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%230AAB98'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%230AAB98'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%230AAB98'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--red {
+        background-image: url("data:image/svg+xml,%3Csvg width='179' height='235' viewBox='0 0 179 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H167C173.627 162 179 167.373 179 174V223C179 229.627 173.627 235 167 235H163.701C162.579 230.405 158.435 226.994 153.494 226.994C148.553 226.994 144.409 230.405 143.287 235H138.12C136.999 230.405 132.855 226.994 127.914 226.994C122.973 226.994 118.828 230.405 117.707 235H112.54C111.419 230.405 107.274 226.994 102.333 226.994C97.3924 226.994 93.2481 230.405 92.1264 235H87.8736C86.7519 230.405 82.6076 226.994 77.6667 226.994C72.7257 226.994 68.5814 230.405 67.4597 235H62.2933C61.1717 230.405 57.0274 226.994 52.0864 226.994C47.1455 226.994 43.0012 230.405 41.8795 235H36.7131C35.5914 230.405 31.4471 226.994 26.5062 226.994C21.5652 226.994 17.4209 230.405 16.2992 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23F54242'/%3E%3Cpath d='M179 152C179 158.627 173.627 164 167 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 3.12414e-08 12 6.12483e-07L167 1.42064e-05C173.627 1.47876e-05 179 5.3726 179 12L179 152Z' fill='%23F54242'/%3E%3Ccircle cx='32' cy='163' r='3' transform='rotate(90 32 163)' fill='%23D81717'/%3E%3Ccircle cx='9' cy='163' r='3' transform='rotate(90 9 163)' fill='%23D81717'/%3E%3Ccircle cx='20.5' cy='163' r='3' transform='rotate(90 20.5 163)' fill='%23D81717'/%3E%3Ccircle cx='78' cy='163' r='3' transform='rotate(90 78 163)' fill='%23D81717'/%3E%3Ccircle cx='55' cy='163' r='3' transform='rotate(90 55 163)' fill='%23D81717'/%3E%3Ccircle cx='43.5' cy='163' r='3' transform='rotate(90 43.5 163)' fill='%23D81717'/%3E%3Ccircle cx='66.5' cy='163' r='3' transform='rotate(90 66.5 163)' fill='%23D81717'/%3E%3Ccircle cx='124' cy='163' r='3' transform='rotate(90 124 163)' fill='%23D81717'/%3E%3Ccircle cx='101' cy='163' r='3' transform='rotate(90 101 163)' fill='%23D81717'/%3E%3Ccircle cx='89.5' cy='163' r='3' transform='rotate(90 89.5 163)' fill='%23D81717'/%3E%3Ccircle cx='112.5' cy='163' r='3' transform='rotate(90 112.5 163)' fill='%23D81717'/%3E%3Ccircle cx='170' cy='163' r='3' transform='rotate(90 170 163)' fill='%23D81717'/%3E%3Ccircle cx='147' cy='163' r='3' transform='rotate(90 147 163)' fill='%23D81717'/%3E%3Ccircle cx='135.5' cy='163' r='3' transform='rotate(90 135.5 163)' fill='%23D81717'/%3E%3Ccircle cx='158.5' cy='163' r='3' transform='rotate(90 158.5 163)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card__name-text {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .coupon__non-active-coupons .coupon__heading {
+        margin-top: 44px;
+    }
+
+    .coupon__rules-card {
+        margin-right: 24px;
+        margin-top: 18px;
+    }
+
+    .rules-card {
+        width: 185px;
+    }
+
+    .rules-card__footer {
+        padding: 8px 12px 12px 16px;
+    }
+
+    .coupon-type {
+        padding: 24px 30px;
+    }
+
+    .coupon-card-big {
+        width: 197px;
+    }
+
+    .coupon-card-big--green {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%233ECF8E'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%233ECF8E'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%2314A13B'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%2314A13B'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%2314A13B'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%2314A13B'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%2314A13B'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%2314A13B'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%2314A13B'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%2314A13B'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%2314A13B'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%2314A13B'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%2314A13B'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%2314A13B'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%2314A13B'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%2314A13B'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%2314A13B'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%2314A13B'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--orange {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23FF890D'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%23FF890D'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%23DC7100'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%23DC7100'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%23DC7100'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%23DC7100'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%23DC7100'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%23DC7100'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%23DC7100'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%23DC7100'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%23DC7100'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%23DC7100'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%23DC7100'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%23DC7100'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%23DC7100'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%23DC7100'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%23DC7100'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--blue {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%2302B3ED'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%2302B3ED'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%230093C3'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%230093C3'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%230093C3'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%230093C3'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%230093C3'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%230093C3'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%230093C3'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%230093C3'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%230093C3'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%230093C3'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%230093C3'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%230093C3'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%230093C3'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%230093C3'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%230093C3'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%230093C3'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--purple {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23C555E4'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%23C555E4'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%23AD34CE'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%23AD34CE'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%23AD34CE'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%23AD34CE'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%23AD34CE'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%23AD34CE'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%23AD34CE'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%23AD34CE'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%23AD34CE'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%23AD34CE'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%23AD34CE'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%23AD34CE'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%23AD34CE'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%23AD34CE'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%23AD34CE'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--pink {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23E71F75'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%23E71F75'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%23CD1467'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%23CD1467'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%23CD1467'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%23CD1467'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%23CD1467'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%23CD1467'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%23CD1467'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%23CD1467'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%23CD1467'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%23CD1467'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%23CD1467'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%23CD1467'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%23CD1467'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%23CD1467'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%23CD1467'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--yellow {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23FFD127'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%23FFD127'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%23E1B205'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%23E1B205'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%23E1B205'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%23E1B205'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%23E1B205'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%23E1B205'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%23E1B205'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%23E1B205'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%23E1B205'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%23E1B205'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%23E1B205'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%23E1B205'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%23E1B205'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%23E1B205'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%23E1B205'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%23E1B205'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--light-green {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%230CC6A4'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%230CC6A4'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%230AAB98'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%230AAB98'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%230AAB98'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%230AAB98'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%230AAB98'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%230AAB98'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%230AAB98'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%230AAB98'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%230AAB98'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%230AAB98'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%230AAB98'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%230AAB98'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%230AAB98'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%230AAB98'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%230AAB98'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--red {
+        background-image: url("data:image/svg+xml,%3Csvg width='197' height='258' viewBox='0 0 197 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H185C191.627 186 197 191.373 197 198V246C197 252.627 191.627 258 185 258H178.86C178.003 252.594 173.321 248.461 167.674 248.461C162.026 248.461 157.344 252.594 156.487 258H151.281C150.424 252.594 145.742 248.461 140.095 248.461C134.447 248.461 129.765 252.594 128.908 258H123.703C122.846 252.594 118.164 248.461 112.517 248.461C106.869 248.461 102.187 252.594 101.33 258H97.1091C96.2519 252.594 91.5698 248.461 85.9224 248.461C80.275 248.461 75.5929 252.594 74.7358 258H69.531C68.6738 252.594 63.9917 248.461 58.3444 248.461C52.697 248.461 48.0149 252.594 47.1577 258H41.952C41.0949 252.594 36.4128 248.461 30.7654 248.461C25.118 248.461 20.4359 252.594 19.5788 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23F54242'/%3E%3Cpath d='M197 174C197 180.627 191.627 186 185 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -1.55096e-06 12 -9.69593e-07L185 1.42061e-05C191.627 1.47875e-05 197 5.3726 197 12L197 174Z' fill='%23F54242'/%3E%3Ccircle cx='45' cy='186' r='3' transform='rotate(90 45 186)' fill='%23D81717'/%3E%3Ccircle cx='21' cy='186' r='3' transform='rotate(90 21 186)' fill='%23D81717'/%3E%3Ccircle cx='10' cy='186' r='3' transform='rotate(90 10 186)' fill='%23D81717'/%3E%3Ccircle cx='33' cy='186' r='3' transform='rotate(90 33 186)' fill='%23D81717'/%3E%3Ccircle cx='93' cy='186' r='3' transform='rotate(90 93 186)' fill='%23D81717'/%3E%3Ccircle cx='69' cy='186' r='3' transform='rotate(90 69 186)' fill='%23D81717'/%3E%3Ccircle cx='57' cy='186' r='3' transform='rotate(90 57 186)' fill='%23D81717'/%3E%3Ccircle cx='81' cy='186' r='3' transform='rotate(90 81 186)' fill='%23D81717'/%3E%3Ccircle cx='141' cy='186' r='3' transform='rotate(90 141 186)' fill='%23D81717'/%3E%3Ccircle cx='117' cy='186' r='3' transform='rotate(90 117 186)' fill='%23D81717'/%3E%3Ccircle cx='105' cy='186' r='3' transform='rotate(90 105 186)' fill='%23D81717'/%3E%3Ccircle cx='129' cy='186' r='3' transform='rotate(90 129 186)' fill='%23D81717'/%3E%3Ccircle cx='189' cy='186' r='3' transform='rotate(90 189 186)' fill='%23D81717'/%3E%3Ccircle cx='165' cy='186' r='3' transform='rotate(90 165 186)' fill='%23D81717'/%3E%3Ccircle cx='153' cy='186' r='3' transform='rotate(90 153 186)' fill='%23D81717'/%3E%3Ccircle cx='177' cy='186' r='3' transform='rotate(90 177 186)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon__coupon-type:last-child {
+        margin-bottom: 56px;
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .coupon__coupons-list > div {
+        margin-right: 17px;
+    }
+    .coupon__coupons-list > div, .coupon__coupons-list > div:nth-child(4n) {
+        margin-bottom: 18px;
+    }
+
+    .coupon__coupons-list > div:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .coupon-card {
+        width: 169px;
+    }
+
+    .coupon-card--green {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%231DC556'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%231DC556'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%2314A13B'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%2314A13B'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%2314A13B'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%2314A13B'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%2314A13B'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%2314A13B'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%2314A13B'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%2314A13B'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--orange {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FF890D'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23FF890D'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC7100'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC7100'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23DC7100'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23DC7100'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23DC7100'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23DC7100'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23DC7100'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--blue {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%2302B3ED'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%2302B3ED'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%230097C8'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%230097C8'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%230097C8'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%230097C8'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%230097C8'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%230097C8'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%230097C8'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%230097C8'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%230097C8'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%230097C8'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%230097C8'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%230097C8'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%230097C8'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%230097C8'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--blue.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.15' fill-rule='evenodd' clip-rule='evenodd' d='M169 190L169 223C169 229.627 163.627 235 157 235H153.836C152.993 230.448 149.001 227 144.204 227C139.408 227 135.416 230.448 134.572 235H129.985C129.141 230.448 125.149 227 120.353 227C115.556 227 111.564 230.448 110.721 235H106.133C105.289 230.448 101.298 227 96.5009 227C91.7042 227 87.7126 230.448 86.869 235H83.1317C82.288 230.448 78.2965 227 73.4997 227C68.7029 227 64.7114 230.448 63.8678 235H59.28C58.4363 230.448 54.4448 227 49.648 227C44.8513 227 40.8597 230.448 40.0161 235H35.4283C34.5847 230.448 30.5931 227 25.7963 227C20.9996 227 17.008 230.448 16.1644 235H12C5.37262 235 3.76052e-05 229.627 3.76052e-05 223V190.03C1.25391e-05 190.02 -8.82391e-10 190.01 0 190L1.55116e-05 12C1.60892e-05 5.37258 5.3726 -5.81241e-07 12 0L157 1.27169e-05C163.627 1.32981e-05 169 5.3726 169 12L169 174.981C169 174.988 169 174.994 169 175L169 190Z' fill='%2302B3ED'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--purple {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23C555E4'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23C555E4'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23AD34CE'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23AD34CE'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23AD34CE'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23AD34CE'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23AD34CE'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23AD34CE'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23AD34CE'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--pink {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23E71F75'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23E71F75'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23CD1467'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23CD1467'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23CD1467'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23CD1467'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23CD1467'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23CD1467'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23CD1467'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FFB84E'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23FFB84E'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M169 175V223C169 229.627 163.627 235 157 235H153.969C153.567 229.959 149.349 225.994 144.204 225.994C139.06 225.994 134.842 229.959 134.439 235H130.118C129.715 229.959 125.497 225.994 120.353 225.994C115.208 225.994 110.99 229.959 110.588 235H106.266C105.864 229.959 101.645 225.994 96.5009 225.994C91.3566 225.994 87.1383 229.959 86.736 235H83.2646C82.8623 229.959 78.6441 225.994 73.4997 225.994C68.3554 225.994 64.1371 229.959 63.7348 235H59.4129C59.0106 229.959 54.7924 225.994 49.648 225.994C44.5037 225.994 40.2854 229.959 39.8831 235H35.5612C35.159 229.959 30.9407 225.994 25.7963 225.994C20.652 225.994 16.4337 229.959 16.0314 235H12.0001C5.37264 235 5.16719e-05 229.627 5.16719e-05 223V180.036C1.72308e-05 180.024 -1.03496e-09 180.012 0 180L1.46402e-05 12C1.52177e-05 5.37258 5.3726 -5.8124e-07 12 0L157 1.27169e-05C163.627 1.32981e-05 169 5.3726 169 12L169 174.973C169 174.982 169 174.991 169 175Z' fill='%23FEDBA6'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-2 {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23CECECE'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23CECECE'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-2.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M169 175V223C169 229.627 163.627 235 157 235H153.969C153.567 229.959 149.349 225.994 144.204 225.994C139.06 225.994 134.842 229.959 134.439 235H130.118C129.715 229.959 125.497 225.994 120.353 225.994C115.208 225.994 110.99 229.959 110.588 235H106.266C105.864 229.959 101.645 225.994 96.5009 225.994C91.3566 225.994 87.1383 229.959 86.736 235H83.2646C82.8623 229.959 78.6441 225.994 73.4997 225.994C68.3554 225.994 64.1371 229.959 63.7348 235H59.4129C59.0106 229.959 54.7924 225.994 49.648 225.994C44.5037 225.994 40.2854 229.959 39.8831 235H35.5612C35.159 229.959 30.9407 225.994 25.7963 225.994C20.652 225.994 16.4337 229.959 16.0314 235H12.0001C5.37264 235 5.16719e-05 229.627 5.16719e-05 223V180.036C1.72308e-05 180.024 -1.03496e-09 180.012 0 180L1.46402e-05 12C1.52177e-05 5.37258 5.3726 -5.8124e-07 12 0L157 1.27169e-05C163.627 1.32981e-05 169 5.3726 169 12L169 174.973C169 174.982 169 174.991 169 175Z' fill='%23EFEBEB'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-3 {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23FFD127'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23FFD127'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-3.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M169 175V223C169 229.627 163.627 235 157 235H153.969C153.567 229.959 149.349 225.994 144.204 225.994C139.06 225.994 134.842 229.959 134.439 235H130.118C129.715 229.959 125.497 225.994 120.353 225.994C115.208 225.994 110.99 229.959 110.588 235H106.266C105.864 229.959 101.645 225.994 96.5009 225.994C91.3566 225.994 87.1383 229.959 86.736 235H83.2646C82.8623 229.959 78.6441 225.994 73.4997 225.994C68.3554 225.994 64.1371 229.959 63.7348 235H59.4129C59.0106 229.959 54.7924 225.994 49.648 225.994C44.5037 225.994 40.2854 229.959 39.8831 235H35.5612C35.159 229.959 30.9407 225.994 25.7963 225.994C20.652 225.994 16.4337 229.959 16.0314 235H12.0001C5.37264 235 5.16719e-05 229.627 5.16719e-05 223V180.036C1.72308e-05 180.024 -1.03496e-09 180.012 0 180L1.46402e-05 12C1.52177e-05 5.37258 5.3726 -5.8124e-07 12 0L157 1.27169e-05C163.627 1.32981e-05 169 5.3726 169 12L169 174.973C169 174.982 169 174.991 169 175Z' fill='%23FFE996'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-4 {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23CACBD2'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23CACBD2'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23DC8F1C'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23DC8F1C'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--beige-4.coupon-card--non-active {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M169 175V223C169 229.627 163.627 235 157 235H153.969C153.567 229.959 149.349 225.994 144.204 225.994C139.06 225.994 134.842 229.959 134.439 235H130.118C129.715 229.959 125.497 225.994 120.353 225.994C115.208 225.994 110.99 229.959 110.588 235H106.266C105.864 229.959 101.645 225.994 96.5009 225.994C91.3566 225.994 87.1383 229.959 86.736 235H83.2646C82.8623 229.959 78.6441 225.994 73.4997 225.994C68.3554 225.994 64.1371 229.959 63.7348 235H59.4129C59.0106 229.959 54.7924 225.994 49.648 225.994C44.5037 225.994 40.2854 229.959 39.8831 235H35.5612C35.159 229.959 30.9407 225.994 25.7963 225.994C20.652 225.994 16.4337 229.959 16.0314 235H12.0001C5.37264 235 5.16719e-05 229.627 5.16719e-05 223V180.036C1.72308e-05 180.024 -1.03496e-09 180.012 0 180L1.46402e-05 12C1.52177e-05 5.37258 5.3726 -5.8124e-07 12 0L157 1.27169e-05C163.627 1.32981e-05 169 5.3726 169 12L169 174.973C169 174.982 169 174.991 169 175Z' fill='%23E4E5EA'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--light-green {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%230CC6A4'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%230CC6A4'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%230AAB98'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%230AAB98'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%230AAB98'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%230AAB98'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%230AAB98'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%230AAB98'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%230AAB98'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card--red {
+        background-image: url("data:image/svg+xml,%3Csvg width='169' height='235' viewBox='0 0 169 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 174C0 167.373 5.37258 162 12 162H157C163.627 162 169 167.373 169 174V223C169 229.627 163.627 235 157 235H153.679C152.574 230.801 148.751 227.704 144.204 227.704C139.658 227.704 135.835 230.801 134.73 235H129.827C128.722 230.801 124.899 227.704 120.353 227.704C115.806 227.704 111.983 230.801 110.878 235H105.975C104.87 230.801 101.047 227.704 96.5009 227.704C91.9546 227.704 88.1316 230.801 87.0265 235H82.9741C81.869 230.801 78.046 227.704 73.4997 227.704C68.9534 227.704 65.1304 230.801 64.0253 235H59.1224C58.0173 230.801 54.1943 227.704 49.648 227.704C45.1017 227.704 41.2787 230.801 40.1736 235H35.2707C34.1656 230.801 30.3426 227.704 25.7963 227.704C21.25 227.704 17.427 230.801 16.3219 235H12C5.37259 235 0 229.627 0 223V174Z' fill='%23F54242'/%3E%3Cpath d='M169 152C169 158.627 163.627 164 157 164L12 164C5.37257 164 -1.47906e-05 158.627 -1.42131e-05 152L-2.0129e-06 12C-1.43536e-06 5.37259 5.37257 9.08266e-07 12 1.48951e-06L157 1.42064e-05C163.627 1.47876e-05 169 5.3726 169 12L169 152Z' fill='%23F54242'/%3E%3Ccircle cx='21.5' cy='163' r='3' transform='rotate(90 21.5 163)' fill='%23D81717'/%3E%3Ccircle cx='10' cy='163' r='3' transform='rotate(90 10 163)' fill='%23D81717'/%3E%3Ccircle cx='67.5' cy='163' r='3' transform='rotate(90 67.5 163)' fill='%23D81717'/%3E%3Ccircle cx='44.5' cy='163' r='3' transform='rotate(90 44.5 163)' fill='%23D81717'/%3E%3Ccircle cx='33' cy='163' r='3' transform='rotate(90 33 163)' fill='%23D81717'/%3E%3Ccircle cx='56' cy='163' r='3' transform='rotate(90 56 163)' fill='%23D81717'/%3E%3Ccircle cx='113.5' cy='163' r='3' transform='rotate(90 113.5 163)' fill='%23D81717'/%3E%3Ccircle cx='90.5' cy='163' r='3' transform='rotate(90 90.5 163)' fill='%23D81717'/%3E%3Ccircle cx='79' cy='163' r='3' transform='rotate(90 79 163)' fill='%23D81717'/%3E%3Ccircle cx='102' cy='163' r='3' transform='rotate(90 102 163)' fill='%23D81717'/%3E%3Ccircle cx='159.5' cy='163' r='3' transform='rotate(90 159.5 163)' fill='%23D81717'/%3E%3Ccircle cx='136.5' cy='163' r='3' transform='rotate(90 136.5 163)' fill='%23D81717'/%3E%3Ccircle cx='125' cy='163' r='3' transform='rotate(90 125 163)' fill='%23D81717'/%3E%3Ccircle cx='148' cy='163' r='3' transform='rotate(90 148 163)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card__price {
+        font-size: 39px;
+        line-height: 53px;
+        margin-top: 15px;
+    }
+
+    .coupon-card__percent {
+        font-size: 39px;
+        line-height: 53px;
+    }
+
+    .coupon-card__name-text {
+        margin-top: 4px;
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .coupon-card__descr-text {
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: initial;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .coupon__heading {
+        margin-top: 48px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .coupon__active-coupons .coupon__heading {
+        margin-top: 0;
+    }
+
+    .coupon__heading--rules {
+        margin-top: 30px;
+    }
+
+    .coupon-card__text {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+
+    .coupon__active-coupons .coupon-btn {
+        margin-bottom: 18px;
+    }
+
+    .coupon__non-active-coupons .coupon__heading {
+        margin-top: 30px;
+    }
+
+    .coupon__rules-card {
+        margin-right: 24px;
+        margin-top: 18px;
+    }
+
+    .rules-card {
+        width: 190px;
+        background-color: #fff;
+    }
+
+    .rules-card__footer {
+        padding: 8px 14px 12px 18px;
+    }
+
+    .coupon-type {
+        padding: 24px 30px;
+        align-items: flex-start;
+    }
+
+    .coupon-card-big {
+        width: 183px;
+    }
+
+    .coupon-card-big__text {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .coupon-card-big--green {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%233ECF8E'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%233ECF8E'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%2314A13B'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%2314A13B'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%2314A13B'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%2314A13B'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%2314A13B'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%2314A13B'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%2314A13B'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%2314A13B'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%2314A13B'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%2314A13B'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%2314A13B'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%2314A13B'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%2314A13B'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%2314A13B'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--orange {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23FF890D'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%23FF890D'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%23DC7100'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%23DC7100'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%23DC7100'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%23DC7100'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%23DC7100'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%23DC7100'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%23DC7100'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%23DC7100'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%23DC7100'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%23DC7100'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%23DC7100'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%23DC7100'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%23DC7100'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%23DC7100'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--blue {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%2302B3ED'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%2302B3ED'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%230093C3'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%230093C3'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%230093C3'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%230093C3'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%230093C3'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%230093C3'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%230093C3'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%230093C3'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%230093C3'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%230093C3'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%230093C3'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%230093C3'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%230093C3'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%230093C3'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--purple {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23C555E4'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%23C555E4'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%23AD34CE'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%23AD34CE'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%23AD34CE'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%23AD34CE'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%23AD34CE'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%23AD34CE'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%23AD34CE'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%23AD34CE'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%23AD34CE'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%23AD34CE'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%23AD34CE'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%23AD34CE'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%23AD34CE'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%23AD34CE'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--pink {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23E71F75'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%23E71F75'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%23CD1467'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%23CD1467'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%23CD1467'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%23CD1467'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%23CD1467'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%23CD1467'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%23CD1467'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%23CD1467'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%23CD1467'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%23CD1467'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%23CD1467'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%23CD1467'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%23CD1467'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%23CD1467'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--yellow {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23FFD127'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%23FFD127'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%23E1B205'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%23E1B205'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%23E1B205'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%23E1B205'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%23E1B205'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%23E1B205'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%23E1B205'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%23E1B205'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%23E1B205'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%23E1B205'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%23E1B205'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%23E1B205'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%23E1B205'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%23E1B205'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--light-green {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%230CC6A4'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%230CC6A4'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%230AAB98'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%230AAB98'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%230AAB98'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%230AAB98'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%230AAB98'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%230AAB98'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%230AAB98'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%230AAB98'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%230AAB98'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%230AAB98'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%230AAB98'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%230AAB98'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%230AAB98'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%230AAB98'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon-card-big--red {
+        background-image: url("data:image/svg+xml,%3Csvg width='183' height='258' viewBox='0 0 183 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 198C0 191.373 5.37258 186 12 186H171C177.627 186 183 191.373 183 198V246C183 252.627 177.627 258 171 258H165.894C165.166 252.912 160.787 249 155.494 249C150.201 249 145.823 252.912 145.094 258H140.313C139.585 252.912 135.206 249 129.914 249C124.621 249 120.242 252.912 119.514 258H114.735C114.007 252.912 109.628 249 104.335 249C99.0423 249 94.6636 252.912 93.9354 258H90.065C89.3367 252.912 84.958 249 79.6652 249C74.3724 249 69.9937 252.912 69.2655 258H64.4864C63.7582 252.912 59.3795 249 54.0867 249C48.7939 249 44.4152 252.912 43.6869 258H38.9059C38.1777 252.912 33.799 249 28.5062 249C23.2134 249 18.8347 252.912 18.1064 258H12C5.37258 258 0 252.627 0 246V198Z' fill='%23F54242'/%3E%3Cpath d='M183 174C183 180.627 177.627 186 171 186L12 186C5.37256 186 -1.47907e-05 180.627 -1.42133e-05 174L-9.89398e-08 12C4.78478e-07 5.37257 5.37259 -3.22862e-07 12 2.58501e-07L171 1.42061e-05C177.627 1.47875e-05 183 5.3726 183 12L183 174Z' fill='%23F54242'/%3E%3Ccircle cx='38' cy='186' r='3' transform='rotate(90 38 186)' fill='%23D81717'/%3E%3Ccircle cx='14' cy='186' r='3' transform='rotate(90 14 186)' fill='%23D81717'/%3E%3Ccircle cx='26' cy='186' r='3' transform='rotate(90 26 186)' fill='%23D81717'/%3E%3Ccircle cx='86' cy='186' r='3' transform='rotate(90 86 186)' fill='%23D81717'/%3E%3Ccircle cx='62' cy='186' r='3' transform='rotate(90 62 186)' fill='%23D81717'/%3E%3Ccircle cx='50' cy='186' r='3' transform='rotate(90 50 186)' fill='%23D81717'/%3E%3Ccircle cx='74' cy='186' r='3' transform='rotate(90 74 186)' fill='%23D81717'/%3E%3Ccircle cx='134' cy='186' r='3' transform='rotate(90 134 186)' fill='%23D81717'/%3E%3Ccircle cx='110' cy='186' r='3' transform='rotate(90 110 186)' fill='%23D81717'/%3E%3Ccircle cx='98' cy='186' r='3' transform='rotate(90 98 186)' fill='%23D81717'/%3E%3Ccircle cx='122' cy='186' r='3' transform='rotate(90 122 186)' fill='%23D81717'/%3E%3Ccircle cx='158' cy='186' r='3' transform='rotate(90 158 186)' fill='%23D81717'/%3E%3Ccircle cx='146' cy='186' r='3' transform='rotate(90 146 186)' fill='%23D81717'/%3E%3Ccircle cx='170' cy='186' r='3' transform='rotate(90 170 186)' fill='%23D81717'/%3E%3C/svg%3E%0A");
+    }
+
+    .coupon__coupon-type:last-child {
+        margin-bottom: 44px;
+    }
+}

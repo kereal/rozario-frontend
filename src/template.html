@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, maximum-scale=5"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    %sapper.head%
+
+    <meta name="theme-color" content="#330033" />
+
+     <link rel="preload" href="/fonts/Bold/OpenSans-Bold.woff2?v=1.101" as="font" type="font/woff2" crossorigin>
+     <link rel="preload" href="/fonts/Semibold/OpenSans-SemiBold.woff2?v=1.101" as="font" type="font/woff2" crossorigin>
+     <link rel="preload" href="/fonts/Regular/OpenSans-Regular.woff2?v=1.101" as="font" type="font/woff2" crossorigin>
+    <!-- <link -->
+    <!--   href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=cyrillic" -->
+    <!--   rel="stylesheet" -->
+    <!-- /> -->
+
+    %sapper.base%
+    <link rel="stylesheet" href="croppie.css" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="freakflags.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="coupons.css">
+    <link rel="icon" type="image/png" href="/logos/favicon_32.png" />
+
+    <meta name="msapplication-config" content="/browserconfigMS.xml" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#330033">
+
+    <link rel="apple-touch-icon" href="/logos/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/logos/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logos/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/logos/touch-icon-ipad-retina.png">
+    <link rel="mask-icon" href="website_icon.svg" color="#330033">
+
+<style>
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Bold/OpenSans-Bold.woff2?v=1.101") format("woff2"), url("/fonts/Bold/OpenSans-Bold.woff?v=1.101") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Semibold/OpenSans-SemiBold.woff2?v=1.101") format("woff2"), url("/fonts/Semibold/OpenSans-SemiBold.woff?v=1.101") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Regular/OpenSans-Regular.woff2?v=1.101") format("woff2"), url("/fonts/Regular/OpenSans-Regular.woff?v=1.101") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+a, a:hover, a:focus, a:active, button, button:focus, button:active, input, input:focus, input:active,label, label:focus, label:active {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+</style>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=239f3c15-dce2-4008-8563-b9f9ca399b0b&lang=ru_RU"
+            type="text/javascript">
+    </script>
+    <script src="croppie.js"></script>
+    %sapper.styles%
+
+  </head>
+  <body>
+    <!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+    <div id="sapper">%sapper.html%</div>
+
+    <!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+    %sapper.scripts%
+  </body>
+</html>
