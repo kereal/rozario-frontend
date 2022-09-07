@@ -40,11 +40,8 @@
   import CatalogFilter from "../../components/CatalogFilter.svelte";
   import PresentCard from "../../components/PresentCard.svelte";
   import cloneDeep from "lodash-es/cloneDeep";
-
   import { stores } from "@sapper/app";
-
   const { page } = stores();
-
   export let slug;
   export let path;
   export let cityMeta;
@@ -54,13 +51,8 @@
   export let catalogSubCategories;
   export let orderList;
   export let categories;
-
-  console.log(categories, 'categories')
-
   let currentFlowerList = flowersList;
-
   let currentSubCategory = catalogSubCategories[0].name;
-
   let filtersData = [
     {
       name: "price",
@@ -144,6 +136,7 @@
   }
 
   onMount(() => {
+    console.log()
     $orderStore.orderList = orderList;
     $orderStore.totalPrice = orderList.reduce((acc, val) => {
       return acc + val.flower.price * val.flower.quantity;

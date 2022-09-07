@@ -108,14 +108,14 @@
     <div class="photo relative">
         <picture >
             <source
-                    data-srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{product.image}" />
-            <img    data-srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{product.image}"
-                    data-src="https://ecocom.ingello.com/resources/images/thumbs/150_150_{product.image}"
+                    data-srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{product.image}" />
+            <img    data-srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{product.image}"
+                    data-src="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{product.image}"
                     alt="{product.name}"
                     class="w-full h-full"/>
         </picture>
         <noscript>
-            <img class="w-full h-full" srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{product.image} 2x" src="https://ecocom.ingello.com/resources/images/thumbs/150_150_{product.image}" alt="recomendation product photo">
+            <img class="w-full h-full" srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{product.image} 2x" src="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{product.image}" alt="recomendation product photo">
         </noscript>
         {#if product.share}
             <div class="share">

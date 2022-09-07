@@ -1,5 +1,5 @@
 <script>
-  import Textarea from "../components/Textarea.svelte";
+  import TextArea from "../components/TextArea.svelte";
 </script>
 
 <style>
@@ -8,5 +8,5 @@
 </style>
 
 <div class="wrapper">
-  <Textarea />
+  <TextArea />
 </div>

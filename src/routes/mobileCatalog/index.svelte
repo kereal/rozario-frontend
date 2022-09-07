@@ -73,7 +73,7 @@
 
     let check = []
     async function getCategories() {
-        let response = await fetch('https://ecocom.ingello.com/catalog/productCategories/default/active?json');
+        let response = await fetch('https://api.rozarioflowers.ru/catalog/productCategories/default/active?json');
         let commits = await response.json();
         categories = []
         for(let i = 0; i < commits.categories.length; i++) {
@@ -201,15 +201,15 @@
                         </div>
                         <div class="category__photo">
                             <picture>
-                                <source data-srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{category.image}.webp, https://ecocom.ingello.com/resources/images/thumbs/150_150_{category.image}-2x.webp 2x"/>
+                                <source data-srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{category.image}.webp, https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{category.image}-2x.webp 2x"/>
                                 <img
                                         class="w-full absolute h-full object-cover"
-                                        data-srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{category.image}-2x 2x"
-                                        data-src={'https://ecocom.ingello.com/resources/images/thumbs/150_150_'+category.image}
+                                        data-srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{category.image}-2x 2x"
+                                        data-src={'https://api.rozarioflowers.ru/resources/images/thumbs/150_150_'+category.image}
                                         alt={category.alias} />
                             </picture>
                             <noscript>
-                                <img srcset="https://ecocom.ingello.com/resources/images/thumbs/150_150_{category.image} 2x" src="https://ecocom.ingello.com/resources/images/thumbs/{category.image}" alt="photo category's">
+                                <img srcset="https://api.rozarioflowers.ru/resources/images/thumbs/150_150_{category.image} 2x" src="https://api.rozarioflowers.ru/resources/images/thumbs/{category.image}" alt="photo category's">
                             </noscript>
                         </div>
                     </a>

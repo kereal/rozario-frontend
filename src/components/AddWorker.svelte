@@ -3,7 +3,7 @@
  import IconButton from "./IconButton.svelte";
  import TelInput from "./TelInput.svelte";
  import Select from "./Select.svelte";
- import AddWorker from "./AddWorker.svelte";
+ //import AddWorker from "./AddWorker.svelte";
  import { fade } from "svelte/transition";
  import Button from "./Button.svelte";
  import { createEventDispatcher } from "svelte";

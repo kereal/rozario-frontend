@@ -22,17 +22,10 @@
   export let flower;
   export let className = "";
   export let selectable = false;
-
   export let useragent;
-
   let desktop = false;
-
-
-
   const dispatch = createEventDispatcher();
-
   let selected = false;
-
   let labelNewPopupVisible = false;
   let labelHitPopupVisible = false;
   let dealsaleVisible = false;
@@ -40,7 +33,6 @@
   let dealcouponVisible = false;
   let likeVisible = false;
   let likeAddedVisible = false;
-
   let dealsaleElement;
   let dealcouponElement;
   let dealgiftElement;
@@ -308,16 +300,16 @@
   </div>
   <div class="bigflowercard-image rounded-b">
     <picture>
-      <source data-srcset="{flower.src}.webp, {flower.src}-2x.webp 2x" />
+      <source data-srcset="{flower.image}, {flower.image} 2x" />
       <img
         class="card-image"
         src="loading-bg-image.svg"
-        data-srcset="{flower.src}-2x.png"
-        data-src="{flower.src}.png"
+        data-srcset="{flower.image}-2x"
+        data-src="{flower.image}"
         alt={flower.title} />
     </picture>
     <noscript>
-      <img srcset="{flower.src}-2x.png" src="{flower.src}.png" alt="{flower.title}">
+      <img srcset="{flower.image}-2x" src="{flower.image}" alt="{flower.title}">
     </noscript>
     <div class="like rounded">
       <div class="flex flex-col items-center rounded">

@@ -1,14 +1,14 @@
 import "./utils.css";
-import Textarea from "../views/Textarea.svelte";
+import TextArea from "../views/TextArea.svelte";
 import { withKnobs, text, object, array } from "@storybook/addon-knobs";
 
 export default {
-  title: "Textarea",
+  title: "TextArea",
   decorators: [withKnobs],
   excludeStories: /.*Data$/,
 };
 
 export const Default = () => ({
-  Component: Textarea,
+  Component: TextArea,
   props: {},
 });

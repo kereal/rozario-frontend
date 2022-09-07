@@ -10,13 +10,10 @@
   export let page = "";
   export let currentSubCategory = '';
   export let initCategories = [];
-
   let categories = cloneDeep(initCategories);
 
   const dispatch = createEventDispatcher();
-
   let moreCategories = [];
-
   let moreDropdownVisible = false;
   let moreDropdownElement;
   let moreDropdownButton;
@@ -24,7 +21,6 @@
     "leading-12 bg-accent px-16 whitespace-no-wrap mr-8 rounded-full text-main";
   const indexButtonStyle =
     "hover:bg-gray-300 leading-12 px-16 whitespace-no-wrap mr-8 rounded-full text-main";
-
   let currWindowScreenWidth = 0;
   let dimensions = 0;
 
@@ -123,6 +119,7 @@
     }
     return 1500;
   }
+
   beforeUpdate(() => {
     let navLength = categories.length;
     if (page === "index" || $orderStore.orderList.length === 0) {
@@ -133,7 +130,9 @@
     let currWindowScreenWidth = getOptimalScreenWidth();
     reduceNavListInitial(currWindowScreenWidth);
   });
+
   onMount(() => {
+    console.info(categories)
     styleMoreButton();
     goToCategory = (e) => {
       selectCategory(e);
@@ -141,18 +140,15 @@
   });
 
   function resizeWindow(e) {
-if(window.innerWidth>1000) {
-  if (currWindowScreenWidth > window.innerWidth && window.innerWidth > 1000) {
-    reduceNavList();
-  } else {
-    expandNavList();
+    if (window.innerWidth>1000) {
+      if (currWindowScreenWidth > window.innerWidth && window.innerWidth > 1000) {
+        reduceNavList();
+      } else {
+        expandNavList();
+      }
     }
-}
-
-    console.log(window.innerWidth)
     currWindowScreenWidth = getOptimalScreenWidth();
   }
-
   function showMoreNav() {
     moreDropdownVisible = !moreDropdownVisible;
   }
@@ -177,7 +173,7 @@ if(window.innerWidth>1000) {
       {#if category.name === currentSubCategory}
         <li class="h-full flex items-center">
           <a
-            href={category.path}
+            href={category.permalink}
             on:click={goToCategory}
             class={indexButtonStyleSelected}>
             {category.name}
@@ -186,7 +182,7 @@ if(window.innerWidth>1000) {
       {:else}
         <li class="h-full flex items-center">
           <a
-            href={category.path}
+            href={category.permalink}
             data-value={category}
             on:click={goToCategory}
             class={indexButtonStyle}>

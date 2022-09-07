@@ -41,7 +41,7 @@
     let products = []
 
     async function getCategories() {
-        let response = await fetch('https://ecocom.ingello.com/catalog/productCategories/default/active?json');
+        let response = await fetch('https://api.rozarioflowers.ru/catalog/productCategories/default/active?json');
         let commits = await response.json();
         categories = []
         for(let i = 0; i < commits.categories.length; i++) {
@@ -53,7 +53,7 @@
                 category = commits.categories[i]
             }
         }
-            response = await fetch('https://ecocom.ingello.com/catalog/productCategories/site/view?id='+category.id+'&json=');
+            response = await fetch('https://api.rozarioflowers.ru/catalog/productCategories/site/view?id='+category.id+'&json=');
             commits = await response.json();
             products = Object.values(commits.categoryList)
          console.log(products , 'products')

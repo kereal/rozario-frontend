@@ -3,11 +3,17 @@
     const res = await this.fetch(
       `index.json?city=${page.host[0]}&path=${page.path}`
     );
-    const json = await res.json();
+    const json = await res.json();    
+
+    const res1 = await this.fetch(`http://127.0.0.1:3000/rozmain`)
+    const solData = await res1.json()
+
     return {
-      flowersList: json.flowersList,
+      //flowersList: json.flowersList,
+      flowersList: solData.products,
       collections: json.collections,
-      categories: json.catalog,
+      //categories: json.catalog,
+      categories: solData.taxons,
       recommendations: json.recommendations,
       user: session.user,
       cityMeta: json.cityMeta,
@@ -40,10 +46,7 @@
   import { orderStore } from "../stores/order.js";
   import Swiper, { Navigation } from "swiper";
   import "swiper/swiper-bundle.css";
-
   const { page } = stores();
-
-
   export let flowersList;
   export let collections;
   export let categories;
@@ -57,8 +60,6 @@
   export let orderList = [];
   export let testThesound;
 
-
-
   const currDealCategory = "Лето";
   const flowerCarouselGap = 40;
   const testimonialCarouselGap = 40;
@@ -70,15 +71,13 @@
   let smilesCarouselContainer;
 
  // async function fetchUsers() {
-
- //         const response = await fetch(`https://ecocom.ingello.com/catalog/productCategories/site/view?id=${id}&json`);
+ //         const response = await fetch(`https://api.rozarioflowers.ru/catalog/productCategories/site/view?id=${id}&json`);
  //   if (response.ok) {
 //      testThesound = response.json();
   //  } else {
  //     return 'error'
  //   }
  // }
-
 
   onMount(async () => {
    // let navigator = window.navigator.userAgent

@@ -35,7 +35,7 @@
   }
   .image-placeholder {
     background-image: url("../../static/loading-bg-image.svg");
-    padding-top: 54%;
+    padding-top: 100%;
   }
   .sh {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -46,21 +46,30 @@
 </style>
 
 <div class="relative rounded-lg h-full collections-card {className}">
-  <div class="sh rounded-lg h-full">
+  <a href={collection.permalink} class="sh rounded-lg h-full">
     <div
       class="image-placeholder w-full rounded-t-lg overflow-hidden relative
       object-cover">
       <picture>
-        <source
+        <!-- <source
           data-srcset="{collection.src}.webp, {collection.src}-2x.webp 2x" />
         <img
           class="rounded-t-lg w-full h-full absolute inset-0"
           data-srcset="{collection.src}-2x.png 2x"
           data-src="{collection.src}.png"
+          alt={collection.name} /> -->
+        <source
+          data-srcset="{collection.image}" />
+        <img
+          style="height:auto"
+          class="rounded-t-lg w-full h-full absolute inset-0"
+          data-srcset="{collection.image}"
+          data-src="{collection.image}"
           alt={collection.name} />
       </picture>
       <noscript>
-        <img srcset="{collection.src}-2x.png 2x" src="{collection.src}.png" alt="{collection.name}">
+        <!-- <img srcset="{collection.src}-2x.png 2x" src="{collection.src}.png" alt="{collection.name}"> -->
+        <img srcset="{collection.image}" src="{collection.image}" alt="{collection.name}">
       </noscript>
       {#if collection.oneplusone}
         <DealLabel
@@ -123,11 +132,11 @@
         <img class="w-16 h-16 mr-16" src="shopper-sm-p.svg" alt="shopper" />
         <img class="w-16 h-16 mr-34" src="star-sm-p.svg" alt="star" />
       </div>
-      <div class="text-gray-700 text-sm font-semibold">
+      <!-- <div class="text-gray-700 text-sm font-semibold">
         <a href="/">Розы</a>
         <span>&#8226;</span>
         <a href="/">Шикарные</a>
-      </div>
+      </div> -->
     </div>
-  </div>
+  </a>
 </div>

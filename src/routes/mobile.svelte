@@ -225,7 +225,7 @@
 
     export let categories = []
     async function getCategories() {
-        let response = await fetch('https://ecocom.ingello.com/catalog/productCategories/default/active?json');
+        let response = await fetch('https://api.rozarioflowers.ru/catalog/productCategories/default/active?json');
         let commits = await response.json();
         categories = []
         for(let i = 0; i < commits.categories.length; i++) {
