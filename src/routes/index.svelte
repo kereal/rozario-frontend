@@ -5,7 +5,7 @@
     );
     const json = await res.json();    
 
-    const res1 = await this.fetch(`http://127.0.0.1:3000/rozmain`)
+    const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain`)
     const solData = await res1.json()
 
     return {
@@ -18,7 +18,8 @@
       user: session.user,
       cityMeta: json.cityMeta,
       blogposts: json.blogposts,
-      testimonials: json.testimonials,
+      //testimonials: json.testimonials,
+      testimonials: solData.reviews,
       smiles: json.smiles,
       orderList: json.orderList,
     };
@@ -56,9 +57,7 @@
   export let blogposts;
   export let smiles;
   export let testimonials;
-  export let id = 18;
   export let orderList = [];
-  export let testThesound;
 
   const currDealCategory = "Лето";
   const flowerCarouselGap = 40;
@@ -70,14 +69,6 @@
   let blogpostsCarouselContainer;
   let smilesCarouselContainer;
 
- // async function fetchUsers() {
- //         const response = await fetch(`https://api.rozarioflowers.ru/catalog/productCategories/site/view?id=${id}&json`);
- //   if (response.ok) {
-//      testThesound = response.json();
-  //  } else {
- //     return 'error'
- //   }
- // }
 
   onMount(async () => {
    // let navigator = window.navigator.userAgent
@@ -159,7 +150,6 @@
     flex: 1 0 auto;
     @apply inline-block pointer-events-none opacity-0;
   }
-
   .main-page :global(.bigflowercard-carousel-item) {
     padding-right: 30px;
   }
@@ -200,7 +190,6 @@
   .special-card-wrapper:nth-child(4n) {
     margin-right: 0;
   }
-
   @media (max-width: 1250px) {
     .special-card-wrapper {
       flex-basis: calc(100% / 3 - 35px);
@@ -209,7 +198,6 @@
       display: none;
     }
   }
-
 </style>
 
 <svelte:head>
@@ -219,9 +207,7 @@
     content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
     Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
     банковской картой." />
-
   <link rel="canonical" href="https://{$page.host + $page.path}" />
-
   <link
     rel="alternate"
     href="https://{$page.host + $page.path}"
@@ -234,18 +220,15 @@
     type="text/html"
     hreflang="en"
     title="English" />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, " />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы" />
@@ -258,7 +241,6 @@
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta
     name="twitter:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы" />
@@ -270,7 +252,6 @@
   <meta name="twitter:image" content="ruka3.jpg" />
   <meta name="twitter:image:alt" content="Розарио.Цветы" />
   <meta name="twitter:card" content="summary" />
-
 </svelte:head>
 
 <div class="w-full bg-gray-800 main-page mb-10 border-b border-gray-300">

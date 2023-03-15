@@ -1,10 +1,10 @@
 <script>
-  import HeroInput from "./HeroInput.svelte";
+  import HeroInput from "./HeroInput.svelte"
 
-  export let locativus = "";
-  export let name = "";
+  export let locativus = ""
+  export let name = ""
 
-  const visible = false;
+  const visible = false
 
   const occasionList = [
     { text: "Все", path: "" },
@@ -18,16 +18,16 @@
     { text: "На свадьбу", path: "wedding" },
     { text: "Для новорожденного", path: "newborn" },
     { text: "Траур", path: "mourning" }
-  ];
+  ]
 
   const priceRangeList = [
-    { from: "", to: "2000", text: 'От 2000', query: "from-2000" },
-    { from: "2000", to: "4000", text: 'От 2000 до 4000', query: "from-2000-to-4000" },
-    { from: "4000", to: "5000", text: 'От 4000 до 5000', query: "from-4000-to-5000" },
-    { from: "5000", to: "9000", text: 'От 5000 до 9000', query: "from-5000-to-9000" },
-    { from: "9000", to: "14000", text: 'От 9000 до 14000', query: "from-9000-to-14000" },
-    { from: "14000", to: "", text: 'От 14000', query: "from-14000" }
-  ];
+    { from: "", to: "2000", text: "От 2000", query: "from-2000" },
+    { from: "2000", to: "4000", text: "От 2000 до 4000", query: "from-2000-to-4000" },
+    { from: "4000", to: "5000", text: "От 4000 до 5000", query: "from-4000-to-5000" },
+    { from: "5000", to: "9000", text: "От 5000 до 9000", query: "from-5000-to-9000" },
+    { from: "9000", to: "14000", text: "От 9000 до 14000", query: "from-9000-to-14000" },
+    { from: "14000", to: "", text: "От 14000", query: "from-14000" }
+  ]
 
   const personList = [
     { text: "Маме", path: "mother" },
@@ -40,7 +40,7 @@
     { text: "Дочери", path: "daughter" },
     { text: "Подруге", path: "girlfriend" },
     { text: "Сестре", path: "sister" }
-  ];
+  ]
 
   const flowerList = [
     { text: "все", path: "" },
@@ -62,8 +62,52 @@
     { text: "с экзотическими цветами", path: "exotic" },
     { text: "с подсолнухами", path: "sunflower" },
     { text: "с тюльпанами", path: "tulip" }
-  ];
+  ]
 </script>
+
+<div class="wrapper z-10 rounded-t relative text-white">
+  <picture>
+    <source
+      srcset="pexels-dbart-714918.jpg, pexels-dbart-714918.jpg 2x"
+      type="image/webp"
+    />
+    <img
+      srcset="pexels-dbart-714918.jpg 2x"
+      class="absolute object-cover h-full w-full rounded-t"
+      src="pexels-dbart-714918.jpg"
+      alt="hero"
+    />
+  </picture>
+  <noscript>
+    <img src="pexels-dbart-714918.jpg" alt="hero" />
+  </noscript>
+  <div class="hero-content w-full relative">
+    <div class="w-full z-10 relative">
+      <div class="hero-title w-full mx-auto pb-32">
+        <div class="text">
+          <a class="cursor-pointer" href="/">Доставка цветов</a>
+          <span>&nbsp;&#8226;&nbsp;</span>
+          <a class="cursor-pointer" href="/">{name}</a>
+        </div>
+        <h1
+          style="font-size: 3.125rem"
+          class="tracking-wider text-left text-white leading-tight w-9/12"
+        >
+          <span>Надежная доставка цветов</span>
+          <br />
+          <span>{locativus}</span>
+        </h1>
+      </div>
+      <HeroInput
+        {occasionList}
+        {priceRangeList}
+        {personList}
+        {flowerList}
+        closeFinalDropdown={!visible}
+      />
+    </div>
+  </div>
+</div>
 
 <style>
   .wrapper {
@@ -91,43 +135,3 @@
     color: rgba(255, 255, 255, 0.8);
   }
 </style>
-
-<div class="wrapper z-10 rounded-t relative text-white">
-  <picture>
-    <source
-      srcset="/hero-image.webp, /hero-image-2x.webp 2x"
-      type="image/webp" />
-    <img
-      srcset="/hero-image-2x.png 2x"
-      class="absolute object-cover h-full w-full rounded-t"
-      src="/hero-image.png"
-      alt="hero" />
-  </picture>
-  <noscript>
-    <img srcset="hero-image-2x.png" src="hero-image.png" alt="hero">
-  </noscript>
-  <div class="hero-content w-full relative">
-    <div class="w-full z-10 relative">
-      <div class="hero-title w-full mx-auto pb-32">
-        <div class="text">
-          <a class="cursor-pointer" href="/">Доставка цветов</a>
-          <span>&nbsp;&#8226;&nbsp;</span>
-          <a class="cursor-pointer" href="/">{name}</a>
-        </div>
-        <h1
-          style="font-size: 3.125rem"
-          class="tracking-wider text-left text-white leading-tight w-9/12">
-          <span>Надежная доставка цветов</span>
-          <br />
-          <span>{locativus}</span>
-        </h1>
-      </div>
-      <HeroInput
-        {occasionList}
-        {priceRangeList}
-        {personList}
-        {flowerList}
-        closeFinalDropdown={!visible} />
-    </div>
-  </div>
-</div>

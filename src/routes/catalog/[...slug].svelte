@@ -2,26 +2,27 @@
   export async function preload(page, session) {
     try { const regex = /(.jpg|.webp|.png|.jpeg|.gif|.svg)/;
       if (
-        page.params.slug.find((el) =>
-          el.substring(el.lastIndexOf(".")).match(regex)
-        )
-      ) {
-        return {};
-      }
+        page.params.slug.find((el) => el.substring(el.lastIndexOf(".")).match(regex))
+      ) { return {} }
       const res = await this.fetch(
         `index.json?city=${page.host[0]}&path=${page.path}`
       );
       const json = await res.json();
+      const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain${page.path}`)
+      const solData = await res1.json()
       return {
         slug: page.slug,
         path: page.path,
-        flowersList: json.flowersList,
+        //flowersList: json.flowersList,
+        flowersList: solData.products,
         categories: json.catalog,
-        catalogSubCategories: json.catalogSubCategories,
+        //catalogSubCategories: json.catalogSubCategories,
+        catalogSubCategories: solData.taxons,
         cityMeta: json.cityMeta,
         breadcrumbs: json.breadcrumbs,
         filters: json.filters,
         orderList: json.orderList,
+        currentTaxon: solData.current_taxon,
       };
     } catch (e) {
       console.log(e);
@@ -51,8 +52,9 @@
   export let catalogSubCategories;
   export let orderList;
   export let categories;
+  export let currentTaxon;
   let currentFlowerList = flowersList;
-  let currentSubCategory = catalogSubCategories[0].name;
+  let currentSubCategory = catalogSubCategories.length ? catalogSubCategories[0].name : "";
   let filtersData = [
     {
       name: "price",
@@ -240,16 +242,14 @@
 
 <!-- <svelte:window on:resize={throttledResize} /> -->
 <svelte:head>
-  <title>{breadcrumbs[breadcrumbs.length - 1].name || 'каталог'}</title>
+  <!-- <title>{breadcrumbs[breadcrumbs.length - 1].name || 'каталог'}</title> -->
+  <title>{currentTaxon.name || 'каталог'}</title>
   <meta name="description" content="Цветы" />
-
   <link rel="canonical" href="https://{$page.host + $page.path}" />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, " />
-
   <link
     rel="alternate"
     href="https://{$page.host + $page.path}"
@@ -262,18 +262,15 @@
     type="text/html"
     hreflang="en"
     title="English" />
-
   <meta name="geo.region" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta property="og:title" content="Your Awesome Open Graph Title" />
   <meta property="og:description" content="Your Awesome Open Graph Title" />
   <meta property="og:image" content="image" />
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta name="twitter:title" content="European Travel Destinations " />
   <meta
     name="twitter:description"
@@ -289,18 +286,21 @@
   <div
     class="h-full catalog-content rounded {$orderStore.orderList.length ? 'has-aside' : ''}">
 
-    {#if breadcrumbs}
+    {#if breadcrumbs.length}
       <CatalogHero
         {cityMeta}
         {breadcrumbs}
         title={breadcrumbs[breadcrumbs.length - 1]} />
     {:else}
-      <CatalogHero {cityMeta} />
+      <CatalogHero {cityMeta} title={currentTaxon.name} />
     {/if}
+    
+    {#if catalogSubCategories.length}
     <CatalogNavbar
       bind:currentSubCategory
       initCategories={catalogSubCategories}
       page="catalog" />
+      {/if}
 
     <div>
       <CatalogFilter bind:sortingOrder bind:filtersData />
@@ -321,7 +321,7 @@
         class="pt-48 px-44 lg:px-34 xl:px-80 border-gray-300 border-r border-l">
         <div class="mb-24">
           <span class="text-2xl leading-mid text-main font-bold">
-            {currentSubCategory}
+            {currentSubCategory || currentTaxon.name}
           </span>
           <span class="leading-mid text-gray-700 text-2xl ml-12">
             {currentFlowerList.length}

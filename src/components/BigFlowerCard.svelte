@@ -148,7 +148,6 @@
   .bigflowercard :global(.icon) {
     position: static;
   }
-
   .bigflowercard-image {
     background-image: url("../../static/loading-bg-image.svg");
     padding-top: 100%;
@@ -166,11 +165,15 @@
     color: rgba(0, 0, 0, 0) !important;
     @apply w-full h-full inset-0 absolute object-cover;
   }
-
   .bigflowercard :global(.deal) {
     bottom: 68px;
     @apply absolute;
   }
+  .bigflowercard .descr {
+    overflow: hidden;
+    height: 100%;
+    line-height: 1.3;
+    }
   .dealcoupon {
     width: 72px;
     height: 48px;
@@ -189,7 +192,7 @@
     }
   }
   .like {
-    bottom: 34px;
+    bottom: 0.7rem;
     right: 1.5rem;
     @apply absolute;
   }
@@ -229,17 +232,14 @@
     width: 4px;
     background-color: var(--color-accent);
   }
-
   .title {
     max-height: 2.9rem;
     overflow: hidden;
   }
-
   .price {
     top: 0;
     right: 0;
   }
-
   .top-block {
     height: 10rem;
   }
@@ -294,7 +294,7 @@
         {flower.price}&nbsp;₽
       </span>
     </div>
-    <div class="text-gray-600 text-ssm leading-tight">
+    <div class="text-gray-600 text-ssm leading-tight descr">
       {flower.description}
     </div>
   </div>
@@ -347,7 +347,7 @@
             </section>
           </CustomDropdown>
         {/if}
-        <div
+        <!--<div
           on:mouseenter={showLikePopup}
           on:mouseleave={closeLikePopup}
           bind:this={likeElement}
@@ -358,7 +358,7 @@
             4,5
           </div>
           <div class="text-gray-700 pt-4 pb-4 text-sm text-center">343</div>
-        </div>
+        </div>-->
         {#if likeVisible}
           <CustomDropdown
             css="width: 300px; max-height: 300px;"

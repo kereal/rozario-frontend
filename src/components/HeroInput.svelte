@@ -18,19 +18,14 @@
 
   let filteredLink = "/";
   const svgSize = 20;
-
   let finalDropdownButton;
   let heroInputContainer;
-
   let personDropdownVisible = false;
   let personDropdownIcon;
   let personDropdownButton;
-
   let occasionDropdownVisible = false;
   let occasionDropdownIcon;
   let occasionDropdownButton;
-
-
   let flowerDropdownVisible = false;
   let flowerDropdownIcon;
   let flowerDropdownButton;
@@ -277,7 +272,6 @@
   }
 
   let currentState = heroInputMachine.initialState.value;
-
   let heroInputService;
 
   onMount(async () => {

@@ -5,6 +5,8 @@
         `index.json?city=${page.host[0]}&path=${page.path}`
       );
       const json = await res.json();
+      const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain${page.path}`)
+      const solData = await res1.json()
       return {
         flowersList: json.flowersList,
         pagefor: page,
