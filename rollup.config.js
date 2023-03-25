@@ -46,7 +46,8 @@ export default {
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
-          runtimeHelpers: true,
+          //runtimeHelpers: true,
+          babelHelpers: "bundled",
           exclude: ["node_modules/@babel/**"],
           presets: [
             [
@@ -55,16 +56,16 @@ export default {
                 targets: "> 0.25%, not dead"
               }
             ]
-          ],
-          plugins: [
-            "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true
-              }
-            ]
           ]
+          // plugins: [
+          //   "@babel/plugin-syntax-dynamic-import",
+          //   [
+          //     "@babel/plugin-transform-runtime",
+          //     {
+          //       useESModules: true
+          //     }
+          //   ]
+          // ]
         }),
 
       !dev && terser()

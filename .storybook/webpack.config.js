@@ -1,31 +1,12 @@
-const path = require('path');
+const path = require("path")
 
 module.exports = ({ config, mode }) => {
-    config.module.rules.push(
-        {
-            test: /\.css$/,
-            loaders: [
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        sourceMap: true,
-                        config: {
-                            path: './.storybook/',
-                        },
-                    },
-                },
-            ],
+  config.module.rules.push({
+    test: /\.stories\.js?$/,
+    loaders: [require.resolve("@storybook/source-loader")],
+    include: [path.resolve(__dirname, "../storybook")],
+    enforce: "pre"
+  })
 
-            include: path.resolve(__dirname, '../storybook/'),
-        },
-        //This is the new block for the addon
-        {
-            test: /\.stories\.js?$/,
-            loaders: [require.resolve('@storybook/addon-storysource/loader')],
-            include: [path.resolve(__dirname, '../storybook')],
-            enforce: 'pre',
-        },
-    );
-
-    return config;
-};
+  return config
+}
