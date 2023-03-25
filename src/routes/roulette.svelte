@@ -361,7 +361,7 @@ h3{
                             {prize.size}
                         </p>
                         <p class="infoText mt-18">
-                            Мы отправили СМС с промокодом на номер <span class="font-semibold whitespace-no-wrap">{userInfo.phone}</span>
+                            Мы отправили СМС с промокодом на номер <span class="font-semibold whitespace-nowrap">{userInfo.phone}</span>
                         </p>
                         <p class="infoText mt-8">
                             Введите его при оформлении заказа, чтобы получить приз. Обратите внимание, заказать доставку подарка необходимо в течение<span class="font-semibold"> 7 дней.</span>
@@ -379,7 +379,7 @@ h3{
 
                             />
                             <Button size="full" on:click={checkEmail} status='active-secondary' className="mt-18">
-                                <span class="whitespace-no-wrap">Получить промокод</span>
+                                <span class="whitespace-nowrap">Получить промокод</span>
                             </Button>
                             {#if incorrectEmail}
                                 <div class="errorBlock flex items-center" transition:slide|local>

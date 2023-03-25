@@ -148,7 +148,7 @@
                     <div class="flex w-full items-center ">
                         <img src="{way.src}" alt="way" style="height:{way.height}px;">
                         {#if way.text}
-                            <div class="text whitespace-no-wrap ml-12">{way.text}</div>
+                            <div class="text whitespace-nowrap ml-12">{way.text}</div>
                         {/if}
                     </div>
                 </CustomRadioButton>

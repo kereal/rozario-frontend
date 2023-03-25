@@ -93,7 +93,7 @@
             {/if}
         </div>
         <div>
-            <div class="text whitespace-no-wrap">{coupon.text} {#if coupon.promo != ''}<span class="promo">{coupon.promo}</span>{/if}</div>
+            <div class="text whitespace-nowrap">{coupon.text} {#if coupon.promo != ''}<span class="promo">{coupon.promo}</span>{/if}</div>
             <div class="subText">{coupon.subText}</div>
         </div>
     </div>
@@ -110,7 +110,7 @@
             {/if}
         </div>
         <div>
-            <div class="text whitespace-no-wrap">{coupon.text} {#if coupon.promo != ''}<span class="promo">{coupon.promo}</span>{/if}</div>
+            <div class="text whitespace-nowrap">{coupon.text} {#if coupon.promo != ''}<span class="promo">{coupon.promo}</span>{/if}</div>
             <div class="subText">{coupon.subText}</div>
         </div>
     </div>
@@ -118,6 +118,6 @@
 
 
 
-    <div class="hidden flex justify-center items-center whitespace-no-wrap"
+    <div class="hidden flex justify-center items-center whitespace-nowrap"
     style="top: calc(50vh + {y - 25}px);" class:copyed={copyedVisible}>Промокод успешно скопирован</div>
 

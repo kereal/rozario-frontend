@@ -190,7 +190,7 @@
                 {/if}
             </div>
         </div>
-        <div class="product__name whitespace-no-wrap">
+        <div class="product__name whitespace-nowrap">
             {flower.price * flower.quantity} ₽
         </div>
     </div>

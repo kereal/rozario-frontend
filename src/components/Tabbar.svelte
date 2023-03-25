@@ -221,7 +221,7 @@ function resizeWindow() {
   <ul id="ulTabbar" class="flex h-full" bind:this={menuRef} style="scroll-behavior: smooth;">
     {#each menulist as menu, i}
       <li class="horrizontalItem h-full flex items-center border-b-4 {currentMenuIndex === menu.index ? 'border-accent' : 'border-transparent'}">
-        <button data-index={i} on:click={handleClick} class="px-14 h-full whitespace-no-wrap text-main {currentMenuIndex === menu.index ? 'font-semibold' : 'font-normal'}">
+        <button data-index={i} on:click={handleClick} class="px-14 h-full whitespace-nowrap text-main {currentMenuIndex === menu.index ? 'font-semibold' : 'font-normal'}">
           {menu.name}
         </button>
       </li>
@@ -233,8 +233,8 @@ function resizeWindow() {
               bind:this={moreDropdownButton}
               on:click={showMoreNav}
               class="h-full flex items-center border-b-4 {selectedItem != 'Еще' ? 'border-accent' : 'border-transparent'} buttonDrop">
-        <div class="flex items-center {moreDropdownVisible ? 'bg-gray-300' : ''} px-16 leading-12 whitespace-no-wrap rounded-full text-main">
-          <span class="items-center mr-8 h-full whitespace-no-wrap text-main block {selectedItem != 'Еще' ? 'font-semibold' : 'font-normal'}">{selectedItem}</span>
+        <div class="flex items-center {moreDropdownVisible ? 'bg-gray-300' : ''} px-16 leading-12 whitespace-nowrap rounded-full text-main">
+          <span class="items-center mr-8 h-full whitespace-nowrap text-main block {selectedItem != 'Еще' ? 'font-semibold' : 'font-normal'}">{selectedItem}</span>
           <img class="w-full h-full items-center pr-4" class:rotated="{moreDropdownVisible}"
                bind:this={moreDropdownElement}
                src="arrow_down.svg" alt="arrow_icon">

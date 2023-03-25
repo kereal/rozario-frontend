@@ -264,7 +264,7 @@
     {#if sentCode}
         <h2>Подтверждение</h2>
         <div class="verificationText">
-            Код подтверждения был отправлен на <span class="whitespace-no-wrap">{tel ? 'номер ' + selectedCountry.dial + ' ' + phone : 'адрес ' + email}</span>
+            Код подтверждения был отправлен на <span class="whitespace-nowrap">{tel ? 'номер ' + selectedCountry.dial + ' ' + phone : 'адрес ' + email}</span>
         </div>
         <div class="{errorCode ? 'errorValue' : 'dataInput'}">
                 <input  bind:value={code}  maxlength="4" type="tel"  placeholder="{placeholderCode}" id="mobileCodeInput" on:click={()=>{

@@ -54,7 +54,7 @@
                     name={name}
             />
             <label
-                    class="cursor-pointer flex items-center hover:text-main hover:border-gray-700 pl-12 pr-12 whitespace-no-wrap {labelClass}"
+                    class="cursor-pointer flex items-center hover:text-main hover:border-gray-700 pl-12 pr-12 whitespace-nowrap {labelClass}"
                     style="{style}"
                     for={label}>
                 <div style="">
@@ -64,5 +64,5 @@
             </label>
         </div>
 {:else}
-    <button class="unused whitespace-no-wrap">{text}</button>
+    <button class="unused whitespace-nowrap">{text}</button>
 {/if}

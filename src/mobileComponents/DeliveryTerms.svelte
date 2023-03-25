@@ -67,7 +67,7 @@
         <div class="term">
             <div class=" flex items-center justify-between">
                 <div class="text">{item.name}</div>
-                <div class="price whitespace-no-wrap">{item.price} ₽</div>
+                <div class="price whitespace-nowrap">{item.price} ₽</div>
             </div>
             {#if item.subText != undefined}
                 <div class="subText mt-4">

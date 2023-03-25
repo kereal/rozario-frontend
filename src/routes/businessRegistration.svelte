@@ -687,7 +687,7 @@
         </div>
             <h3 class="mt-48">Удалённая доставка</h3>
             <p class="descriptText">
-                Стоимость удалённой доставки считается по формуле: <span class="font-semibold text-main mt-24 whitespace-no-wrap">стоимость забора заказа + стоимость 1 км × кол-во км</span>
+                Стоимость удалённой доставки считается по формуле: <span class="font-semibold text-main mt-24 whitespace-nowrap">стоимость забора заказа + стоимость 1 км × кол-во км</span>
             </p>
             <p class="label-text mt-24">
                 Стоимость забора заказа

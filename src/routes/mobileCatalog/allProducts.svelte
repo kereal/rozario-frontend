@@ -1353,7 +1353,7 @@
             </a>
         </div>
         {#if y > 150}
-                <div class="page__name whitespace-no-wrap">
+                <div class="page__name whitespace-nowrap">
                     {cataloges[category].name}
                 </div>
         {/if}

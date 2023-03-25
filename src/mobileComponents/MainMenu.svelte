@@ -445,14 +445,14 @@ export let infoItems = [
         </div>
             {#each menuItems as item, i}
                 {#if item.func == undefined}
-                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap">
+                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap">
                         {@html item.icon}
                         <div class="ml-20">
                             <a href="{item.link}">{item.name}</a>
                         </div>
                     </div>
                 {:else}
-                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap" on:click={item.func}>
+                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap" on:click={item.func}>
                         {@html item.icon}
                         <div class="ml-20">
                             <a href="{item.link}">{item.name}</a>
@@ -472,14 +472,14 @@ export let infoItems = [
         <div class="user__menu">
             {#each menuUser as item}
                 {#if item.func == undefined}
-                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap">
+                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap">
                         {@html item.icon}
                         <div class="ml-20">
                             <a href="{item.link}">{item.name}</a>
                         </div>
                     </div>
                 {:else}
-                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap" on:click={item.func}>
+                    <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap" on:click={item.func}>
                         {@html item.icon}
                         <div class="ml-20">
                             <a href="{item.link}">{item.name}</a>
@@ -490,14 +490,14 @@ export let infoItems = [
         </div>
             {#each menuItemsAuth as item, i}
                     {#if item.func == undefined}
-                            <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap">
+                            <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap">
                                 {@html item.icon}
                                 <div class="ml-20">
                                     <a href="{item.link}">{item.name}</a>
                                 </div>
                             </div>
                     {:else}
-                            <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-no-wrap" on:click={item.func}>
+                            <div class="menu__item flex items-center mt-30 first:mt-24 last:mb-24 whitespace-nowrap" on:click={item.func}>
                                 {@html item.icon}
                                 <div class="ml-20">
                                     <a href="{item.link}">{item.name}</a>
@@ -509,7 +509,7 @@ export let infoItems = [
     </div>
     <div class="info padding">
         {#each infoItems as item}
-            <div class="info__items items-center last:mb-30 whitespace-no-wrap">
+            <div class="info__items items-center last:mb-30 whitespace-nowrap">
                 <a href="{item.link}">{item.name}</a>
             </div>
         {/each}

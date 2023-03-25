@@ -467,9 +467,9 @@ export let size = 'Маленький'
                 <div class="flex justify-between mb-12">
                     <div class="footer__name">{product.name}</div>
                     <div>
-                        <div class="product__price whitespace-no-wrap">{product.price} ₽</div>
+                        <div class="product__price whitespace-nowrap">{product.price} ₽</div>
                         {#if product.chip !== undefined}
-                            <div class="product__priceChip whitespace-no-wrap mt-2">
+                            <div class="product__priceChip whitespace-nowrap mt-2">
                                 {product.chip } ₽
                             </div>
                         {/if}

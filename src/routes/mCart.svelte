@@ -564,7 +564,7 @@ let changedProduct;
         </div>
     </div>
     <div class="cart__body ">
-        <h2 class="page__name mb-24 padding whitespace-no-wrap">Мой заказ</h2>
+        <h2 class="page__name mb-24 padding whitespace-nowrap">Мой заказ</h2>
         {#if orderList}
             {#each orderList as item}
                 <div class="product">

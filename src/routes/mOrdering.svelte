@@ -304,7 +304,7 @@
             </h2>
         {/if}
     </div>
-    <h2 class="page__name mb-24 padding whitespace-no-wrap">Оформление заказа</h2>
+    <h2 class="page__name mb-24 padding whitespace-nowrap">Оформление заказа</h2>
     <div class="padding">
         <div class="delyvery__buttons flex items-center">
             <div class="delyvery__button flex justify-center {yourself == true ? 'activeButton' : ''} ml-2" on:click={changeMethod}>Получу сам(а)</div>

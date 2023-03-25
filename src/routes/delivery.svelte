@@ -470,7 +470,7 @@
                             </svg>
                         </div>
                         <div class="delivery__Method_text">
-                            <h4><span class="whitespace-no-wrap">с 08:00 до 21:00</span>, <span class="whitespace-no-wrap"> интервал 2 часа</span></h4>
+                            <h4><span class="whitespace-nowrap">с 08:00 до 21:00</span>, <span class="whitespace-nowrap"> интервал 2 часа</span></h4>
                             <p>Бесплатная доставка</p>
                         </div>
                     </div>
@@ -484,8 +484,8 @@
                             </svg>
                         </div>
                         <div class="delivery__Method_text">
-                            <h4><span class="whitespace-no-wrap">с 21:00 до 08:00</span>, <span class="whitespace-no-wrap"> интервал 2 часа</span></h4>
-                            <p>Стоимость доставки — <span class="whitespace-no-wrap">349 ₽</span></p>
+                            <h4><span class="whitespace-nowrap">с 21:00 до 08:00</span>, <span class="whitespace-nowrap"> интервал 2 часа</span></h4>
+                            <p>Стоимость доставки — <span class="whitespace-nowrap">349 ₽</span></p>
                         </div>
                     </div>
                 {/if}
@@ -502,8 +502,8 @@
                         </div>
                         <div class="delivery__Method_text">
                             <h4>Доставка к точному времени</h4>
-                            <p><span class="delivery__Method_time whitespace-no-wrap">с 08:00 до 21:00</span><span class="delivery__Method_price whitespace-no-wrap">— 250 ₽</span>,
-                                <span class="delivery__Method_time whitespace-no-wrap">с 21:00 до 08:00 </span><span class="delivery__Method_price whitespace-no-wrap">— 549 ₽</span></p>
+                            <p><span class="delivery__Method_time whitespace-nowrap">с 08:00 до 21:00</span><span class="delivery__Method_price whitespace-nowrap">— 250 ₽</span>,
+                                <span class="delivery__Method_time whitespace-nowrap">с 21:00 до 08:00 </span><span class="delivery__Method_price whitespace-nowrap">— 549 ₽</span></p>
                         </div>
                     </div>
                 {/if}

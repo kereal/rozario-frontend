@@ -66,7 +66,7 @@
 
 <div class="nav flex">
     <Slider>
-        <div class="nav_element whitespace-no-wrap flex items-center  mr-8" on:click={openaboutShop}>
+        <div class="nav_element whitespace-nowrap flex items-center  mr-8" on:click={openaboutShop}>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <g clip-path="url(#clip0)">
                     <path d="M9.44724 8.38184H10.3794L8.73438 14.7819H10.1252" stroke="#330033" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -80,13 +80,13 @@
                 </defs>
             </svg>
         </div>
-        <div class="nav_element whitespace-no-wrap mr-8 flex items-center" on:click={openDeliveryTerms}>
+        <div class="nav_element whitespace-nowrap mr-8 flex items-center" on:click={openDeliveryTerms}>
             Доставка 0–250 ₽
         </div>
-        <div class="nav_element whitespace-no-wrap mr-8 flex items-center" on:click={openfreePostCart}>
+        <div class="nav_element whitespace-nowrap mr-8 flex items-center" on:click={openfreePostCart}>
             Открытка в подарок
         </div>
-        <div class="nav_element whitespace-no-wrap flex items-center" on:click={openAddress}>
+        <div class="nav_element whitespace-nowrap flex items-center" on:click={openAddress}>
             Узнаем адрес сами
         </div>
 

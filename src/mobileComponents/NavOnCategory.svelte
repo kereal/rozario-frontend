@@ -57,7 +57,7 @@
     <ul class="flex h-full">
         <Slider>
             {#if filters}
-                    <li class="filters flex items-center whitespace-no-wrap {pagefor.params.slug[1] == 'filtered' ? 'selected' : ''}" on:click={openFilters}>
+                    <li class="filters flex items-center whitespace-nowrap {pagefor.params.slug[1] == 'filtered' ? 'selected' : ''}" on:click={openFilters}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
                             <line x1="8.75" y1="3.25" x2="18.25" y2="3.25" stroke="{pagefor.params.slug[1] == 'filtered' ? '#fff' : '#330033'}" stroke-width="1.5" stroke-linecap="round"/>
                             <line x1="0.75" y1="3.25" x2="2.25" y2="3.25" stroke="{pagefor.params.slug[1] == 'filtered' ? '#fff' : '#330033'}" stroke-width="1.5" stroke-linecap="round"/>
@@ -68,7 +68,7 @@
                         </svg>
                     </li>
             {/if}
-            <li class="flex items-center whitespace-no-wrap {pagefor.params.slug[1] == undefined ? 'selected' : ''}"
+            <li class="flex items-center whitespace-nowrap {pagefor.params.slug[1] == undefined ? 'selected' : ''}"
             on:click={()=>{
             selected = ''
             }}>
@@ -79,7 +79,7 @@
                 </a>
             </li>
             {#each menuItems as item, i}
-                <li class="flex items-center whitespace-no-wrap {item.id == pagefor.params.slug[1] ? 'selected' : ''}">
+                <li class="flex items-center whitespace-nowrap {item.id == pagefor.params.slug[1] ? 'selected' : ''}">
                     <a href="mobileCatalog/{item.id}">
                         <button>
                             {item.name}

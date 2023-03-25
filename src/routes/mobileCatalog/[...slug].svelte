@@ -283,11 +283,11 @@
         </div>
         {#if y > 150}
             {#if pagefor.params.slug[1] != 'filtered' && pagefor.params.slug[1]}
-            <div class="page__name whitespace-no-wrap">
+            <div class="page__name whitespace-nowrap">
                 {categoryName}
             </div>
         {:else}
-            <div class="page__name whitespace-no-wrap">
+            <div class="page__name whitespace-nowrap">
                 {categoryName}
             </div>
         {/if}

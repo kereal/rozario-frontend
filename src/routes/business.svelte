@@ -578,7 +578,7 @@ let width;
                                     <span class="mt-2">1</span>
                                 </div>
                             </div>
-                        <div class="business__howitworkText"><span class="whitespace-no-wrap">Создайте личный</span> кабинет</div>
+                        <div class="business__howitworkText"><span class="whitespace-nowrap">Создайте личный</span> кабинет</div>
                         </div>
                         <div>
                             {#if width > 1200}

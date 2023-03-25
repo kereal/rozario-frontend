@@ -86,7 +86,7 @@
     <ul class="flex h-full">
         <div class="conteiner  flex items-center" bind:this={menuRef} >
             {#each menulist as menu, i}
-                <li class=" flex items-center whitespace-no-wrap  {currentMenuIndex === menu.index ? 'selected' : ''}">
+                <li class=" flex items-center whitespace-nowrap  {currentMenuIndex === menu.index ? 'selected' : ''}">
                     <button data-index={i} on:click={handleClick} class="header">
                         {menu.name}
                     </button>

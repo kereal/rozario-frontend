@@ -615,7 +615,7 @@ let addContactVisible = false;
                         {/each}
                         <h3 class="subSectionName mt-96">Удалённая доставка</h3>
                         <p class="date__subscribeText mb-18">
-                            Стоимость удалённой доставки считается по формуле: <span class="text-main font-semibold whitespace-no-wrap">стоимость забора заказа + стоимость 1 км × кол-во км</span>
+                            Стоимость удалённой доставки считается по формуле: <span class="text-main font-semibold whitespace-nowrap">стоимость забора заказа + стоимость 1 км × кол-во км</span>
                         </p>
                         <p class="label-text">
                             Стоимость забора заказа

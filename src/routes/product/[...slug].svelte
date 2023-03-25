@@ -1275,20 +1275,20 @@ if(pagefor.params.slug[0] % 2 == 0) {
             </ul>
           </section>
         </InfoButton>
-          <p class="whitespace-no-wrap">Стоимость доставки: <span class="highlighting ">0–549 ₽</span></p>
-          <p>Ближайшая дата доставки: <span class="highlighting">22.02.2020, <span class="whitespace-no-wrap">в течение 120 мин</span></span></p>
+          <p class="whitespace-nowrap">Стоимость доставки: <span class="highlighting ">0–549 ₽</span></p>
+          <p>Ближайшая дата доставки: <span class="highlighting">22.02.2020, <span class="whitespace-nowrap">в течение 120 мин</span></span></p>
         </div>
         <div class="product__fixedButton_right flex items-center">
           {#if product.composite}
             <div class="flex items-center product__price">
               <span class="product__price_main flex"><AnimateNumber number={Math.round((packagePrice + numberSize.price - couponDeal - couponNew)/100*(100-product.chip))}/> &nbsp;₽</span>
-              <span class="product__price_withDiscount whitespace-no-wrap">{String(numberSize.price + packagePrice -couponDeal - couponNew).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} ₽</span>
+              <span class="product__price_withDiscount whitespace-nowrap">{String(numberSize.price + packagePrice -couponDeal - couponNew).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} ₽</span>
             </div>
           {:else}
             <div class=" flex items-center product__price">
               <span class="product__price_main flex"><AnimateNumber
                       number={Math.round(packagePrice + (amountFlowers*newBouquet[selectedFlower].sizes[sizeFlower].price - couponDeal - couponNew )/100*(100-product.chip))}/>&nbsp;₽</span>
-              <span class="product__price_withDiscount whitespace-no-wrap">{String(amountFlowers*newBouquet[selectedFlower].sizes[sizeFlower].price + packagePrice -couponDeal - couponNew)
+              <span class="product__price_withDiscount whitespace-nowrap">{String(amountFlowers*newBouquet[selectedFlower].sizes[sizeFlower].price + packagePrice -couponDeal - couponNew)
               .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') } ₽</span>
             </div>
           {/if}
@@ -1296,7 +1296,7 @@ if(pagefor.params.slug[0] % 2 == 0) {
             <div class="mr-18">
               <Button size="lg" status={productAdded ? 'active-secondary' : 'active-main' } on:click={()=>{
               orderStore.addToOrderList(flowersList[0])}} >
-                  <span class="whitespace-no-wrap">Добавить в корзину</span>
+                  <span class="whitespace-nowrap">Добавить в корзину</span>
               </Button>
             </div>
             <HeartCounter/>
@@ -1362,7 +1362,7 @@ if(pagefor.params.slug[0] % 2 == 0) {
                               id={size.id}
                               name={numberSize}
                               />
-                      <label   class=" cursor-pointer rounded leading-snug border border-gray-500 hover:text-main hover:border-gray-700 flex  whitespace-no-wrap mb-12" for={size.id}
+                      <label   class=" cursor-pointer rounded leading-snug border border-gray-500 hover:text-main hover:border-gray-700 flex  whitespace-nowrap mb-12" for={size.id}
                       on:click={textAnimate}>
                           <div class="flex items-center">
                         <span>{size.text}</span>

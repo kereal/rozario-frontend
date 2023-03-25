@@ -182,19 +182,19 @@
         <div>
           <span
                   class="font-semibold mr-8 line-height-20 text-main text-lg
-            whitespace-no-wrap">
+            whitespace-nowrap">
             {recommendation.price.sale} ₽
           </span>
           <span
                   class="font-semibold line-through text-sm line-height-20
-            text-gray-500 whitespace-no-wrap">
+            text-gray-500 whitespace-nowrap">
             {recommendation.price.full} ₽
           </span>
         </div>
       {:else}
         <span
                 class="font-semibold line-height-20 text-main text-lg
-          whitespace-no-wrap">
+          whitespace-nowrap">
           {recommendation.price.full} ₽
         </span>
       {/if}

@@ -652,7 +652,7 @@ $: if(listEmployees) {
                     <p class="mb-30">
                         Добавляйте сотрудников, чтобы они могли заказывать цветы и подарки, оплачивая
                         с вашего расчётного счёта. Можно объединять сотрудников в группы
-                        (например, «Отдел продаж», «Бухгалтерия» <span class="whitespace-no-wrap">и т. д.).</span>
+                        (например, «Отдел продаж», «Бухгалтерия» <span class="whitespace-nowrap">и т. д.).</span>
                     </p>
                     <BusinessListEmployees bind:listEmployees={listEmployees} bind:businessAdmin={businessAdmin} bind:businessUser={businessUser}/>
                     <div id="RequisitesBlock"></div>
