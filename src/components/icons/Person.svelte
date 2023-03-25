@@ -1,0 +1,9 @@
+<script>
+  export let iconSize = '';
+  export let classNames = '';
+  export let height = '';
+  export let width = '';
+</script>
+<svg class={classNames} width={iconSize ? iconSize : width} height={iconSize ? iconSize : height} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M19.576 19.066c1.988-1.267 3.316-3.565 3.316-6.2 0-3.998-3.066-7.243-6.852-7.243-3.789 0-6.854 3.245-6.854 7.243 0 2.626 1.322 4.918 3.3 6.19-3.87.959-8.008 3.219-8.008 5.536 0 0 1.112 1.783 11.638 1.783 10.668 0 11.402-1.783 11.402-1.783.003-2.375-4.143-4.555-7.942-5.526z"/>
+</svg>

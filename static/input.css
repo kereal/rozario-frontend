@@ -1,0 +1,19 @@
+.input {
+    @apply shadow-tiInset px-2 py-1 rounded border border-gray-500 h-8 w-full;
+}
+.input::placeholder {
+    @apply text-gray-700;
+}
+.input:focus {
+    @apply outline-none;
+}
+.input:invalid {
+    @apply border-info;
+}
+input:focus {
+    @apply outline-none;
+}
+
+textarea:focus {
+    @apply outline-none;
+}
