@@ -4,11 +4,10 @@ export async function load({ fetch, url }) {
       `/data?city=${url.searchParams.get("city")}&path=${url.searchParams.get("path")}`
     )
     const json = await res.json()
+
     return {
-      slug: page.slug,
-      path: page.path,
+      path: url.pathname,
       categories: json.catalog,
-      cityMeta: json.cityMeta,
       activeOrders: json.activeOrders,
       deliveryAddresses: json.deliveryAddresses,
       orderStories: json.orderStories,

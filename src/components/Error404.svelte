@@ -1,25 +1,22 @@
 <script>
-  let signedIn = false
-
-  import Button from "./Button.svelte"
-  import PuzzleModal from "./PuzzleModal.svelte"
-  import PuzzleModalPhone from "./PuzzleModalPhone.svelte"
-  import PuzzleModalPhoneFinal from "./PuzzleModalPhoneFinal.svelte"
-
   import { onMount } from "svelte"
+  import Button from "@/components/Button.svelte"
+  import PuzzleModal from "@/components/PuzzleModal.svelte"
+  import PuzzleModalPhone from "@/components/PuzzleModalPhone.svelte"
+  import PuzzleModalPhoneFinal from "@/components/PuzzleModalPhoneFinal.svelte"
 
+  let signedIn = false
   let puzzleModalVisible = false
-  function togglePuzzleModalVisible() {
-    puzzleModalVisible = !puzzleModalVisible
-  }
-
   let puzzleSuccess = false
   let showPuzzleSuccess = false
   let showPuzzleTired = false
   let puzzlePhoneModalVisible = false
   let puzzlePhoneFinalModalVisible = false
-
   let order = []
+
+  function togglePuzzleModalVisible() {
+    puzzleModalVisible = !puzzleModalVisible
+  }
 
   class Puzzle {
     constructor() {
@@ -216,7 +213,7 @@
     {/if}
   </div>
   <div class="puzzle-column">
-    <div class="puzzle-header">Упс, кажется, этой страницы не существует. :)</div>
+    <div class="puzzle-header">Упс! Кажется, этой страницы не существует :-)</div>
     <div class="puzzle-message">
       <p>Вы можете вернуться на сайт или сыграть в суперсекретную игру!</p>
       <p>Перемещай кусочки пазла, собери картинку и получи приз!</p>

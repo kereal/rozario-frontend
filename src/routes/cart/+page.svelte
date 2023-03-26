@@ -16,10 +16,10 @@
 
   export let data
 
-  export let orderList
-  export let cityMeta
+  const orderList = data.orderList
+  const cityMeta = data.cityMeta
 
-  console.log("orderStore", $orderStore)
+  //console.log("orderStore", $orderStore)
 
   let date
   let gpayReady = false
@@ -177,8 +177,6 @@
       loadGooglePay()
     }
   })
-
-  $: console.log("paymentTypes", paymentTypes, $currPaymentStore)
 
   $: paymentName = paymentTypes.find((type) => type.check)
     ? paymentTypes.find((type) => type.check).buttonText
