@@ -64,7 +64,7 @@
         changeModalVisible = !changeModalVisible
       }}
     >
-      {#if $page.path === "/cart"}
+      {#if $page.url.pathname === "/cart"}
         <div class="image-box mr-12">
           <img
             class="hide-text w-full h-full absolute inset-0"

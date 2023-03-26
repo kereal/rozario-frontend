@@ -7,7 +7,7 @@
   <div class="flex flex-col items-center p-8">
     <div class="image-container rounded-full relative overflow-hidden mx-auto mb-8">
       <picture>
-        <source data-srcset="{smile.img}.webp, {smile.img}-2x.webp 2x" />
+        <source data-srcset="{smile.img}.jpg, {smile.img}-2x.jpg 2x" />
         <img
           class="absolute object-cover w-full h-full inset-0"
           data-srcset="{smile.img}-2x.jpg 2x"
@@ -35,7 +35,7 @@
   <div class="clients-photo">
     <div class="photo rounded-full relative overflow-hidden mx-auto mb-8">
       <picture>
-        <source data-srcset="{smile.img}.webp, {smile.img}-2x.webp 2x" />
+        <source data-srcset="{smile.img}.jpg, {smile.img}-2x.jpg 2x" />
         <img
           class="absolute object-cover w-full h-full inset-0"
           data-srcset="{smile.img}-2x.jpg 2x"
@@ -88,7 +88,6 @@
     height: 156px;
     background-image: url("../../static/loading-bg-image.svg");
   }
-
   .clients-photo__date {
     font-style: normal;
     font-weight: normal;

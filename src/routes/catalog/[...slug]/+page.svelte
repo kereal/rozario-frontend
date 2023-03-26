@@ -152,7 +152,7 @@
   <!-- <title>{breadcrumbs[breadcrumbs.length - 1].name || 'каталог'}</title> -->
   <title>{data.currentTaxon?.name || "каталог"}</title>
   <meta name="description" content="Цветы" />
-  <link rel="canonical" href="https://{$page.host + $page.path}" />
+  <link rel="canonical" href="https://{$page.url.hostname + $page.url.pathname}" />
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
@@ -160,14 +160,14 @@
   />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="ru"
     title="Русский"
   />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="en"
     title="English"

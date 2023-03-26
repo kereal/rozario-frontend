@@ -108,17 +108,17 @@
 <svelte:head>
   <title>Отзывы</title>
   <meta name="description" content="CONTACTS_DESCRIPTION" />
-  <link rel="canonical" href={$page.host + $page.path} />
+  <link rel="canonical" href={$page.url.hostname + $page.url.pathname} />
   <link
     rel="alternate"
-    href={$page.host + $page.path}
+    href={$page.url.hostname + $page.url.pathname}
     type="text/html"
     hreflang="ru"
     title="Русский"
   />
   <link
     rel="alternate"
-    href={$page.host + $page.path}
+    href={$page.url.hostname + $page.url.pathname}
     type="text/html"
     hreflang="en"
     title="English"

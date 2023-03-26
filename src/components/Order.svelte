@@ -115,7 +115,7 @@
               <div class="text-main flex justify-between mb-12">
                 <div class="text-one-five leading-mid">Открытка</div>
                 <div
-                  style={$page.path == "/cart"
+                  style={$page.url.pathname == "/cart"
                     ? "margin-left: 120px;"
                     : "margin-left: 77px;"}
                   class="countPostCard"
@@ -130,7 +130,7 @@
               <div class="text-sm">500&nbsp;₽</div>
             </div>
             <div class="text-main flex justify-between mb-12">
-              {#if $page.path == "/cart"}
+              {#if $page.url.pathname == "/cart"}
                 <div class="text-one-five leading-mid">Фото в момент вручения</div>
                 <div class="text-sm">0&nbsp;₽</div>
               {/if}
@@ -140,7 +140,7 @@
       </div>
     </div>
 
-    {#if $page.path == "/cart"}
+    {#if $page.url.pathname == "/cart"}
       <div
         class="rounded-b border-t border-b border-gray-300 p-24 pl-18 footer flex
       items-center justify-between"
@@ -190,9 +190,9 @@
       </div>
     {/if}
   </div>
-  {#if $page.path !== "/cart"}
+  {#if $page.url.pathname !== "/cart"}
     <a
-      href="cart"
+      href="/cart"
       class="checkout-button font-semibold mt-6 flex-shrink-0 text-center rounded w-full px-16 py-8 {orderList.length
         ? 'active'
         : 'disabled'}"

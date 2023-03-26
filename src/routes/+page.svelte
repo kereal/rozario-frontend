@@ -24,7 +24,7 @@
   const flowerCarouselGap = 40
   const testimonialCarouselGap = 40
   const promoBlock = false
-  const smilesInRow = 5
+  let smilesInRow = 4
 
   let customersCarouselContainer
   let blogpostsCarouselContainer
@@ -95,17 +95,17 @@
     Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
     банковской картой."
   />
-  <link rel="canonical" href="https://{$page.host + $page.path}" />
+  <link rel="canonical" href="https://{$page.url.hostname + $page.url.pathname}" />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="ru"
     title="Русский"
   />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="en"
     title="English"
@@ -266,23 +266,27 @@
     </p>
     <div class="relative" data-value="SMILESCONTAINER">
       {#if data.smiles}
-        <!-- <Carousel
+        <Carousel
           carouselClass="carousel-lg"
           iconColor="text-infolight"
           buttonColor="bg-circlebtn"
           bind:itemsInRow={smilesInRow}
           itemClass=".smiles-carousel-item"
           gap={flowerCarouselGap}
-          totalitems={smiles?.length}>
-          {#each smiles as smile, i}
+          totalitems={data.smiles?.length}
+        >
+          {#each data.smiles as smile, i}
             <div
               style={`width: calc(100% / ${smilesInRow});`}
-              class="smiles-carousel-item carousel-item {i < smilesInRow ? 'carousel-item-active' : ''}">
+              class="smiles-carousel-item carousel-item {i < smilesInRow
+                ? 'carousel-item-active'
+                : ''}"
+            >
               <Smile {smile} />
             </div>
           {/each}
-        </Carousel> -->
-        <div class="-ml-68 -mr-68">
+        </Carousel>
+        <!-- <div class="-ml-68 -mr-68">
           <Slider
             sliderName="smile"
             forDesktop="5"
@@ -297,7 +301,7 @@
               </div>
             {/each}
           </Slider>
-        </div>
+        </div> -->
       {/if}
     </div>
   </SectionContainer>

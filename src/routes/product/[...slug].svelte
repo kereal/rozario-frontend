@@ -519,17 +519,17 @@
     Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
     банковской картой."
   />
-  <link rel="canonical" href="https://{$page.host + $page.path}" />
+  <link rel="canonical" href="https://{$page.url.hostname + $page.url.pathname}" />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="ru"
     title="Русский"
   />
   <link
     rel="alternate"
-    href="https://{$page.host + $page.path}"
+    href="https://{$page.url.hostname + $page.url.pathname}"
     type="text/html"
     hreflang="en"
     title="English"
