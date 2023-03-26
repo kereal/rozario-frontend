@@ -46,12 +46,10 @@
     setupPuzzleData() {
       showPuzzleSuccess = false
       showPuzzleTired = false
-
       order = [...Array(9).keys()]
       this.key = order.join("")
       do {
         order = order.sort(() => Math.random() - 0.5)
-        console.log("shuffled")
       } while (this.key === order.join(""))
     }
     checkIfWon() {
@@ -196,11 +194,11 @@
 <div class="error-404-wrapper">
   <div class="fox-column">
     <img
-      data-src="404/404-fox.png"
-      data-srcset="404/404-fox.png,
-                404/404-fox.png 1.5x,
-                404/404-fox.png 2x,
-                404/404-fox.png 3x"
+      data-src="/404/404-fox.png"
+      data-srcset="/404/404-fox.png,
+                /404/404-fox.png 1.5x,
+                /404/404-fox.png 2x,
+                /404/404-fox.png 3x"
       class="fox-image"
       alt=""
     />
@@ -226,14 +224,11 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[0]}>
                 <img
-                  data-src="404/puzzle{order[0] + 1}.png"
-                  data-srcset="404/puzzle{order[0] + 1}.png,
-                                                                                            404/puzzle{order[0] +
-                    1}.png 1.5x,
-                                                                                            404/puzzle{order[0] +
-                    1}.png 2x,
-                                                                                            404/puzzle{order[0] +
-                    1}.png 3x"
+                  data-src="/404/puzzle{order[0] + 1}.png"
+                  data-srcset="/404/puzzle{order[0] + 1}.png,
+                    /404/puzzle{order[0] + 1}.png 1.5x,
+                    /404/puzzle{order[0] + 1}.png 2x,
+                    /404/puzzle{order[0] + 1}.png 3x"
                   alt=""
                 />
               </div>
@@ -243,14 +238,11 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[1]}>
                 <img
-                  data-src="404/puzzle{order[1] + 1}.png"
-                  data-srcset="404/puzzle{order[1] + 1}.png,
-                                                                                            404/puzzle{order[1] +
-                    1}.png 1.5x,
-                                                                                            404/puzzle{order[1] +
-                    1}.png 2x,
-                                                                                            404/puzzle{order[1] +
-                    1}.png 3x"
+                  data-src="/404/puzzle{order[1] + 1}.png"
+                  data-srcset="/404/puzzle{order[1] + 1}.png,
+                    /404/puzzle{order[1] + 1}.png 1.5x,
+                    /404/puzzle{order[1] + 1}.png 2x,
+                    /404/puzzle{order[1] + 1}.png 3x"
                   alt=""
                 />
               </div>
@@ -260,14 +252,11 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[2]}>
                 <img
-                  data-src="404/puzzle{order[2] + 1}.png"
-                  data-srcset="404/puzzle{order[2] + 1}.png,
-                                                                                            404/puzzle{order[2] +
-                    1}.png 1.5x,
-                                                                                            404/puzzle{order[2] +
-                    1}.png 2x,
-                                                                                            404/puzzle{order[2] +
-                    1}.png 3x"
+                  data-src="/404/puzzle{order[2] + 1}.png"
+                  data-srcset="/404/puzzle{order[2] + 1}.png,
+                    /404/puzzle{order[2] + 1}.png 1.5x,
+                    /404/puzzle{order[2] + 1}.png 2x,
+                    /404/puzzle{order[2] + 1}.png 3x"
                   alt=""
                 />
               </div>
@@ -279,13 +268,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[3]}>
                 <img
-                  data-src="404/puzzle{order[3] + 1}.png"
-                  data-srcset="404/puzzle{order[3] + 1}.png,
-                                                                                            404/puzzle{order[3] +
+                  data-src="/404/puzzle{order[3] + 1}.png"
+                  data-srcset="/404/puzzle{order[3] + 1}.png,
+                                                                                            /404/puzzle{order[3] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[3] +
+                                                                                            /404/puzzle{order[3] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[3] +
+                                                                                            /404/puzzle{order[3] +
                     1}.png 3x"
                   alt=""
                 />
@@ -296,13 +285,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[4]}>
                 <img
-                  data-src="404/puzzle{order[4] + 1}.png"
-                  data-srcset="404/puzzle{order[4] + 1}.png,
-                                                                                            404/puzzle{order[4] +
+                  data-src="/404/puzzle{order[4] + 1}.png"
+                  data-srcset="/404/puzzle{order[4] + 1}.png,
+                                                                                            /404/puzzle{order[4] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[4] +
+                                                                                            /404/puzzle{order[4] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[4] +
+                                                                                            /404/puzzle{order[4] +
                     1}.png 3x"
                   alt=""
                 />
@@ -313,13 +302,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[5]}>
                 <img
-                  data-src="404/puzzle{order[5] + 1}.png"
-                  data-srcset="404/puzzle{order[5] + 1}.png,
-                                                                                            404/puzzle{order[5] +
+                  data-src="/404/puzzle{order[5] + 1}.png"
+                  data-srcset="/404/puzzle{order[5] + 1}.png,
+                                                                                            /404/puzzle{order[5] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[5] +
+                                                                                            /404/puzzle{order[5] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[5] +
+                                                                                            /404/puzzle{order[5] +
                     1}.png 3x"
                   alt=""
                 />
@@ -332,13 +321,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[6]}>
                 <img
-                  data-src="404/puzzle{order[6] + 1}.png"
-                  data-srcset="404/puzzle{order[6] + 1}.png,
-                                                                                            404/puzzle{order[6] +
+                  data-src="/404/puzzle{order[6] + 1}.png"
+                  data-srcset="/404/puzzle{order[6] + 1}.png,
+                                                                                            /404/puzzle{order[6] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[6] +
+                                                                                            /404/puzzle{order[6] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[6] +
+                                                                                            /404/puzzle{order[6] +
                     1}.png 3x"
                   alt=""
                 />
@@ -349,13 +338,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[7]}>
                 <img
-                  data-src="404/puzzle{order[7] + 1}.png"
-                  data-srcset="404/puzzle{order[7] + 1}.png,
-                                                                                            404/puzzle{order[7] +
+                  data-src="/404/puzzle{order[7] + 1}.png"
+                  data-srcset="/404/puzzle{order[7] + 1}.png,
+                                                                                            /404/puzzle{order[7] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[7] +
+                                                                                            /404/puzzle{order[7] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[7] +
+                                                                                            /404/puzzle{order[7] +
                     1}.png 3x"
                   alt=""
                 />
@@ -366,13 +355,13 @@
             <div class="puzzle-image-wrapper" draggable="true">
               <div class="puzzle-image" data-i={order[8]}>
                 <img
-                  data-src="404/puzzle{order[8] + 1}.png"
-                  data-srcset="404/puzzle{order[8] + 1}.png,
-                                                                                            404/puzzle{order[8] +
+                  data-src="/404/puzzle{order[8] + 1}.png"
+                  data-srcset="/404/puzzle{order[8] + 1}.png,
+                                                                                            /404/puzzle{order[8] +
                     1}.png 1.5x,
-                                                                                            404/puzzle{order[8] +
+                                                                                            /404/puzzle{order[8] +
                     1}.png 2x,
-                                                                                            404/puzzle{order[8] +
+                                                                                            /404/puzzle{order[8] +
                     1}.png 3x"
                   alt=""
                 />
