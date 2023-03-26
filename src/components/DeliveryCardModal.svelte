@@ -243,7 +243,7 @@
                       last:border-b-0 border-gray-900"
                 >
                   <div class="image-box">
-                    <img width={24} height={24} src="delivery-icon.svg" alt="delivery" />
+                    <img width={24} height={24} src="/delivery-icon.svg" alt="delivery" />
                   </div>
                   <span class="mx-8 block w-40">{option.price}Р</span>
                   <p class="ml-40 text-md">{option.text}</p>

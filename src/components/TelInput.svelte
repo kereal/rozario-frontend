@@ -94,7 +94,6 @@
       value = `${selectedCountry.dial}`
     }
     selectedCountry.element = document.querySelector('.tel-input ul li[tabindex="0"]')
-    console.log(selectedCountry.element)
   })
 </script>
 

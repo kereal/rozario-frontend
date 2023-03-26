@@ -519,9 +519,7 @@
     Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
     банковской картой."
   />
-
   <link rel="canonical" href="https://{$page.host + $page.path}" />
-
   <link
     rel="alternate"
     href="https://{$page.host + $page.path}"
@@ -536,19 +534,16 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -563,7 +558,6 @@
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta
     name="twitter:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -630,7 +624,7 @@
                       <img
                         width={svgSize}
                         height={svgSize}
-                        src="delivery-icon.svg"
+                        src="/delivery-icon.svg"
                         alt="delivery"
                       />
                     </div>
@@ -1775,14 +1769,12 @@
     margin-right: 12px;
     margin-left: 12px;
   }
-
   .feedback h2 {
     margin-left: 80px;
   }
   .feedback__text {
     margin-left: 80px;
   }
-
   .feedback__text {
     font-style: normal;
     font-weight: normal;
@@ -1792,17 +1784,14 @@
     margin-bottom: 24px;
     margin-top: 22px;
   }
-
   .feedback__clients-photos {
     margin-top: 55px;
     margin-bottom: 44px;
   }
-
   .feedback__reviews-photos {
     margin-top: 68px;
     margin-bottom: 68px;
   }
-
   .feedback__product-photo {
     width: 100%;
     margin-top: 34px;
@@ -1814,7 +1803,6 @@
     margin-top: 68px;
     margin-bottom: 185px;
   }
-
   .recommendation__products {
     justify-content: space-between;
     margin-top: 24px;
@@ -1827,7 +1815,6 @@
   .recommendation__product:last-child {
     margin-right: 0;
   }
-
   .order__section {
     font-size: 16px;
     line-height: 130%;
@@ -1866,7 +1853,6 @@
     .product__price_withDiscount {
       margin-right: 0;
     }
-
     .OutLineRadio label {
       font-size: 15px;
     }
@@ -1938,7 +1924,6 @@
       width: 280px;
       justify-content: flex-start;
     }
-
     .vis1000 {
       display: none;
     }
@@ -1967,7 +1952,6 @@
     .stagesDesign {
       margin-top: 48px;
     }
-
     .feedback__reviews-photos {
       margin-bottom: 48px;
     }

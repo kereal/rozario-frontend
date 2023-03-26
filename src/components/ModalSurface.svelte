@@ -39,7 +39,6 @@
     ) {
       return
     }
-    console.log("handle modal click", focused)
     if (focused) {
       focused = false
     }

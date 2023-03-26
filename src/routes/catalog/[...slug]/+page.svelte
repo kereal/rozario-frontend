@@ -1,81 +1,45 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const regex = /(.jpg|.webp|.png|.jpeg|.gif|.svg)/
-      if (page.params.slug.find((el) => el.substring(el.lastIndexOf(".")).match(regex))) {
-        return {}
-      }
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain${page.path}`)
-      const solData = await res1.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        //flowersList: json.flowersList,
-        flowersList: solData.products,
-        categories: json.catalog,
-        //catalogSubCategories: json.catalogSubCategories,
-        catalogSubCategories: solData.taxons,
-        cityMeta: json.cityMeta,
-        breadcrumbs: json.breadcrumbs,
-        filters: json.filters,
-        orderList: json.orderList,
-        currentTaxon: solData.current_taxon
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
   import { onMount } from "svelte"
-  import { mainStore, breadcrumbsStore } from "../../stores/global.js"
-  import { orderStore } from "../../stores/order.js"
-  import CatalogHero from "../../components/CatalogHero.svelte"
-  import BigFlowerCard from "../../components/BigFlowerCard.svelte"
-  import OrderContainer from "../../components/OrderContainer.svelte"
-  import CatalogNavbar from "../../components/CatalogNavbar.svelte"
-  import CatalogFilter from "../../components/CatalogFilter.svelte"
-  import PresentCard from "../../components/PresentCard.svelte"
+  import { mainStore, breadcrumbsStore } from "../../../stores/global.js"
+  import { orderStore } from "../../../stores/order.js"
+  import CatalogHero from "../../../components/CatalogHero.svelte"
+  import BigFlowerCard from "../../../components/BigFlowerCard.svelte"
+  import OrderContainer from "../../../components/OrderContainer.svelte"
+  import CatalogNavbar from "../../../components/CatalogNavbar.svelte"
+  import CatalogFilter from "../../../components/CatalogFilter.svelte"
+  import PresentCard from "../../../components/PresentCard.svelte"
   import cloneDeep from "lodash-es/cloneDeep"
   import { page } from "$app/stores"
-  export let slug
-  export let path
-  export let cityMeta
-  export let breadcrumbs
-  export let flowersList
-  export let filters
-  export let catalogSubCategories
-  export let orderList
-  export let categories
-  export let currentTaxon
-  let currentFlowerList = flowersList
-  let currentSubCategory = catalogSubCategories.length ? catalogSubCategories[0].name : ""
+
+  export let data
+  let currentFlowerList = data.flowersList
+
+  let currentSubCategory = data.catalogSubCategories.length
+    ? data.catalogSubCategories[0].name
+    : ""
   let filtersData = [
     {
       name: "price",
-      list: filters.priceRangeList,
+      list: data.filters.priceRangeList,
       text: "Цена",
       current: null
     },
     {
       name: "composition",
-      list: filters.compositionList,
+      list: data.filters.compositionList,
       text: "Состав",
       current: null
     },
-    { name: "color", list: filters.colorList, text: "Цвет", current: null },
+    { name: "color", list: data.filters.colorList, text: "Цвет", current: null },
     {
       name: "occasion",
-      list: filters.occasionList,
+      list: data.filters.occasionList,
       text: "Повод",
       current: null
     },
     {
       name: "recipient",
-      list: filters.recipientList,
+      list: data.filters.recipientList,
       text: "Кому",
       current: null
     }
@@ -95,7 +59,7 @@
       return 0
     })
     if (sortedFiltersData.find((filter) => !filter.current)) {
-      currentFlowerList = flowersList
+      currentFlowerList = data.flowersList
     }
 
     for (let filter of sortedFiltersData) {
@@ -133,14 +97,13 @@
   }
 
   onMount(() => {
-    console.log()
-    $orderStore.orderList = orderList
-    $orderStore.totalPrice = orderList.reduce((acc, val) => {
+    $orderStore.orderList = data.orderList
+    $orderStore.totalPrice = data.orderList.reduce((acc, val) => {
       return acc + val.flower.price * val.flower.quantity
     }, 0)
-    $mainStore.address.city = cityMeta
+    $mainStore.address.city = data.cityMeta
 
-    breadcrumbsStore.pushPath(path)
+    breadcrumbsStore.pushPath(data.path)
 
     const options = {
       root: null,
@@ -187,7 +150,7 @@
 <!-- <svelte:window on:resize={throttledResize} /> -->
 <svelte:head>
   <!-- <title>{breadcrumbs[breadcrumbs.length - 1].name || 'каталог'}</title> -->
-  <title>{currentTaxon.name || "каталог"}</title>
+  <title>{data.currentTaxon?.name || "каталог"}</title>
   <meta name="description" content="Цветы" />
   <link rel="canonical" href="https://{$page.host + $page.path}" />
   <meta
@@ -234,16 +197,20 @@
       ? 'has-aside'
       : ''}"
   >
-    {#if breadcrumbs.length}
-      <CatalogHero {cityMeta} {breadcrumbs} title={breadcrumbs[breadcrumbs.length - 1]} />
+    {#if data.breadcrumbs.length}
+      <CatalogHero
+        cityMeta={data.cityMeta}
+        breadcrumbs={data.breadcrumbs}
+        title={data.breadcrumbs[data.breadcrumbs.length - 1]}
+      />
     {:else}
-      <CatalogHero {cityMeta} title={currentTaxon.name} />
+      <CatalogHero cityMeta={data.cityMeta} title={data.currentTaxon?.name} />
     {/if}
 
-    {#if catalogSubCategories.length}
+    {#if data.catalogSubCategories.length}
       <CatalogNavbar
         bind:currentSubCategory
-        initCategories={catalogSubCategories}
+        initCategories={data.catalogSubCategories}
         page="catalog"
       />
     {/if}
@@ -265,7 +232,7 @@
       <div class="pt-48 px-44 lg:px-34 xl:px-80 border-gray-300 border-r border-l">
         <div class="mb-24">
           <span class="text-2xl leading-mid text-main font-bold">
-            {currentSubCategory || currentTaxon.name}
+            {currentSubCategory || data.currentTaxon?.name}
           </span>
           <span class="leading-mid text-gray-700 text-2xl ml-12">
             {currentFlowerList.length}

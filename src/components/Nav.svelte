@@ -165,7 +165,7 @@
       style="width:211px;height:28px;"
       class="flex-shrink-0 font-bold text-main text-xl mr-16 xl:mr-32"
     >
-      <img class="w-full h-full" src="logo.svg" alt="Розарио Цветы" />
+      <img class="w-full h-full" src="/logo.svg" alt="Розарио Цветы" />
     </a>
     <nav class="flex-1 flex justify-center">
       <ul class="flex items-center">
@@ -227,7 +227,7 @@
         justify-center mr-16"
         on:click={toggleSearch}
       >
-        <img width="16" height="16" src="search.svg" alt="search" />
+        <img width="16" height="16" src="/search.svg" alt="search" />
       </button>
 
       <div class="hidden lg:block">
@@ -266,7 +266,7 @@
           </button>
         </div>
         <a
-          href="cart"
+          href="/cart"
           class="{$orderStore.orderList.length ? 'block' : 'hidden'}
           flex items-center rounded-full pl-8 pr-16 py-4"
         >

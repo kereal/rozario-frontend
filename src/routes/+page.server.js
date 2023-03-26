@@ -1,5 +1,4 @@
 export async function load({ url, fetch, session }) {
-  //console.log(`/data?city=${url.searchParams.get("city")}&path=${url.searchParams.get("path")}`)
   const res = await fetch(
     `/data?city=${url.searchParams.get("city")}&path=${url.searchParams.get("path")}`
   )

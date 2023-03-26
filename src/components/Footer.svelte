@@ -54,7 +54,7 @@
   >
     <div class="footer-width footer-padding flex items-center py-48 w-full">
       <a href="#header" class="mr-134">
-        <img width="175" height="23" src="logo-footer.svg" alt="Розарио Цветы" />
+        <img width="175" height="23" src="/logo-footer.svg" alt="Розарио Цветы" />
       </a>
       <ul class="flex justify-between font-semibold text-gray-600 w-8/12 leading-snug">
         <li class="mr-16">Бесплатная доставка</li>

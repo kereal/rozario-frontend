@@ -17,7 +17,6 @@
   export let selectedDate = ""
   import { page } from "$app/stores"
   const dispatch = createEventDispatcher()
-  console.log("page", $page)
 
   let deleteModalVisible = false
   let timeModalVisible = false
@@ -223,7 +222,6 @@
     scrollbar-color: var(--thumb-color) var(--scroll-track);
     scrollbar-width: thin;
   }
-
   .custom-scrollbar::-webkit-scrollbar {
     width: 5px;
   }

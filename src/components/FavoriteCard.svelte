@@ -101,11 +101,11 @@
           </div>
           <div class="text-gray-700 mb-8 font-semibold text-sm inline-flex items-center">
             <div class="image-box mr-8">
-              <img src="size-width.svg" alt="width" />
+              <img src="/size-width.svg" alt="width" />
             </div>
             {recommendation.size.width}
             <div class="image-box mx-8">
-              <img src="size-height.svg" alt="height" />
+              <img src="/size-height.svg" alt="height" />
             </div>
             {recommendation.size.height}
           </div>

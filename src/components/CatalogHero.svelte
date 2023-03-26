@@ -57,7 +57,10 @@
               styleText="line-height: 155%;"
               styleMainIcon=" min-width: 40px; max-width:40px; height: 40px;
               margin-right:14px;"
-              text={['Доставка: 0–549 руб.', 'Бесплатно в интервале 2 часа с 08:00 до 21:00']}
+              text={[
+                "Доставка: 0–549 руб.",
+                "Бесплатно в интервале 2 часа с 08:00 до 21:00"
+              ]}
             >
               <section class="leading-tight rounded bg-white px-32 py-24">
                 <h3 class="text-main text-lg font-bold mb-8">Доставка Розарио.Цветы</h3>
@@ -75,7 +78,7 @@
                         <img
                           width={svgSize}
                           height={svgSize}
-                          src="delivery-icon.svg"
+                          src="/delivery-icon.svg"
                           alt="delivery"
                         />
                       </div>
@@ -97,7 +100,7 @@
             styleText="line-height: 155%;"
             styleMainIcon=" min-width: 40px; max-width:40px; height: 40px;
             margin-right:14px;"
-            text={['Мы узнаем адрес сами,', 'но о цветах ни слова...']}
+            text={["Мы узнаем адрес сами,", "но о цветах ни слова..."]}
           >
             <section class="rounded bg-white px-32 py-24">
               <h3 class="text-main text-lg mb-16 font-bold">
@@ -120,7 +123,7 @@
               icon="info-icon"
               styleMainIcon="min-width: 37px; max-width:37px; height:37px;"
               styleBlock="padding:12px 18px; margin-right:-18px; margin-left:-18px; "
-              text={['Информация', 'о магазине']}
+              text={["Информация", "о магазине"]}
             >
               <section
                 class="rounded bg-white px-32 py-24"
@@ -190,7 +193,6 @@
                       <span itemprop="taxID">519054442210</span>
                       , ОГРНИП 318519000018711
                     </div>
-
                   </div>
                 </div>
               </section>

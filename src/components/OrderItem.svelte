@@ -54,8 +54,6 @@
     }
     return price
   }
-
-  console.log(flower)
 </script>
 
 <div class="flex -ml-8">

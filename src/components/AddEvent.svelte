@@ -37,28 +37,20 @@
   let focused = false
 
   function onFocus() {
-    console.log("focus", focused)
-
     focused = true
   }
 
   function scrollDown(e) {
-    console.log("scroll")
     e.preventDefault()
     const editBlockBCR = editBlock.getBoundingClientRect()
     const selectBCR = e.detail.ref.closest(".custom-select").getBoundingClientRect()
-    console.log(selectBCR.top, editBlockBCR.bottom)
-
     if (selectBCR.top + 161 > editBlockBCR.bottom) {
       let i = 0
       const prevTop = editBlock.scrollTop
       const intervalId = setInterval(() => {
         editBlock.scrollTop += i
         i += 3
-        console.log(prevTop, editBlock.scrollTop)
-
         if (prevTop + 120 <= editBlock.scrollTop) {
-          console.log("clear")
           clearInterval(intervalId)
         }
       }, 16)
@@ -102,7 +94,6 @@
   }
 
   function handleInvalid(e) {
-    console.log(e.target)
     e.preventDefault()
     validateFormInput(e)
   }
@@ -112,7 +103,6 @@
   }
 
   function onSubmit() {
-    console.log("submit SUBMIT")
     if (isValid) {
       dispatch("add", {
         id: $eventsStore.length + 1,

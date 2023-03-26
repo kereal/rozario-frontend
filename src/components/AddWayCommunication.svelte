@@ -30,8 +30,6 @@
   }
   function validateFormInput(e) {
     const elem = document.querySelector(`#form-user-data .validation .${e.target.name}`)
-    console.log("elem", elem, e.target.name, e.target.validity)
-    console.log("target", e.target)
     if (e.target.validity.valueMissing) {
       e.target.classList.add("error")
       elem.classList.remove("invisible")

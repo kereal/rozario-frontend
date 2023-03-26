@@ -29,10 +29,8 @@
   }
 
   $: if (selectedReason) {
-    console.log(selectedReason)
     if (selectedReason == "Другая причина") {
       visibleInput = true
-      console.log(visibleInput)
     } else {
       visibleInput = false
     }
