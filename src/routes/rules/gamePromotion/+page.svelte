@@ -1,9 +1,8 @@
 <script>
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import { onMount, setContext } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
+  import { onMount } from "svelte"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
   export let texts = [
     {
       title: "Общие положения",
@@ -137,10 +136,10 @@
   const menulist = []
 
   const navlist = [
-    { name: "Пользовательское соглашение", link: "rules", active: false },
-    { name: "Политика конфиденциальности", link: "rules/privacyPolicy", active: true },
-    { name: "Использование cookies", link: "rules/cookies", active: false },
-    { name: "Правила акции «Розарио.Игра»", link: "rules/gamePromotion", active: false }
+    { name: "Пользовательское соглашение", link: "/rules", active: false },
+    { name: "Политика конфиденциальности", link: "/rules/privacyPolicy", active: false },
+    { name: "Использование cookies", link: "/rules/cookies", active: false },
+    { name: "Правила акции «Розарио.Игра»", link: "/rules/gamePromotion", active: true }
   ]
 
   let headers = []
@@ -292,6 +291,9 @@
     .content {
       @apply px-44;
       @apply py-34;
+    }
+    h2 {
+      margin-top: 30px;
     }
     h1 {
       margin-bottom: 30px;

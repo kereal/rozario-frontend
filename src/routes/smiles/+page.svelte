@@ -1,38 +1,23 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain`)
-      const solData = await res1.json()
-      return {
-        reviews: solData.reviews,
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import debounce from "lodash/debounce"
-  import Button from "../components/Button.svelte"
-  import Review from "../components/Review.svelte"
-  import Breadcrumbs from "../components/Breadcrumbs.svelte"
   import { onMount } from "svelte"
-  import { mainStore } from "../stores/global.js"
+  import { mainStore } from "@/stores/global"
   import { page } from "$app/stores"
-  export let reviews
-  export let cityMeta
+  import Button from "@/components/Button.svelte"
+  import RecipientSmile from "@/components/RecipientSmile.svelte"
+  import RecipientSmileModal from "@/components/RecipientSmileModal.svelte"
+  import Breadcrumbs from "@/components/Breadcrumbs.svelte"
+
+  export let data
+
+  const cityMeta = data.cityMeta
   const city_name = cityMeta.name
-  const photo_name = cityMeta.shop.reviews_image
+  const photo_name = cityMeta.shop.smiles_image
+
   const photo = photo_name + ".png"
   const photo1_5 = photo_name + "@1.5x.png"
   const photo2 = photo_name + "@2x.png"
   const photo3 = photo_name + "@3x.png"
+
   const pathlist = [
     {
       name: "Доставка цветов",
@@ -43,53 +28,55 @@
       href: "#"
     }
   ]
-  let hasMoreReviews = true
-  let loading = false
 
-  let loadMoreReviews = function () {
+  let hasMoreSmiles = true
+  let loading = false
+  let loadMoreSmiles = function () {
     loading = true
-    let reviewsToLoad = reviews.slice(startIndex, startIndex + step)
-    startIndex = startIndex + reviewsToLoad.length
-    addReviewsToColumns(reviewsToLoad)
-    if (startIndex >= reviews.length) {
-      hasMoreReviews = false
+    let smilesToLoad = cityMeta.smiles.slice(startIndex, startIndex + step)
+    startIndex = startIndex + smilesToLoad.length
+    addSmilesToColumns(smilesToLoad)
+    if (startIndex >= cityMeta.smiles.length) {
+      hasMoreSmiles = false
     }
   }
-  let isLeftColumnHigher = function () {
-    return (
-      document.getElementById("leftColumnReviews").offsetHeight >
-      document.getElementById("rightColumnReviews").offsetHeight
-    )
-  }
-  let addReviewsToColumns = function (reviews) {
-    if (reviews.length) {
-      console.log(isLeftColumnHigher())
-      if (isLeftColumnHigher()) {
-        rightColumnReviews.push(reviews[0])
-        rightColumnReviews = rightColumnReviews
-      } else {
-        leftColumnReviews.push(reviews[0])
-        leftColumnReviews = leftColumnReviews
-      }
-      setTimeout(() => addReviewsToColumns(reviews.slice(1)), 1)
+  let addSmilesToColumns = function (smiles) {
+    if (smiles.length) {
+      shownSmiles.push(smiles[0])
+      shownSmiles = shownSmiles
+      setTimeout(() => addSmilesToColumns(smiles.slice(1)), 10)
     } else {
       loading = false
     }
   }
 
-  let leftColumnReviews = []
-  let rightColumnReviews = []
+  let shownSmiles = []
+  let smiles = []
   let startIndex = 0
-  let step = 8
+  let step = 9
+  let smilesModalOpened = false
+  let smile_i = 0
+
+  function openSmileModal(i) {
+    smile_i = i
+    smilesModalOpened = true
+  }
+  function closeSmileModal() {
+    smilesModalOpened = false
+  }
 
   onMount(() => {
     $mainStore.address.city = cityMeta
-    loadMoreReviews()
+    smiles = cityMeta.smiles
+    smiles.forEach((smile, index) => (smile.index = index))
+    loadMoreSmiles()
+
     const options = {
       root: null,
       rootMargin: "0px",
       threshold: 0.2
     }
+
     const images = document.querySelectorAll("img[data-src]")
     const sources = document.querySelectorAll("source[data-srcset]")
     function callback(entries, observer) {
@@ -123,7 +110,7 @@
 </script>
 
 <svelte:head>
-  <title>Отзывы</title>
+  <title>Улыбки получателей</title>
   <meta name="description" content="CONTACTS_DESCRIPTION" />
   <link rel="canonical" href={$page.host + $page.path} />
   <link
@@ -142,8 +129,8 @@
   />
   <meta
     name="keywords"
-    content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске, Заказать цветы с
-    доставкой в Мурманске, "
+    content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
+    Заказать цветы с доставкой в Мурманске, "
   />
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
@@ -156,8 +143,9 @@
   />
   <meta
     property="og:description"
-    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в Мурманске.
-    Оформить доставку цветов можно на сайте. Оплатить — наличными или банковской картой."
+    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
+    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
+    банковской картой."
   />
   <meta property="og:image" content="ruka3.jpg" />
   <meta property="og:url" content="url" />
@@ -169,52 +157,49 @@
   />
   <meta
     name="twitter:description"
-    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в Мурманске.
-    Оформить доставку цветов можно на сайте. Оплатить — наличными или банковской картой."
+    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
+    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
+    банковской картой."
   />
   <meta name="twitter:image" content="ruka3.jpg" />
   <meta name="twitter:image:alt" content="Розарио.Цветы" />
   <meta name="twitter:card" content="summary" />
 </svelte:head>
 
-<div id="reviews-page" class="page" itemscope itemtype="http://schema.org/Florist">
+<div id="smiles-page" class="page">
   <div class="header image-box relative">
     <img
       class="w-full h-full rounded absolute object-cover inset-0"
       data-src={photo}
-      data-srcset="{photo}, {photo1_5} 1.5x, {photo2} 2x, {photo3} 3x"
+      data-srcset="{photo},
+                {photo1_5} 1.5x,
+                {photo2} 2x,
+                {photo3} 3x"
       itemprop="image"
       alt="photo"
     />
     <div class="breadcrumbs">
       <Breadcrumbs {pathlist} />
     </div>
-    <h1 class="font-bold">Отзывы</h1>
-    <p>
-      Здесь собраны все отзывы, оставленные покупателями и счастливыми получателями после
-      доставки.
-    </p>
+    <h1 class="font-bold">Улыбки получателей</h1>
+    <p>Очаровательные улыбки, запечатлённые нашей службой доставки</p>
   </div>
-  <div class="reviews-body">
-    {#if reviews.length}
-      <div id="leftColumnReviews">
-        {#each leftColumnReviews as review, i}
-          <Review {review} review_i={"left" + i} />
-        {/each}
-      </div>
-      <div id="rightColumnReviews">
-        {#each rightColumnReviews as review, i}
-          <Review {review} review_i={"right" + i} />
-        {/each}
-      </div>
+  <div class="smiles-body">
+    {#if cityMeta}
+      {#each shownSmiles as smile, i}
+        <RecipientSmile {smile} smile_i={"smile" + i} {openSmileModal} />
+      {/each}
     {/if}
   </div>
-  {#if hasMoreReviews}
+  {#if hasMoreSmiles}
     {#if !loading}
-      <div class="load-more-reviews">
-        <Button on:click={loadMoreReviews}>Загрузить больше отзывов</Button>
+      <div class="load-more-smiles">
+        <Button on:click={loadMoreSmiles}>Загрузить больше улыбок</Button>
       </div>
     {/if}
+  {/if}
+  {#if smilesModalOpened}
+    <RecipientSmileModal {smiles} {smile_i} closeModal={closeSmileModal} />
   {/if}
 </div>
 
@@ -247,7 +232,7 @@
   .header :global(li + li::before) {
     color: var(--color-light);
   }
-  .reviews-body {
+  .smiles-body {
     background: linear-gradient(
         180deg,
         var(--color-light) 0%,
@@ -257,17 +242,15 @@
     border: 1px solid var(--gray-300);
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 48px 80px 6px;
+    padding: 48px 80px 0;
     color: var(--color-main);
     margin-bottom: 6px;
     flex-grow: 1;
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
-  #leftColumnReviews {
-    margin-right: 34px;
-  }
-  .reviews-body > div {
+  .smiles-body > div {
     flex-basis: 50%;
     flex-grow: 1;
     min-width: 0;
@@ -293,7 +276,7 @@
   .breadcrumbs :global(li a:hover) {
     opacity: 1;
   }
-  .load-more-reviews :global(button) {
+  .load-more-smiles :global(button) {
     font-size: 16px;
     padding: 12px 12px 11px;
     width: 100%;
@@ -301,27 +284,27 @@
   }
   @media (max-width: 1300px) {
     .header,
-    .reviews-body,
-    .reviews-body :global(button .text-base) {
+    .smiles-body,
+    .smiles-body :global(button .text-base) {
       font-size: 15px;
     }
-    .reviews-body :global(.button--lg) {
+    .smiles-body :global(.button--lg) {
       padding: 12px 30px;
       height: auto;
       font-size: 15px;
       line-height: 135%;
     }
-    .load-more-reviews :global(button) {
+    .load-more-smiles :global(button) {
       font-size: 15px;
       padding: 11px;
     }
+    .smiles-body {
+      padding: 40px 80px 0;
+    }
   }
   @media (max-width: 1000px) {
-    .reviews-body {
-      padding: 40px 80px 10px;
-    }
-    #leftColumnReviews {
-      margin-right: 24px;
+    .smiles-body {
+      padding: 26px 80px 0;
     }
   }
 </style>

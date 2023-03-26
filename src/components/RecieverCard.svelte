@@ -1,12 +1,9 @@
 <script>
-  import TelInput from "./TelInput.svelte"
-  import TextInput from "./TextInput.svelte"
+  import { cartFormStore } from "@/stores/cart"
   import debounce from "lodash-es/debounce"
-  import CongratulationsButton from "./CongratulationsButton.svelte"
-  import CustomCheckbox from "./CustomCheckbox.svelte"
-  import HelpButton from "./HelpButton.svelte"
-  import { onMount } from "svelte"
-  import { cartFormStore } from "../stores/cart.js"
+  import TelInput from "@/components/TelInput.svelte"
+  import TextInput from "@/components/TextInput.svelte"
+  import HelpButton from "@/components/HelpButton.svelte"
 
   function validateFormInput(e) {
     const elem = document.querySelector(
@@ -62,7 +59,7 @@
             <HelpButton
               position="CENTER"
               css="width: 300px;"
-              text="Не переживайте, это будет сюрприз. Получатель узнает, от кого цветы, только если вы укажете ваше имя в открытке."
+              text="Не переживайте, это будет сюрприз. Получатель узнает от&nbsp;кого цветы только если Вы&nbsp;укажете имя в открытке."
             />
           </div>
         </label>

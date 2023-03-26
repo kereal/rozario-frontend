@@ -162,7 +162,7 @@
         <img
           class="mr-16 border border-gray-500"
           style="width: 1.5rem; height:1rem;"
-          src="{$mainStore.currentCountry.flag}-flag-icon-32.png"
+          src="/{$mainStore.currentCountry.flag}-flag-icon-32.png"
           alt=""
         />
         <span class="text-main font-semibold">

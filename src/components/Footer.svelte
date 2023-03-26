@@ -165,7 +165,7 @@
       class="footer-width w-full mx-auto footer-padding self-start text-left
       text-gray-700 text-ssm py-24"
     >
-      2020
+      © {new Date().getFullYear()}
       <span itemprop="name">Розарио.Цветы</span>
     </div>
   </div>
