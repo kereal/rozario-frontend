@@ -119,14 +119,14 @@
   i.search {
     position: absolute;
     left: 12px;
-    top: 15px;
+    top: 12px;
     bottom: 0;
     pointer-events: none;
   }
   i.close {
     position: absolute;
     right: 12px;
-    top: 15px;
+    top: 12px;
     bottom: 0;
     cursor: pointer;
   }

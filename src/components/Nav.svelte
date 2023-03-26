@@ -1,5 +1,5 @@
 <script>
-  import { onMount, setContext, afterUpdate, beforeUpdate } from "svelte"
+  import { onMount, afterUpdate, beforeUpdate } from "svelte"
   import AutoComplete from "./AutoComplete.svelte"
   import CustomDropdown from "./CustomDropdown.svelte"
   import MapModal from "./MapModal.svelte"
@@ -10,16 +10,16 @@
   import HelpDrawer from "./HelpDrawer.svelte"
   import ShoppingCart from "./icons/ShoppingCart.svelte"
   import { goto } from "$app/navigation"
-  import { scrollToSmoothly } from "../utils"
-  import { fakeFetch } from "../utils/http.js"
-  import { mainStore } from "../stores/global"
+  import { scrollToSmoothly } from "@/utils"
+  import { fakeFetch } from "@/utils/http"
+  import { mainStore } from "@/stores/global"
 
   export let session = {}
   export let countries = []
   export let cityList = []
   export let orderStore = {}
 
-  const navItems = [{ name: "Доставка", addr: "profile" }]
+  const navItems = [{ name: "Доставка", addr: "delivery" }]
   let screen = ""
   const price = "2450р"
   let header
@@ -136,11 +136,11 @@
   })
 
   onMount(async () => {
-    const aCollections = document.getElementById("collections")
-    goToCollections = () => {
-      // aCollections.scrollIntoView({alignToTop: true, behavior: 'smooth'})
-      scrollToSmoothly(aCollections.offsetTop - 140, 10)
-    }
+    // const aCollections = document.getElementById("collections")
+    // goToCollections = () => {
+    //   // aCollections.scrollIntoView({alignToTop: true, behavior: 'smooth'})
+    //   scrollToSmoothly(aCollections.offsetTop - 140, 10)
+    // }
   })
 
   afterUpdate(() => {
@@ -170,11 +170,10 @@
     <nav class="flex-1 flex justify-center">
       <ul class="flex items-center">
         <li
-          on:click={goToCollections}
           class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32
           last:mr-0"
         >
-          <span>--Коллекции</span>
+          <span><a href="/#mainCollection">Коллекции</a></span>
         </li>
         {#each navItems as item}
           <li class="text-main hover:text-gray-700 mr-16 xl:mr-32 last:mr-0">

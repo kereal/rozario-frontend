@@ -1,6 +1,5 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte"
-  import About from "../routes/about.svelte"
   export let css = ""
 
   /**

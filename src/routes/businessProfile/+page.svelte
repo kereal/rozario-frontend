@@ -498,7 +498,6 @@
     headers = [ActiveOrderHeader, OrderHistoryHeader, PretensionHeader]
     scrollSpy = new ScrollSpy(window, headers)
     const setIndex = (e) => {
-      console.log("set index")
       currentMenuIndex = e.detail.index
     }
     window.addEventListener("scrollspy-activate", setIndex)

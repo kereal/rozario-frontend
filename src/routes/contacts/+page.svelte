@@ -1,45 +1,27 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import Breadcrumbs from "../components/Breadcrumbs.svelte"
-  import SocialIcon from "../components/SocialIcon.svelte"
-  import Button from "../components/Button.svelte"
-
   import { onMount } from "svelte"
-  import { mainStore } from "../stores/global.js"
+  import { mainStore } from "@/stores/global.js"
   import { page } from "$app/stores"
+  import Breadcrumbs from "@/components/Breadcrumbs.svelte"
+  import SocialIcon from "@/components/SocialIcon.svelte"
+  import Button from "@/components/Button.svelte"
 
-  export let cityMeta
-
+  export let data
+  const cityMeta = data.cityMeta
   const city_name = cityMeta.name
   const shop_name = cityMeta.shop.name
-  const phonto_name = cityMeta.shop.contacts_image
-  const photo = phonto_name + ".png"
-  const photo1_5 = phonto_name + "@1.5x.png"
-  const photo2 = phonto_name + "@2x.png"
-  const photo3 = phonto_name + "@3x.png"
-
+  const photo_name = cityMeta.shop.contacts_image
+  const photo = photo_name + ".png"
+  const photo1_5 = photo_name + "@1.5x.png"
+  const photo2 = photo_name + "@2x.png"
+  const photo3 = photo_name + "@3x.png"
   const city_locativus = cityMeta.locativus
   const shop_address_street = cityMeta.shop.address.street
   const shop_address_opening_hours_days = cityMeta.shop.address.openingHours.days
   const shop_address_opening_hours_hours = cityMeta.shop.address.openingHours.hours
   const schedule = `${shop_address_opening_hours_days}, ${shop_address_opening_hours_hours}`
   const phone_local = cityMeta.shop.phone
-  const city_lat_lng = cityMeta.shop.address.lat_lng
+  const city_lat_lng = cityMeta.shop.address.lat_lng || cityMeta.shop.address.coordinates
   const phone_global = cityMeta.shop.phone_world
 
   const pathlist = [
@@ -72,14 +54,12 @@
             center: coords,
             zoom: 7
           })
-
           var marker = new ymaps.GeoObject({
             geometry: {
               type: "Point",
               coordinates: coords
             }
           })
-
           map.geoObjects.add(marker)
         }
       }
@@ -140,9 +120,7 @@
 <svelte:head>
   <title>Контакты</title>
   <meta name="description" content="CONTACTS_DESCRIPTION" />
-
   <link rel="canonical" href={$page.host + $page.path} />
-
   <link
     rel="alternate"
     href={$page.host + $page.path}
@@ -157,19 +135,16 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -184,7 +159,6 @@
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta
     name="twitter:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -199,15 +173,22 @@
   <meta name="twitter:image:alt" content="Розарио.Цветы" />
   <meta name="twitter:card" content="summary" />
 </svelte:head>
+
 <div class="page" itemscope itemtype="http://schema.org/Florist">
   <div class="header image-box relative">
-    <img
+    <!-- <img
       class="w-full h-full rounded absolute object-cover inset-0"
       data-src={photo}
       data-srcset="{photo},
                 {photo1_5} 1.5x,
                 {photo2} 2x,
                 {photo3} 3x"
+      itemprop="image"
+      alt="photo"
+    /> -->
+    <img
+      class="w-full h-full rounded absolute object-cover inset-0"
+      src="/{photo}"
       itemprop="image"
       alt="photo"
     />
@@ -229,7 +210,7 @@
 
       <h2 class="font-bold">Свяжитесь с нами</h2>
       <div class="contacts-text">
-        Если у вас есть вопросы по вашему заказу, позвоните нам:
+        Если у Вас есть вопросы по Вашему заказу, позвоните нам:
       </div>
       <div class="phones">
         <div class="local-phone">
@@ -309,7 +290,6 @@
   .header :global(li + li::before) {
     color: var(--color-light);
   }
-
   .contacts-body {
     background: linear-gradient(
         180deg,

@@ -1,31 +1,18 @@
-<script context="module" xmlns="http://www.w3.org/1999/html">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import Breadcrumbs from "../components/Breadcrumbs.svelte"
-  import Tabbar from "../components/Tabbar.svelte"
-  import Button from "../components/Button.svelte"
-  import DeliveryCardModal from "../components/DeliveryCardModal.svelte"
-  import HelpCategory from "../components/HelpCategory.svelte"
   import { onMount, afterUpdate } from "svelte"
-  import ScrollSpy from "../utils/scrollSpy.js"
-  export let cityMeta
+  import { mainStore } from "@/stores/global.js"
+  import { page } from "$app/stores"
+  import Breadcrumbs from "@/components/Breadcrumbs.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import Button from "@/components/Button.svelte"
+  import DeliveryCardModal from "@/components/DeliveryCardModal.svelte"
+  import HelpCategory from "@/components/HelpCategory.svelte"
+  import ScrollSpy from "@/utils/scrollSpy"
+
+  export let data
+  const cityMeta = data.cityMeta
   const city_name = cityMeta.name
   const photo_name = cityMeta.shop.delivery_image
-
   const photo = photo_name + ".png"
   const photo1_5 = photo_name + "@1.5x.png"
   const photo2 = photo_name + "@2x.png"
@@ -105,6 +92,7 @@
   let countMethods = 0
   let myMap
   onMount(() => {
+    $mainStore.address.city = cityMeta
     headers = [methods, stages, FAQ]
     scrollSpy = new ScrollSpy(window, headers)
     const setIndex = (e) => {
@@ -187,15 +175,78 @@
   })
 </script>
 
+<svelte:head>
+  <title>Доставка</title>
+  <meta name="description" content="DELIVERY_DESCRIPTION" />
+  <link rel="canonical" href={$page.host + $page.path} />
+  <link
+    rel="alternate"
+    href={$page.host + $page.path}
+    type="text/html"
+    hreflang="ru"
+    title="Русский"
+  />
+  <link
+    rel="alternate"
+    href={$page.host + $page.path}
+    type="text/html"
+    hreflang="en"
+    title="English"
+  />
+  <meta
+    name="keywords"
+    content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
+    Заказать цветы с доставкой в Мурманске, "
+  />
+  <meta name="geo.region" content="" />
+  <meta name="geo.position" content="" />
+  <meta name="geo.placename" content="" />
+  <meta name="ICBM" content="" />
+  <meta name="referrer" content="always" />
+  <meta
+    property="og:title"
+    content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
+  />
+  <meta
+    property="og:description"
+    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
+    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
+    банковской картой."
+  />
+  <meta property="og:image" content="ruka3.jpg" />
+  <meta property="og:url" content="url" />
+  <meta property="og:site_name" content="Розарио.Цветы" />
+  <meta property="og:type" content="website" />
+  <meta
+    name="twitter:title"
+    content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
+  />
+  <meta
+    name="twitter:description"
+    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
+    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
+    банковской картой."
+  />
+  <meta name="twitter:image" content="ruka3.jpg" />
+  <meta name="twitter:image:alt" content="Розарио.Цветы" />
+  <meta name="twitter:card" content="summary" />
+</svelte:head>
+
 <div class="page">
   <div class="header image-box relative">
-    <img
+    <!-- <img
       class="w-full h-full rounded absolute object-cover inset-0"
       data-src={photo}
       data-srcset="{photo},
                 {photo1_5} 1.5x,
                 {photo2} 2x,
                 {photo3} 3x"
+      itemprop="image"
+      alt="photo"
+    /> -->
+    <img
+      class="w-full h-full rounded absolute object-cover inset-0"
+      src="/{photo}"
       itemprop="image"
       alt="photo"
     />
@@ -449,8 +500,8 @@
         <div>
           <h3>Самовывоз</h3>
           <p class="delivery__pickup-text">
-            Возможен самовывоз из нашего магазина по адресу: {cityMeta.name}, {cityMeta
-              .shop.address.street}.
+            Возможен самовывоз из нашего магазина по адресу: {cityMeta.name}, {data
+              .cityMeta.shop.address.street}.
           </p>
           <p class="delivery__pickup-text mt-8">
             Режим работы: ежедневно, {cityMeta.shop.address.openingHours.hours}.
@@ -541,8 +592,8 @@
               </svg>
             </div>
             <p class="delivery_stage-text">
-              Как только заказ передан в доставку, мы пришлём вам уведомления по e-mail и
-              СМС
+              Как только заказ передан в доставку, мы пришлем Вам уведомление
+              по&nbsp;эл.&nbsp;почте и&nbsp;SMS
             </p>
             <svg
               class="delivery_stage-miniIcon"
@@ -629,8 +680,8 @@
               </svg>
             </div>
             <p class="delivery_stage-text">
-              Во время доставки вы сможете отследить курьера на карте <a href="/profile"
-                >в личном кабинете</a
+              Во время доставки Вы сможете отследить курьера на карте <a href="/profile"
+                >в&nbsp;личном кабинете</a
               >
             </p>
             <svg
@@ -708,8 +759,8 @@
               </svg>
             </div>
             <p class="delivery_stage-text">
-              После вручения заказа вы также получите уведомление о доставке и фото
-              получателя
+              После вручения заказа Вы также получите уведомление о&nbsp;доставке
+              и&nbsp;фото получателя
             </p>
             <svg
               class="delivery_stage-miniIcon"
@@ -802,7 +853,6 @@
     padding-bottom: 79px;
     border-top: none;
   }
-
   h2 {
     font-weight: bold;
     font-size: 24px;
@@ -970,7 +1020,6 @@
       padding: 40px 80px;
       padding-bottom: 63px;
     }
-
     .route {
       margin-top: 16px;
     }

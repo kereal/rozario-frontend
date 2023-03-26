@@ -15,30 +15,28 @@
 </script>
 
 <script>
-  import { setContext } from "svelte"
+  import { setContext, onMount } from "svelte"
+  import Button from "@/components/Button.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import HelpQuestion from "@/components/HelpQuestion.svelte"
+  import HelpCategory from "@/components/HelpCategory.svelte"
+  import HelpSearchInput from "@/components/HelpSearchInput.svelte"
+  import HelpSearchResult from "@/components/HelpSearchResult.svelte"
+  import ContactUsModal from "@/components/ContactUsModal.svelte"
+  import ChatStripes from "@/components/icons/ChatStripes.svelte"
+  import Icon from "@/components/Icon.svelte"
+  import GetCallModal from "@/components/GetCallModal.svelte"
+  import InfoPopup from "@/components/InfoPopup.svelte"
   import debounce from "lodash/debounce"
-  import Button from "../components/Button.svelte"
-  import Tabbar from "../components/Tabbar.svelte"
-  import HelpQuestion from "../components/HelpQuestion.svelte"
-  import HelpCategory from "../components/HelpCategory.svelte"
-  import HelpSearchInput from "../components/HelpSearchInput.svelte"
-  import HelpSearchResult from "../components/HelpSearchResult.svelte"
-  import ContactUsModal from "../components/ContactUsModal.svelte"
-  import ChatStripes from "../components/icons/ChatStripes.svelte"
-  import Icon from "../components/Icon.svelte"
-  import GetCallModal from "../components/GetCallModal.svelte"
-  import InfoPopup from "../components/InfoPopup.svelte"
+  import ScrollSpy from "@/utils/scrollSpy.js"
+  import { mainStore } from "@/stores/global.js"
+  import { page } from "$app/stores"
 
   setContext("contact-us-modal", {
     toggleGetCall
   })
 
-  import { onMount } from "svelte"
-  import ScrollSpy from "../utils/scrollSpy.js"
-  import { mainStore } from "../stores/global.js"
-  import { page } from "$app/stores"
-
-  export let cityMeta
+  export let data
   let containerElement
   let AboutServiceHeader
   let OrderCheckoutHeader
@@ -293,11 +291,10 @@
   }
 
   let headers
-
   let scrollSpy
-
   let searching = false
   let searchTerm = ""
+
   function onSearch(term) {
     searchTerm = term
     searching = true
@@ -344,12 +341,11 @@
 
     scrollSpy = new ScrollSpy(window, headers)
     const setIndex = (e) => {
-      console.log("set index")
       currentMenuIndex = e.detail.index
     }
     window.addEventListener("scrollspy-activate", setIndex)
 
-    $mainStore.address.city = cityMeta
+    $mainStore.address.city = data.cityMeta
   })
 </script>
 
@@ -362,9 +358,7 @@
 <svelte:head>
   <title>Помощь</title>
   <meta name="description" content="CONTACTS_DESCRIPTION" />
-
   <link rel="canonical" href={$page.host + $page.path} />
-
   <link
     rel="alternate"
     href={$page.host + $page.path}
@@ -379,19 +373,16 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"

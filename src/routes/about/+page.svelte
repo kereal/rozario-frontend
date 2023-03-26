@@ -1,60 +1,37 @@
-<script context="module">
-  export async function preload(page, session) {
-    const blogRes = await this.fetch(`blog.json`)
-    const blogJson = await blogRes.json()
-
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        posts: blogJson[0],
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import { setContext } from "svelte"
-  import debounce from "lodash/debounce"
-  import BlogPost from "../components/BlogPost.svelte"
-  import LinkButton from "../components/LinkButton.svelte"
-  import Tabbar from "../components/Tabbar.svelte"
-  import Header from "../components/Header.svelte"
-  import Slider from "../components/Slider.svelte"
-
   import { onMount } from "svelte"
-  import ScrollSpy from "../utils/scrollSpy.js"
-  import { mainStore } from "../stores/global.js"
+  import { mainStore } from "@/stores/global"
   import { page } from "$app/stores"
-
+  import debounce from "lodash/debounce"
   import Swiper, { Navigation } from "swiper"
-  import "swiper/swiper-bundle.css"
+  import "swiper/css"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import BlogPost from "@/components/BlogPost.svelte"
+  import LinkButton from "@/components/LinkButton.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import Header from "@/components/Header.svelte"
+  import Slider from "@/components/Slider.svelte"
 
-  export let posts
-  export let cityMeta
+  export let data
 
+  const posts = data.posts
+  const cityMeta = data.cityMeta
   const city_lat_lng = cityMeta.shop.address.coordinates
   const city_name = cityMeta.name
-  let scrollSpy
+
   const menulist = [
     { name: "О нас", index: 0 },
     { name: "7 причин купить у нас", index: 1 },
     { name: "Карта покупателей", index: 2 },
     { name: "Наш блог", index: 3 }
   ]
+  let scrollSpy
   let timeoutid
   let currentMenuIndex = 0
-
   let AboutUsHeader
   let SevenReasonsHeader
   let MapHeader
   let BlogHeader
-
   let headers
   const pathlist = [
     {
@@ -68,7 +45,6 @@
   ]
 
   const photo_name = cityMeta.shop.about_image
-
   const photo = photo_name + ".png"
   const photo1_5 = photo_name + "@1.5x.png"
   const photo2 = photo_name + "@2x.png"
@@ -196,6 +172,7 @@
   }
 
   onMount(() => {
+    $mainStore.address.city = cityMeta
     headers = [AboutUsHeader, SevenReasonsHeader, MapHeader, BlogHeader]
     scrollSpy = new ScrollSpy(window, headers)
     const setIndex = (e) => {
@@ -225,6 +202,7 @@
     Array.from(images).forEach((image) => observer.observe(image))
 
     $mainStore.address.city = cityMeta
+
     if (ymaps) {
       function loadMap(coords) {
         console.log(coords)
@@ -291,9 +269,7 @@
 <svelte:head>
   <title>О нас</title>
   <meta name="description" content="CONTACTS_DESCRIPTION" />
-
   <link rel="canonical" href={$page.host + $page.path} />
-
   <link
     rel="alternate"
     href={$page.host + $page.path}
@@ -308,19 +284,16 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -335,7 +308,6 @@
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta
     name="twitter:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -447,7 +419,7 @@
         middleSpaceBreakpoint="1200"
         bigSpaceBreakpoint="1300"
       >
-        {#each posts["last-posts"] as blogpost, i}
+        {#each posts as blogpost, i}
           <div class="swiper-slide">
             <BlogPost group={"last-posts"} {blogpost} />
           </div>
@@ -631,7 +603,6 @@
   .next {
     margin-left: 4px;
   }
-
   .prev :global(button),
   .next :global(button) {
     width: 46px;

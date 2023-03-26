@@ -78,17 +78,12 @@
   button:hover svg {
     @apply text-info;
   }
-
   .text__heartCounter {
     padding: 18px;
   }
-
   .unlike {
     fill: var(--gray-200);
   }
-  .heart {
-  }
-
   @keyframes heartbeat {
     0% {
       transform: scale(1.2);

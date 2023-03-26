@@ -11,7 +11,6 @@
   export let carouselClass = ""
 
   let curr = 0
-
   let slider
   let carousel
   let prevButton
@@ -21,12 +20,8 @@
   let itemslist
   onMount(() => {
     const selector = carouselClass ? `.${carouselClass} ${itemClass}` : itemClass
-    console.log("selector", selector)
     itemslist = document.querySelectorAll(selector)
     totalitems = itemslist.length
-    console.log("carouselClass", carouselClass)
-    console.log("itemClasss", itemClass)
-    console.log("itemslist", itemslist)
     itemslist.forEach((item) => {
       item.style.width = 100 / itemsInRow + "%"
     })
@@ -93,7 +88,6 @@
       slider.style.transform = `translateX(-${(100 / itemsInRow) * curr}%)`
     }
   }
-  $: console.log("itemslist", itemslist)
 </script>
 
 <div class="carousel-wrapper relative">

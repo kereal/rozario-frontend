@@ -22,7 +22,8 @@ const cities = [
       reviews_image: 'contacts_murmansk',
       smiles_image: 'smiles/smiles_murmansk',
       about_image: 'about/header',
-      delivery_image: 'delivery_murmansk'
+      delivery_image: 'delivery_murmansk',
+      contacts_image: 'contacts_murmansk'
     },
     reviews: [
       {

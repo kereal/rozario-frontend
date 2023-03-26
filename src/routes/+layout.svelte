@@ -1,14 +1,14 @@
 <script>
+  import { onMount } from "svelte"
   import "core-js/features/object/assign"
   import "core-js/features/string/repeat"
   import "core-js/features/string/pad-start"
   import "core-js/features/string/pad-end"
   import "core-js/features/global-this"
-  import NavContainer from "../components/NavContainer.svelte"
-  import Footer from "../components/Footer.svelte"
-  import { onMount } from "svelte"
   import smoothscroll from "smoothscroll-polyfill"
   import "../app.css"
+  import NavContainer from "../components/NavContainer.svelte"
+  import Footer from "../components/Footer.svelte"
 
   export let desktop
 

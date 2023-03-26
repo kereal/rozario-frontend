@@ -1,30 +1,24 @@
 <script>
-  export let blogpost;
+  export let blogpost
 </script>
-
-<style>
-  .blog-post-card {
-    max-width: 24.5rem;
-  }
-  .image {
-    background-image: url("../../static/loading-bg-image.svg");
-    height: 384px;
-    max-height: 384px;
-  }
-</style>
 
 <div class="blog-post-card flex flex-col rounded">
   <div class="image relative w-full rounded-t">
     <picture>
-      <source data-srcset="{blogpost.img}.webp, {blogpost.img}-2x.webp 2x" />
+      <source data-srcset="{blogpost.img}.jpg, {blogpost.img}-2x.jpg 2x" />
       <img
         class="w-full absolute h-full object-cover"
-        data-srcset="{blogpost.img}-2x.png 2x"
-        data-src="{blogpost.img}.png"
-        alt={blogpost.title} />
+        data-srcset="{blogpost.img}-2x.jpg 2x"
+        data-src="{blogpost.img}.jpg"
+        alt={blogpost.title}
+      />
     </picture>
     <noscript>
-      <img srcset="{blogpost.img}-2x.png 2x" src="{blogpost.img}.png" alt="{blogpost.title}">
+      <img
+        srcset="{blogpost.img}-2x.jpg 2x"
+        src="{blogpost.img}.jpg"
+        alt={blogpost.title}
+      />
     </noscript>
   </div>
   <div class="bg-gray-200 px-16 pt-12 pb-12 rounded-b">
@@ -38,3 +32,14 @@
     </div>
   </div>
 </div>
+
+<style>
+  .blog-post-card {
+    max-width: 24.5rem;
+  }
+  .image {
+    background-image: url("../../static/loading-bg-image.svg");
+    height: 384px;
+    max-height: 384px;
+  }
+</style>

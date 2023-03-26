@@ -14,7 +14,7 @@
 <div class="wrapper flex flex-col rounded-lg">
   <div class="image-placeholder rounded-t-lg bg-white relative">
     <picture>
-      <source data-srcset="{recommendation.img}.webp, {recommendation.img}-2x.webp 2x" />
+      <source data-srcset="{recommendation.img}.png, {recommendation.img}-2x.png 2x" />
       <img
         class="main-image rounded-t-lg object-contain absolute inset-0 h-full
         w-full"
