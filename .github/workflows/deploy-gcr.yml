@@ -27,6 +27,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/rozario-frontend/${{ github.ref_name }}:${{ github.sha }}
-            ghcr.io/rozario-frontend/${{ github.ref_name }}:latest
-            ghcr.io/rozario-frontend/${{ github.ref_name }}:latest
+            ghcr.io/${{ github.actor }}/rozario-frontend-${{ github.ref_name }}:${{ github.sha }}
+            ghcr.io/${{ github.actor }}/rozario-frontend:latest
