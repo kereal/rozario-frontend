@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Build image
-        run: docker build . -t rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA -t rozario-frontend/$GITHUB_REF_NAME:latest
+        run: docker build . -t rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA::8 -t rozario-frontend/$GITHUB_REF_NAME:latest
 
       - name: Stop container
         run: docker stop rozario-frontend-$GITHUB_REF_NAME || true
@@ -21,4 +21,4 @@ jobs:
         run: docker system prune -f
 
       - name: Run container
-        run: docker run -dp 3006:3006 --name rozario-frontend-$GITHUB_REF_NAME rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA
+        run: docker run -dp 3006:3006 --name rozario-frontend-$GITHUB_REF_NAME rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA::8
