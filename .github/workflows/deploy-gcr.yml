@@ -1,7 +1,5 @@
 name: Deploy frontend (GitHub Container Registry)
 
-# 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
-
 on:
   push:
     branches: [kit]
@@ -28,6 +26,6 @@ jobs:
         with:
           push: true
           tags: |
-            rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA::8
-            rozario-frontend/$GITHUB_REF_NAME:latest
-            ghcr.io/rozario-frontend/$GITHUB_REF_NAME:latest
+            rozario-frontend/${{ $GITHUB_REF_NAME }}:${{ $GITHUB_SHA::8 }}
+            rozario-frontend/${{ $GITHUB_REF_NAME }}:latest
+            ghcr.io/rozario-frontend/${{ $GITHUB_REF_NAME }}:latest
