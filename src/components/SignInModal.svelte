@@ -1,13 +1,10 @@
 <script>
-  import ActionInput from "./ActionInput.svelte"
-  import ModalSurface from "./ModalSurface.svelte"
   import { createEventDispatcher } from "svelte"
-  import ActionTelInput from "./ActionTelInput.svelte"
+  import debounce from "lodash/debounce"
+  import ModalSurface from "./ModalSurface.svelte"
   import ActionEmail from "./ActionEmail.svelte"
-  import TelInput from "./TelInput.svelte"
   import TextInput from "./TextInput.svelte"
   import Button from "./Button.svelte"
-  import debounce from "lodash/debounce"
 
   export let session
 
@@ -140,7 +137,6 @@
 
   function validateFormInput(e) {
     const elem = document.querySelector(`#sign-in-modal .validation .${e.target.name}`)
-    console.log("e target", e.target.validity)
     if (!e.target.validity.valid) {
       e.target.classList.add("error")
       elem.classList.remove("invisible")

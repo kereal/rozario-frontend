@@ -1,7 +1,5 @@
 <script>
-  import { onMount } from "svelte"
   import TextInput from "./TextInput.svelte"
-  import { cartFormStore } from "../stores/cart.js"
   import debounce from "lodash-es/debounce"
 
   const maskOptions = {
@@ -12,7 +10,6 @@
     const elem = document.querySelector(
       `#cart-bank-card-back .validation .${e.target.name}`
     )
-    console.log("e target", e.target.validity)
     if (!e.target.validity.valid) {
       e.target.classList.add("error")
       elem.classList.remove("invisible")
