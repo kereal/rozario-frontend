@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build --prod
+RUN npm run build -- --logLevel error
 
 
 FROM node:18-alpine

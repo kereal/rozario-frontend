@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Build image
-        run: docker build . -t rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA
+        run: docker build . -t rozario-frontend/$GITHUB_REF_NAME:$GITHUB_SHA -t rozario-frontend/$GITHUB_REF_NAME:latest
 
       - name: Stop container
         run: docker stop rozario-frontend-$GITHUB_REF_NAME || true
