@@ -26,6 +26,6 @@ jobs:
         with:
           push: true
           tags: |
-            rozario-frontend/${{ GITHUB_REF_NAME }}:${{ GITHUB_SHA::8 }}
-            rozario-frontend/${{ GITHUB_REF_NAME }}:latest
-            ghcr.io/rozario-frontend/${{ GITHUB_REF_NAME }}:latest
+            rozario-frontend/${{ vars.GITHUB_REF_NAME }}:${{ vars.GITHUB_SHA::8 }}
+            rozario-frontend/${{ vars.GITHUB_REF_NAME }}:latest
+            ghcr.io/rozario-frontend/${{ vars.GITHUB_REF_NAME }}:latest
