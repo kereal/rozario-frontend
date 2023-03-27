@@ -22,12 +22,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
-          registry: ghcr.io
           context: .
           push: true
           tags: |
-            rozario-frontend/${{ github.ref_name }}:${{ github.sha }}
-            rozario-frontend/${{ github.ref_name }}:latest
+            ghcr.io/rozario-frontend/${{ github.ref_name }}:${{ github.sha }}
+            ghcr.io/rozario-frontend/${{ github.ref_name }}:latest
             ghcr.io/rozario-frontend/${{ github.ref_name }}:latest
