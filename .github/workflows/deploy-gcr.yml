@@ -21,11 +21,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get current datetime
+        run: echo "::set-output name=date::$(date +%d-%m-%Y.%H%M%S)"
+
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/rozario-frontend-${{ github.ref_name }}:${{ github.sha }}
+            ghcr.io/${{ github.actor }}/rozario-frontend-${{ github.ref_name }}:${{ steps.date.outputs.date }}
             ghcr.io/${{ github.actor }}/rozario-frontend-${{ github.ref_name }}:latest
