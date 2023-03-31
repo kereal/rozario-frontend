@@ -47,5 +47,5 @@ jobs:
           script: |
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull ${{ env.image_name }}
-            docker stop ${{ github.repository }}-${{ github.ref_name }} && docker rm $_ || true
+            docker stop ${{ github.event.repository.name }}-${{ github.ref_name }} && docker rm $_ || true
             docker run -dp 127.0.0.1:3006:3006 --network rozario --name ${{ github.event.repository.name }}-${{ github.ref_name }} ${{ env.image_name }}
