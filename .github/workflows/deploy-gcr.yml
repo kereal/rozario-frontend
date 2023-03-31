@@ -31,6 +31,8 @@ jobs:
         with:
           context: .
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ${{ env.image_name }}:latest
             ${{ env.image_name }}:${{ env.date }}
@@ -46,4 +48,4 @@ jobs:
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull ${{ env.image_name }}
             docker stop ${{ github.repository }}-${{ github.ref_name }} && docker rm $_ || true
-            docker run -dp 3006:3006 --name ${{ github.event.repository.name }}-${{ github.ref_name }} ${{ env.image_name }}
+            docker run -dp 127.0.0.1:3006:3006 --name ${{ github.event.repository.name }}-${{ github.ref_name }} ${{ env.image_name }}
