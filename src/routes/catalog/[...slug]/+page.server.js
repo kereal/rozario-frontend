@@ -1,3 +1,5 @@
+import { API_URL } from "@/data/constants"
+
 export async function load({ fetch, params, url }) {
   try {
     const regex = /(.jpg|.webp|.png|.jpeg|.gif|.svg)/
@@ -11,7 +13,7 @@ export async function load({ fetch, params, url }) {
     )
 
     const json = await res.json()
-    const res1 = await fetch(`http://127.0.0.1:3003/rozmain${url.pathname}`)
+    const res1 = await fetch(`${API_URL}/rozmain${url.pathname}`)
     const solData = await res1.json()
 
     return {
