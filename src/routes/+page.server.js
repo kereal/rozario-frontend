@@ -1,6 +1,6 @@
 import { API_URL } from "@/data/constants"
 
-console.log(API_URL)
+console.log("API_URL", API_URL)
 
 export async function load({ url, fetch, session }) {
   const res = await fetch(
