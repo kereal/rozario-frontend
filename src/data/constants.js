@@ -1,6 +1,10 @@
-export const API_URL = import.meta.env.PROD
+export let API_URL
+
+API_URL = import.meta.env.PROD
   ? import.meta.env.VITE_PROD_API_URL
   : import.meta.env.VITE_DEV_API_URL
+
+if (!API_URL?.length) API_URL = "http://127.0.0.1:3003"
 
 //export const API_URL = "http://localhost:8000"
 

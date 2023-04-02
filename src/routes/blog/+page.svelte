@@ -1,36 +1,19 @@
-<script context="module">
-  export async function preload(page, session) {
-    const blogRes = await this.fetch(`blog.json`)
-    const blogJson = await blogRes.json()
-
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        posts: blogJson[0],
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import { setContext } from "svelte"
+  import { onMount } from "svelte"
+  import { mainStore } from "@/stores/global.js"
+  import { page } from "$app/stores"
   import debounce from "lodash/debounce"
-  import BlogPost from "../../components/BlogPost.svelte"
-  import Button from "../../components/Button.svelte"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import Header from "../../components/Header.svelte"
-  import BlogAsideNavigation from "../../components/BlogAsideNavigation.svelte"
-  import BlogPromocodeForm from "../../components/BlogPromocodeForm.svelte"
-  import BlogPopupSubscribeSuccess from "../../components/BlogPopupSubscribeSuccess.svelte"
-  import BlogPopupEmailSubscribedError from "../../components/BlogPopupEmailSubscribedError.svelte"
-  import BlogPopupChangeEmail from "../../components/BlogPopupChangeEmail.svelte"
-  import Envelope from "../../components/icons/Envelope.svelte"
+  import ScrollSpy from "@/utils/scrollSpy.js"
+  import BlogPost from "@/components/BlogPost.svelte"
+  import Button from "@/components/Button.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import Header from "@/components/Header.svelte"
+  import BlogAsideNavigation from "@/components/BlogAsideNavigation.svelte"
+  import BlogPromocodeForm from "@/components/BlogPromocodeForm.svelte"
+  import BlogPopupSubscribeSuccess from "@/components/BlogPopupSubscribeSuccess.svelte"
+  import BlogPopupEmailSubscribedError from "@/components/BlogPopupEmailSubscribedError.svelte"
+  import BlogPopupChangeEmail from "@/components/BlogPopupChangeEmail.svelte"
+  import Envelope from "@/components/icons/Envelope.svelte"
 
   let showBlogPopupSubscribeSuccess = false
   let showBlogPopupEmailSubscribedError = false
@@ -49,13 +32,10 @@
     showBlogPopupChangeEmail = !showBlogPopupChangeEmail
   }
 
-  import { onMount } from "svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import { mainStore } from "../../stores/global.js"
-  import { page } from "$app/stores"
+  export let data
 
-  export let posts
-  export let cityMeta
+  const posts = data.posts
+  const cityMeta = data.cityMeta
 
   const city_name = cityMeta.name
   let scrollSpy

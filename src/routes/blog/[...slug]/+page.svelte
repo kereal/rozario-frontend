@@ -1,33 +1,25 @@
-<script context="module">
-  export async function preload({ host, path, params }) {
-    const res = await this.fetch(`blog/${params.slug[0]}/${params.slug[1]}.json`)
-    const postData = await res.json()
-    try {
-      const res = await this.fetch(`index.json?city=${host.split(".")[0]}&path=${path}`)
-      const json = await res.json()
-      return {
-        post: postData,
-        cityMeta: json.cityMeta
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import { setContext } from "svelte"
-  import debounce from "lodash/debounce"
-  import Button from "../../components/Button.svelte"
-  import BlogPost from "../../components/BlogPost.svelte"
-  import Header from "../../components/Header.svelte"
-  import BlogAsideNavigation from "../../components/BlogAsideNavigation.svelte"
-  import BlogPromocodeForm from "../../components/BlogPromocodeForm.svelte"
-  import BlogPopupPromocodeForm from "../../components/BlogPopupPromocodeForm.svelte"
-  import BlogPopupSubscribeSuccess from "../../components/BlogPopupSubscribeSuccess.svelte"
-  import BlogPopupEmailSubscribedError from "../../components/BlogPopupEmailSubscribedError.svelte"
-  import BlogPopupChangeEmail from "../../components/BlogPopupChangeEmail.svelte"
-  import Envelope from "../../components/icons/Envelope.svelte"
+  import { onMount } from "svelte"
+  import { mainStore } from "@/stores/global.js"
+  import { page } from "$app/stores"
+  import Button from "@/components/Button.svelte"
+  import BlogPost from "@/components/BlogPost.svelte"
+  import Header from "@/components/Header.svelte"
+  import BlogAsideNavigation from "@/components/BlogAsideNavigation.svelte"
+  import BlogPromocodeForm from "@/components/BlogPromocodeForm.svelte"
+  import BlogPopupPromocodeForm from "@/components/BlogPopupPromocodeForm.svelte"
+  import BlogPopupSubscribeSuccess from "@/components/BlogPopupSubscribeSuccess.svelte"
+  import BlogPopupEmailSubscribedError from "@/components/BlogPopupEmailSubscribedError.svelte"
+  import BlogPopupChangeEmail from "@/components/BlogPopupChangeEmail.svelte"
+  import Envelope from "@/components/icons/Envelope.svelte"
+  import CustomDropdown from "@/components/CustomDropdown.svelte"
+  import HelpThankyouMessage from "@/components/HelpThankyouMessage.svelte"
+  import FavoriteCard from "@/components/FavoriteCard.svelte"
+
+  export let data
+
+  const post = data.post
+  const cityMeta = data.cityMeta
 
   let showBlogPopupPromocodeForm = false
   let showBlogPopupSubscribeSuccess = false
@@ -52,17 +44,6 @@
   const toggleBlogPopupChangeEmail = function () {
     showBlogPopupChangeEmail = !showBlogPopupChangeEmail
   }
-
-  import CustomDropdown from "../../components/CustomDropdown.svelte"
-  import HelpThankyouMessage from "../../components/HelpThankyouMessage.svelte"
-  import FavoriteCard from "../../components/FavoriteCard.svelte"
-
-  import { onMount } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import { page } from "$app/stores"
-
-  export let post
-  export let cityMeta
 
   const city_name = cityMeta.name
   const pathlist = [
@@ -116,7 +97,7 @@
 
   const readMorePosts = [
     {
-      img: "blog/post",
+      img: "/blog/post",
       slug: "1",
       title: "Новогодний интерьер: украшаем дом чужими руками",
       short:
@@ -147,7 +128,7 @@
       }
     },
     {
-      img: "blog/post",
+      img: "/blog/post",
       slug: "2",
       title: "Новогодний интерьер: украшаем дом чужими руками",
       short:
@@ -178,7 +159,7 @@
       }
     },
     {
-      img: "blog/post",
+      img: "/blog/post",
       slug: "3",
       title: "Новогодний интерьер: украшаем дом чужими руками",
       short:
@@ -262,7 +243,7 @@
 
   const favorites = [
     {
-      img: "",
+      img: "/photoForPrize",
       title: "Настоящая Любовь",
       size: {
         text: "Размеры",
@@ -279,7 +260,7 @@
       rating: "4,5"
     },
     {
-      img: "",
+      img: "/photoForPrize",
       title: "Настоящая Любовь",
       size: {
         text: "Размеры",
@@ -296,7 +277,7 @@
       rating: "4,5"
     },
     {
-      img: "",
+      img: "/photoForPrize",
       title: "Настоящая Любовь",
       size: {
         text: "Размеры",
@@ -931,7 +912,6 @@
   .aside-nav-container :global(aside) {
     min-height: 692px;
   }
-
   .blog-main {
     display: flex;
     flex-direction: column;
@@ -1232,16 +1212,13 @@
   .post-buttons .share button.vk svg > path {
     stroke: #1039c9;
   }
-
   .post-buttons .share button svg > path {
     fill: #1039c9;
     transition: fill 0.3s, stroke 0.3s;
   }
-
   .post-buttons .open-share:hover {
     color: var(--color-info);
   }
-
   .post-buttons .open-share:hover path:not(.no-fill),
   .post-buttons .share > svg:hover path:not(.no-fill),
   .post-buttons .share button:hover svg path:not(.no-fill) {
@@ -1253,7 +1230,6 @@
   .post-buttons .share button.vk:hover svg > path {
     stroke: var(--color-info);
   }
-
   .post-buttons .share button {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
@@ -1264,11 +1240,9 @@
     transform: translateZ(0);
     animation: fadeOutRight 0.5s forwards;
   }
-
   .yes-no {
     margin-left: auto;
   }
-
   .yes-no span {
     font-family: Open Sans;
     font-style: normal;

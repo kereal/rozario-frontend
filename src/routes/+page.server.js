@@ -1,5 +1,7 @@
 import { API_URL } from "@/data/constants"
 
+console.log("API_URL", API_URL)
+
 export async function load({ url, fetch, session }) {
   const res = await fetch(
     `/data?city=${url.searchParams.get("city")}&path=${url.searchParams.get("path")}`
