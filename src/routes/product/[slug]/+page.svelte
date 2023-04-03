@@ -1,64 +1,33 @@
-<script context="module">
-  export async function preload(page, session, params) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      const res1 = await this.fetch(`http://127.0.0.1:3003/rozmain${page.path}`)
-      const solData = await res1.json()
-      return {
-        flowersList: json.flowersList,
-        pagefor: page,
-        slug: page.slug,
-        path: page.path,
-        categories: json.catalog,
-        cityMeta: json.cityMeta,
-        activeOrders: json.activeOrders,
-        deliveryAddresses: json.deliveryAddresses,
-        orderStories: json.orderStories,
-        smiles: json.smiles,
-        testimonials: json.testimonials,
-        recommendations: json.recommendations,
-        product: json.product,
-        orderList: json.orderList
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import { onMount, setContext } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import { orderStore } from "../../stores/order.js"
-  import ActiveOrder from "../../components/ActiveOrder.svelte"
-  import OrderStoryCard from "../../components/OrderStoryCard.svelte"
-  import { createEventDispatcher } from "svelte"
-  import { fly, fade } from "svelte/transition"
-  import ImageViewer from "../../components/ImageViewer.svelte"
-  import Coupon from "../../components/Coupon.svelte"
-  import HeartCounter from "../../components/HeartCounter.svelte"
-  import SpecialCard from "../../components/SpecialCard.svelte"
-  import InfoButton from "../../components/InfoButton.svelte"
-  import Smile from "../../components/Smile.svelte"
-  import OrderContainer from "../../components/OrderContainer.svelte"
-  import Testimonial from "../../components/Testimonial.svelte"
-  import PlusMinusButton from "../../components/PlusMinusButton.svelte"
-  import Gift from "../../components/Gift.svelte"
-  import PostCardModal from "../../components/PostCardModal.svelte"
-  import AnimateNumber from "../../components/AnimateNumber.svelte"
-  import Slider from "../../components/Slider.svelte"
-  import AutoWidthButtons from "../../components/AutoWidthButtons.svelte"
-  import Button from "../../components/Button.svelte"
-  import StarRating from "../../components/StarRating.svelte"
-  import StagesAfterOrder from "../../components/StagesAfterOrder.svelte"
-  import StagesDesignProductCart from "../../components/StagesDesignProductCart.svelte"
+  import { onMount } from "svelte"
+  import { orderStore } from "@/stores/order"
+  import { page } from "$app/stores"
+  import ImageViewer from "@/components/ImageViewer.svelte"
+  import Coupon from "@/components/Coupon.svelte"
+  import HeartCounter from "@/components/HeartCounter.svelte"
+  import SpecialCard from "@/components/SpecialCard.svelte"
+  import InfoButton from "@/components/InfoButton.svelte"
+  import Smile from "@/components/Smile.svelte"
+  import OrderContainer from "@/components/OrderContainer.svelte"
+  import Testimonial from "@/components/Testimonial.svelte"
+  import PlusMinusButton from "@/components/PlusMinusButton.svelte"
+  import Gift from "@/components/Gift.svelte"
+  import PostCardModal from "@/components/PostCardModal.svelte"
+  import AnimateNumber from "@/components/AnimateNumber.svelte"
+  import Slider from "@/components/Slider.svelte"
+  import AutoWidthButtons from "@/components/AutoWidthButtons.svelte"
+  import Button from "@/components/Button.svelte"
+  import StarRating from "@/components/StarRating.svelte"
+  import StagesAfterOrder from "@/components/StagesAfterOrder.svelte"
+  import StagesDesignProductCart from "@/components/StagesDesignProductCart.svelte"
 
-  export let flower
-  export let flowersList
-  export let smiles
-  export let orderList
-  export let testimonials
+  export let data
+
+  const flowersList = data.flowersList
+  const smiles = data.smiles
+  const orderList = data.orderList
+  const testimonials = data.testimonials
+
   export let couponNew = 0
   export let couponDeal = 0
   let productAdded = false
@@ -83,7 +52,7 @@
 
   export let recentlyViewed = [
     {
-      img: "favorite-card",
+      img: "/favorite-card",
       title: "Настоящая Любовь",
       time: 'Доставим в течение <span class="text-main">120</span> мин',
       price: { sale: 3456, full: 3456 },
@@ -411,8 +380,6 @@
   let numberSize = product.sizes[2]
   let changedCompos = product.sizes[2]
 
-  import { preloading, page, session } from "$app/stores"
-  console.log(session, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
   let reveal = false
 
   function textAnimate() {
@@ -502,10 +469,8 @@
       packagePrice = packagePrice.price
     }
   }
-  export let pagefor
-  export let path
 
-  if (pagefor.params.slug[0] % 2 == 0) {
+  if ($page.params.slug[0] % 2 == 0) {
     product.composite = false
   }
 </script>
@@ -603,7 +568,7 @@
                                               height: 24px;
                                               margin-right: 9px;
                                               "
-            iconAfter="arrow_down"
+            iconAfter="/arrow_down"
             iconAfterCss="width:12px; margin-top: 5px; margin-left: -8px;"
             styleBlock="margin-bottom:4px"
             text={["Условия доставки"]}
@@ -1043,7 +1008,7 @@
                                             height: 24px;
                                             margin-right: 5px;
                                             "
-                iconAfter="arrow_down"
+                iconAfter="/arrow_down"
                 overSize={true}
                 iconAfterCss="width:12px; margin-left: -8px;"
                 text={["Гарантии покупателя "]}
@@ -1189,7 +1154,7 @@
     <section class="gifts">
       <h2 class="section__name section__name_gift">Добавьте подарок к букету</h2>
       <Slider
-        sliderName="gift"
+        sliderName="giftsl"
         forDesktop="4"
         middle="3"
         small="2"
@@ -1343,14 +1308,12 @@
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
-
   .reveal {
     position: relative;
     font-size: 6vw;
     animation-name: text;
     color: #fff;
   }
-
   .reveal::after {
     content: "";
     position: absolute;
@@ -1468,7 +1431,6 @@
   .product__photo {
     width: 40%;
   }
-
   .product-conteiner {
     display: flex;
     margin-bottom: 10px;
@@ -1481,7 +1443,6 @@
     line-height: 115%;
     color: #330033;
   }
-
   .product {
     border: 1px solid var(--gray-300);
     width: calc(99% - 310px);
@@ -1529,7 +1490,6 @@
   .section__name_gift {
     margin-bottom: 24px;
   }
-
   .nav__item {
     display: inline;
     font-style: normal;
@@ -1542,7 +1502,6 @@
     padding: 8px;
     color: var(--gray-700);
   }
-
   .product-description {
     display: flex;
     padding-left: 80px;
@@ -1627,7 +1586,6 @@
   .product__package-buttons :last-child {
     margin-right: 0px;
   }
-
   .product__composition {
     font-size: 14px;
     line-height: 135%;
@@ -1713,7 +1671,6 @@
   .product__buyersGuarantees {
     margin-top: 34px;
   }
-
   .product__conditions h2 {
     margin-top: 14px;
   }
@@ -1726,11 +1683,9 @@
     padding-top: 24px;
     padding-bottom: 34px;
   }
-
   .guarantee__right {
     margin-left: 30px;
   }
-
   .guarantee__icon {
     width: 48px;
     height: 48px;
@@ -1751,20 +1706,17 @@
     margin-top: 2px;
     width: 282px;
   }
-
   .stagesDesign {
     padding-left: 80px;
     padding-right: 80px;
     margin-top: 68px;
   }
-
   .gifts {
     margin-top: 68px;
   }
   .gifts .section__name {
     margin-left: 80px;
   }
-
   .product__rating-numeral {
     margin-right: 12px;
     margin-left: 12px;

@@ -130,11 +130,27 @@
   @media (max-width: 1000px) {
   }
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50%;
+    margin-top: -23px;
+    cursor: pointer;
+  }
   .swiper-button-prev {
     left: -62px;
   }
+  .swiper-button-prev > svg {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+  }
   .swiper-button-next {
     right: -62px;
+  }
+  .swiper-button-next > svg {
+    position: absolute;
+    top: 11px;
+    left: 12px;
   }
   .swiper-button-next:after {
     content: none;

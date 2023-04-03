@@ -184,8 +184,7 @@
         <button
           data-index={i}
           on:click={handleClick}
-          class="px-14 h-full whitespace-nowrap text-main {currentMenuIndex ===
-          menu.index
+          class="px-14 h-full whitespace-nowrap text-main {currentMenuIndex === menu.index
             ? 'font-semibold'
             : 'font-normal'}"
         >
@@ -219,7 +218,7 @@
             class="w-full h-full items-center pr-4"
             class:rotated={moreDropdownVisible}
             bind:this={moreDropdownElement}
-            src="arrow_down.svg"
+            src="/arrow_down.svg"
             alt="arrow_icon"
           />
         </div>

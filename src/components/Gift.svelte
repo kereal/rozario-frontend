@@ -7,6 +7,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="gift" on:click={toggleInfoModal}>
   <div class="gift__photo">
     <picture>
