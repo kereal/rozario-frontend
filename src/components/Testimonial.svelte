@@ -10,11 +10,11 @@
         Object.keys(testimonial.rating).length
       : -1
     if (ratingTotal == 5 || ratingTotal == -1) {
-      testimonial.image = "reviews/good.svg"
+      testimonial.image = "/reviews/good.svg"
     } else if (ratingTotal >= 3 && ratingTotal < 5) {
       testimonial.image = "reviews/meh.svg"
     } else {
-      testimonial.image = "reviews/bad.svg"
+      testimonial.image = "/reviews/bad.svg"
     }
   }
 
@@ -64,11 +64,16 @@
     mx-auto"
     >
       <picture>
-        <source data-srcset="{testimonial.image}, {testimonial.image}-2x.webp 2x" />
+        <!-- <source data-srcset="{testimonial.image}, {testimonial.image}-2x.webp 2x" />
         <img
           class="border-full absolute inset-0 h-full w-full object-contain mb-8"
           data-srcset="{testimonial.image}-2x.png 2x"
           data-src={testimonial.image}
+          alt={testimonial.name}
+        /> -->
+        <img
+          class="border-full absolute inset-0 h-full w-full object-contain mb-8"
+          src={testimonial.image}
           alt={testimonial.name}
         />
       </picture>
@@ -78,10 +83,10 @@
     </div>
     <div class="clients-review__descriptions">
       <div class="clients-review__text">
-        <p>{testimonial.text}</p>
+        <p>{testimonial.testimonial}</p>
       </div>
       <p class="clients-review__name">{testimonial.name}</p>
-      <p class="clients-review__order">{testimonial.order.number}</p>
+      <p class="clients-review__order">{testimonial.ordernumber}</p>
     </div>
   </div>
 {/if}

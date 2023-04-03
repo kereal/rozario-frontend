@@ -1,40 +1,26 @@
-<script context="module" xmlns="http://www.w3.org/1999/html">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        cityMeta: json.cityMeta,
-        testimonials: json.testimonials
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import Breadcrumbs from "../components/Breadcrumbs.svelte"
-  import Tabbar from "../components/Tabbar.svelte"
-  import HelpCategory from "../components/HelpCategory.svelte"
-  import Button from "../components/Button.svelte"
-  import Testimonial from "../components/Testimonial.svelte"
-  import ReadySolution from "../components/ReadySolution.svelte"
-  import Slider from "../components/Slider.svelte"
-  import ScrollSpy from "../utils/scrollSpy.js"
-  import SignInModalNew from "../components/SignInModalNew.svelte"
   import { onMount, afterUpdate } from "svelte"
+  import ScrollSpy from "@/utils/scrollSpy.js"
+  import Breadcrumbs from "@/components/Breadcrumbs.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import HelpCategory from "@/components/HelpCategory.svelte"
+  import Button from "@/components/Button.svelte"
+  import Testimonial from "@/components/Testimonial.svelte"
+  import ReadySolution from "@/components/ReadySolution.svelte"
+  import Slider from "@/components/Slider.svelte"
+  import SignInModalNew from "@/components/SignInModalNew.svelte"
 
   let signInModalVisible = false
   function closeSignInModal() {
     signInModalVisible = !signInModalVisible
   }
 
+  export let data
+
+  const cityMeta = data.cityMeta
+  const testimonials = data.testimonials
+
   export let session = {}
-  export let cityMeta
-  export let testimonials
   export let user = false
   let mapMarkers = []
 
