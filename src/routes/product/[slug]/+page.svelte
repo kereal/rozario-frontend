@@ -1020,7 +1020,7 @@
                       <div class="guarantee__item flex">
                         <div class="guarantee__icon">
                           <picture>
-                            <img src="icon_flowers.svg" alt="icon_delivery" />
+                            <img src="/icon_flowers.svg" alt="icon_delivery" />
                           </picture>
                         </div>
                         <div class="guarantee__text">
@@ -1033,7 +1033,7 @@
                       <div class="guarantee__item flex">
                         <div class="guarantee__icon">
                           <picture>
-                            <img src="icon_face.svg" alt="icon_delivery" />
+                            <img src="/icon_face.svg" alt="icon_delivery" />
                           </picture>
                         </div>
                         <div class="guarantee__text">
@@ -1048,7 +1048,7 @@
                         <div class="guarantee__icon">
                           <picture>
                             <img
-                              src="icon_feedback.svg"
+                              src="/icon_feedback.svg"
                               alt="icon_delivery"
                               class="w-full h-full"
                             />
@@ -1067,7 +1067,7 @@
                       <div class="guarantee__item flex">
                         <div class="guarantee__icon">
                           <picture>
-                            <img src="icon_superhero.svg" alt="icon_superhero" />
+                            <img src="/icon_superhero.svg" alt="icon_superhero" />
                           </picture>
                         </div>
                         <div class="guarantee__text">
@@ -1081,7 +1081,7 @@
                       <div class="guarantee__item flex">
                         <div class="guarantee__icon">
                           <picture>
-                            <img src="icon_exchange.svg" alt="icon_exchange" />
+                            <img src="/icon_exchange.svg" alt="icon_exchange" />
                           </picture>
                         </div>
                         <div class="guarantee__text">
@@ -1096,7 +1096,7 @@
                       <div class="guarantee__item flex">
                         <div class="guarantee__icon">
                           <picture>
-                            <img src="icon_delivery.svg" alt="icon_delivery" />
+                            <img src="/icon_delivery.svg" alt="icon_delivery" />
                           </picture>
                         </div>
                         <div class="guarantee__text">

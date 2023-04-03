@@ -1,6 +1,28 @@
 <script>
-  export let className;
+  export let className
 </script>
+
+<div
+  class="{className} flex items-center justify-between wrapper relative
+  overflow-hidden rounded-l border border-gray-300 bg-white"
+>
+  <div style="padding-right: 70px;" class="flex-1 pl-24 pt-24 lg:pb-24 pb-18">
+    <img src="/logo-sm.svg" alt="Розарио.Цветы" class="mb-8" />
+    <div class="text-gray-600 text-sm mb-16 lg:mb-18 leading-mid">
+      Удобно отслеживать статус заказа, много бонусов.
+    </div>
+    <div class="flex flex-wrap items-center">
+      <img class="mr-16 mb-12" src="/play-market.svg" alt="Play Market" />
+      <img src="/apple-store.svg" class="mb-12" alt="Apple Store" />
+    </div>
+    <div class="text-gray-600 text-xs lg:text-sm leading-tight lg:leading-mid">
+      Вам пришло смс с ссылкой на приложение. Это бесплатно
+    </div>
+  </div>
+  <div class="image-box h-full absolute right-0 top-0 bottom-0">
+    <img class="h-full w-full" src="/cellphone.svg" alt="icon" />
+  </div>
+</div>
 
 <style>
   .wrapper {
@@ -45,24 +67,3 @@
     right: 49px;
   }
 </style>
-
-<div
-  class="{className} flex items-center justify-between wrapper relative
-  overflow-hidden rounded-l border border-gray-300 bg-white">
-  <div style="padding-right: 70px;" class="flex-1 pl-24 pt-24 lg:pb-24 pb-18">
-    <img src="logo-sm.svg" alt="Розарио.Цветы" class="mb-8" />
-    <div class="text-gray-600 text-sm mb-16 lg:mb-18 leading-mid">
-      Удобно отслеживать статус заказа, много бонусов.
-    </div>
-    <div class="flex flex-wrap items-center">
-      <img class="mr-16 mb-12" src="play-market.svg" alt="Play Market" />
-      <img src="apple-store.svg" class="mb-12" alt="Apple Store" />
-    </div>
-    <div class="text-gray-600 text-xs lg:text-sm leading-tight lg:leading-mid">
-      Вам пришло смс с ссылкой на приложение. Это бесплатно
-    </div>
-  </div>
-  <div class="image-box h-full absolute right-0 top-0 bottom-0">
-    <img class="h-full w-full" src="cellphone.svg" alt="icon" />
-  </div>
-</div>

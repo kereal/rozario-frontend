@@ -700,10 +700,10 @@
                 </p>
               </div>
               <div class="mr-24 miniImg">
-                <img class="h-full w-full" src="play-market.svg" alt="Play Market" />
+                <img class="h-full w-full" src="/play-market.svg" alt="Play Market" />
               </div>
               <div class="miniImg">
-                <img src="apple-store.svg" class="h-full w-full" alt="Apple Store" />
+                <img src="/apple-store.svg" class="h-full w-full" alt="Apple Store" />
               </div>
             </div>
           </div>

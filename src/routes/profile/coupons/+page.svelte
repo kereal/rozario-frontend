@@ -1,44 +1,23 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        categories: json.catalog,
-        cityMeta: json.cityMeta,
-        activeOrders: json.activeOrders,
-        deliveryAddresses: json.deliveryAddresses,
-        orderStories: json.orderStories,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
   import { onMount, setContext } from "svelte"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import throttle from "lodash/throttle"
-  import debounce from "lodash/debounce"
-  import ActvieCoupons from "../../components/ActvieCoupons.svelte"
-  import NonActvieCoupons from "../../components/NonActvieCoupons.svelte"
-  import CouponRules from "../../components/CouponRules.svelte"
-  import CouponTypes from "../../components/CouponTypes.svelte"
-  import ShareLinkModal from "../../components/ShareLinkModal.svelte"
-
   import { page } from "$app/stores"
+  import debounce from "lodash/debounce"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import ActvieCoupons from "@/components/ActvieCoupons.svelte"
+  import NonActvieCoupons from "@/components/NonActvieCoupons.svelte"
+  import CouponRules from "@/components/CouponRules.svelte"
+  import CouponTypes from "@/components/CouponTypes.svelte"
+  import ShareLinkModal from "@/components/ShareLinkModal.svelte"
 
-  export let activeOrders
-  export let deliveryAddresses
-  export let orderStories
-  export let cityMeta
-  export let recommendations
+  export let data
+
+  const activeOrders = data.activeOrders
+  const deliveryAddresses = data.deliveryAddresses
+  const orderStories = data.orderStories
+  const cityMeta = data.cityMeta
+  const recommendations = data.recommendations
 
   setContext("profile/coupons", {})
 
@@ -57,13 +36,13 @@
     { name: "Виды купонов", index: 3 }
   ]
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: true },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: false },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: true },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: false },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
   let timeoutid
 

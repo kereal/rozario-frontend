@@ -1,37 +1,21 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        cityMeta: json.cityMeta,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import debounce from "lodash/debounce"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import Button from "../../components/Button.svelte"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import HelpQuestion from "../../components/HelpQuestion.svelte"
-  import HelpCategory from "../../components/HelpCategory.svelte"
-  import HelpSearchInput from "../../components/HelpSearchInput.svelte"
-  import HelpSearchResult from "../../components/HelpSearchResult.svelte"
-
   import { onMount } from "svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import { mainStore } from "../../stores/global.js"
   import { page } from "$app/stores"
+  import { mainStore } from "@/stores/global"
+  import debounce from "lodash/debounce"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import Button from "@/components/Button.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import HelpCategory from "@/components/HelpCategory.svelte"
+  import HelpSearchInput from "@/components/HelpSearchInput.svelte"
+  import HelpSearchResult from "@/components/HelpSearchResult.svelte"
 
-  export let cityMeta
-  export let recommendations
+  export let data
+
+  const cityMeta = data.cityMeta
+  const recommendations = data.recommendations
+
   let containerElement
   let AboutServiceHeader
   let OrderCheckoutHeader
@@ -39,14 +23,15 @@
   let DeliveryHeader
   let ReceivementHeader
   let ProtectionHeader
+
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: true },
-    { name: "Настройки", link: "profile/settings", active: false },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: true },
+    { name: "Настройки", link: "/profile/settings", active: false },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
 
   const menulist = [

@@ -1,39 +1,22 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        events: json.events
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
   import { onMount, setContext } from "svelte"
-  import Calendar from "../../../components/Calendar.svelte"
-  import { eventsStore } from "../../../stores/events.js"
-  import Tabbar from "../../../components/Tabbar.svelte"
-  import AsideNavigation from "../../../components/AsideNavigation.svelte"
-  import EventCard from "../../../components/EventCard.svelte"
-  import AddEvent from "../../../components/AddEvent.svelte"
-  import Icon from "../../../components/Icon.svelte"
-  import ScrollSpy from "../../../utils/scrollSpy.js"
-  import debounce from "lodash/debounce"
-  import InfoDelPopup from "../../../components/InfoDelPopup.svelte"
-  import Button from "../../../components/Button.svelte"
-  import Add from "../../../components/icons/Add.svelte"
-
+  import { eventsStore } from "@/stores/events"
   import { page } from "$app/stores"
-  const today = new Date()
+  import debounce from "lodash/debounce"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import Calendar from "@/components/Calendar.svelte"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import EventCard from "@/components/EventCard.svelte"
+  import AddEvent from "@/components/AddEvent.svelte"
+  import InfoDelPopup from "@/components/InfoDelPopup.svelte"
+  import Button from "@/components/Button.svelte"
 
-  export let recommendations
-  export let events
+  export let data
+
+  const recommendations = data.recommendations
+  const events = data.events
+  const today = new Date()
 
   function removeEvent(id) {
     removeConfirmation = true
@@ -54,20 +37,18 @@
   let DeliveryAddressesHeader
   let containerElement
 
-  const photo = "flower-photo.png"
-
   const menulist = [
     { name: "Календарь", index: 0 },
     { name: "События", index: 1 }
   ]
 
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: true },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: true },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: false }
   ]
 
   let timeoutid

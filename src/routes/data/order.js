@@ -1,6 +1,6 @@
 export const activeOrders = [
   {
-    photo: "flower-photo.png",
+    photo: "/recommendation.png",
     order: {
       date: {
         value: "2020-03-21T00:00",
@@ -8,11 +8,11 @@ export const activeOrders = [
           // exact: "16:00"
           range: {
             from: "16:00",
-            to: "18:00",
-          },
+            to: "18:00"
+          }
         },
         notime: "Уточнить у получателя",
-        status: "range",
+        status: "range"
       },
       recipient: "",
       clientName: "Иван Иванов",
@@ -22,7 +22,7 @@ export const activeOrders = [
         value: "г. Мурманск, ул. Промышленная, 19",
         noAddress: "",
         selfPickup: "Мурманск, промышленная 19",
-        status: "address",
+        status: "address"
       },
       postcard: "С Днём Рождения!",
       comment: "Осторожно злые собаки",
@@ -33,22 +33,22 @@ export const activeOrders = [
         {
           name: "Букет нарциссы и тюльпаны",
           quantity: 1,
-          price: 1590,
+          price: 1590
         },
         {
           name: "Шикарный букет Разноцветных Роз",
           quantity: 2,
-          price: 10590,
-        },
-      ],
+          price: 10590
+        }
+      ]
     },
     testimonials: [
       "1st slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
       "2nd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
-      "3rd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
-    ],
-  },
-];
+      "3rd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день."
+    ]
+  }
+]
 
 export const orderStories = [
   {
@@ -61,9 +61,9 @@ export const orderStories = [
           // exact: "16:00"
           range: {
             from: "16:00",
-            to: "18:00",
-          },
-        },
+            to: "18:00"
+          }
+        }
       },
       recipient: "Получу сам(а)",
       destination: "г. Мурманск, ул. Промышленная, 19",
@@ -76,22 +76,22 @@ export const orderStories = [
         {
           name: "Букет нарциссы и тюльпаны",
           quantity: 1,
-          price: 1590,
+          price: 1590
         },
         {
           name: "Шикарный букет Разноцветных Роз",
           quantity: 2,
-          price: 10590,
-        },
-      ],
+          price: 10590
+        }
+      ]
     },
     testimonials: [
       "1st slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
       "2nd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
-      "3rd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день.",
-    ],
-  },
-];
+      "3rd slide «Спасибо огромное что из другой страны можно поздравить близких . Заказал розы (06.03) на День рождения доставка в тот же день."
+    ]
+  }
+]
 
 // main address can apply to a single card at once
 export const deliveryAddresses = [
@@ -107,11 +107,11 @@ export const deliveryAddresses = [
         city: "г. Мурманск",
         street: "пр. Ленина",
         house: "19",
-        apartment: "24",
+        apartment: "24"
       },
-      phone: "+7 999 270-12-88",
+      phone: "+7 999 270-12-88"
     },
-    isMain: false,
+    isMain: false
   },
   {
     id: 2,
@@ -125,13 +125,13 @@ export const deliveryAddresses = [
         city: "г. Мурманск",
         street: "пр. Ленина",
         house: "19",
-        apartment: "24",
+        apartment: "24"
       },
-      phone: "+7 999 270-12-88",
+      phone: "+7 999 270-12-88"
     },
-    isMain: false,
-  },
-];
+    isMain: false
+  }
+]
 
 export const currentOrderList = [
   {
@@ -146,18 +146,18 @@ export const currentOrderList = [
         name: "средний",
         width: {
           num: "22",
-          measureUnit: "см",
+          measureUnit: "см"
         },
         height: {
           num: "12",
-          measureUnit: "см",
-        },
+          measureUnit: "см"
+        }
       },
       newItem: true,
       dealsale: true,
       active: true,
-      quantity: 1,
-    },
+      quantity: 1
+    }
   },
   {
     flower: {
@@ -171,18 +171,18 @@ export const currentOrderList = [
         name: "средний",
         width: {
           num: "22",
-          measureUnit: "см",
+          measureUnit: "см"
         },
         height: {
           num: "12",
-          measureUnit: "см",
-        },
+          measureUnit: "см"
+        }
       },
       hitItem: true,
       dealcoupon: true,
       active: true,
-      quantity: 2,
-    },
+      quantity: 2
+    }
   },
   {
     flower: {
@@ -196,17 +196,17 @@ export const currentOrderList = [
         name: "средний",
         width: {
           num: "22",
-          measureUnit: "см",
+          measureUnit: "см"
         },
         height: {
           num: "12",
-          measureUnit: "см",
-        },
+          measureUnit: "см"
+        }
       },
       hitItem: true,
       dealcoupon: true,
       active: true,
-      quantity: 2,
-    },
-  },
-];
+      quantity: 2
+    }
+  }
+]

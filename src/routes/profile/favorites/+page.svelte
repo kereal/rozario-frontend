@@ -1,41 +1,20 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        categories: json.catalog,
-        cityMeta: json.cityMeta,
-        activeOrders: json.activeOrders,
-        deliveryAddresses: json.deliveryAddresses,
-        orderStories: json.orderStories,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
   import { onMount, afterUpdate, setContext } from "svelte"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import throttle from "lodash/throttle"
-  import debounce from "lodash/debounce"
-  import FavoriteCard from "../../components/FavoriteCard.svelte"
-  import DeleteFavoriteModal from "../../components/DeleteFavoriteModal.svelte"
-
   import { page } from "$app/stores"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import debounce from "lodash/debounce"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import FavoriteCard from "@/components/FavoriteCard.svelte"
+  import DeleteFavoriteModal from "@/components/DeleteFavoriteModal.svelte"
 
-  export let activeOrders
-  export let deliveryAddresses
-  export let orderStories
-  export let cityMeta
-  export let recommendations
+  export let data
+
+  const activeOrders = data.activeOrders
+  const deliveryAddresses = data.deliveryAddresses
+  const orderStories = data.orderStories
+  const cityMeta = data.cityMeta
+  const recommendations = data.recommendations
 
   export let favoriteBouquets = [
     {
@@ -198,13 +177,13 @@
     { name: "Избранные подарки", index: 1 }
   ]
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: true },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: false },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: true },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: false },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
   let timeoutid
   let showBouquetDeleteModal = false
@@ -327,9 +306,7 @@
 <svelte:head>
   <title>Профиль - Купоны</title>
   <meta name="description" content="PROFILE_DESCRIPTION" />
-
   <link rel="canonical" href={$page.url.hostname + $page.url.pathname} />
-
   <link
     rel="alternate"
     href={$page.url.hostname + $page.url.pathname}
@@ -344,18 +321,15 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске, Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -495,37 +469,30 @@
     @apply pb-64;
     min-height: calc(100vh - 286px);
   }
-
   .favorites__heading {
     font-size: 22px;
     line-height: 30px;
     margin-bottom: 14px;
   }
-
   .favorites__heading--2 {
     margin-top: 32px;
   }
-
   .favorites__heading span {
     font-size: 19px;
     line-height: 22px;
     margin-left: 12px;
     margin-top: 2px;
   }
-
   .favorites__items {
     margin-top: 4px;
   }
-
   .favorites__empty {
     margin-top: -4px;
   }
-
   .favorites__text {
     font-size: 15px;
     line-height: 20px;
   }
-
   .favorites__button {
     margin-top: 18px;
     margin-bottom: 16px;
@@ -544,7 +511,6 @@
     transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
-
   .favorites__button:hover {
     @apply bg-info;
     @apply text-light;
@@ -556,15 +522,12 @@
       line-height: 32px;
       margin-bottom: 18px;
     }
-
     .favorites__heading--2 {
       margin-top: 52px;
     }
-
     .favorites__items {
       margin-top: 6px;
     }
-
     .favorites__button {
       margin-top: 24px;
     }
@@ -576,16 +539,13 @@
       @apply px-44;
       padding-bottom: 62px;
     }
-
     .favorites__heading--2 {
       margin-top: 34px;
     }
-
     .favorites__text {
       font-size: 16px;
       line-height: 21px;
     }
-
     .favorites__button {
       margin-top: 24px;
       margin-bottom: 34px;
@@ -607,11 +567,9 @@
     bottom: 10px;
     @apply sticky h-full;
   }
-
   .add-address-button:hover span {
     @apply text-info;
   }
-
   .add-address-button:hover > :global(svg) {
     @apply text-info;
   }

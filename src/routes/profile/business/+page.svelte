@@ -1,57 +1,31 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        categories: json.catalog,
-        cityMeta: json.cityMeta,
-        activeOrders: json.activeOrders,
-        deliveryAddresses: json.deliveryAddresses,
-        orderStories: json.orderStories,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import { onMount, setContext } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import { orderStore, addressStore } from "../../stores/order.js"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import ActiveOrder from "../../components/ActiveOrder.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import OrderStoryCard from "../../components/OrderStoryCard.svelte"
-  import DeliveryAddressCard from "../../components/DeliveryAddressCard.svelte"
-  import AddAddress from "../../components/AddAddress.svelte"
-  import OutlineRadio from "../../components/OutlineRadio.svelte"
-  import CustomCheckbox from "../../components/CustomCheckbox.svelte"
-  import ReportOrders from "../../components/ReportOrders.svelte"
-  import ReportAccounts from "../../components/ReportAccounts.svelte"
-  import ReportInvoice from "../../components/ReportInvoice.svelte"
-  import ReportReconciliations from "../../components/ReportReconciliations.svelte"
-  import BusinessRequisites from "../../components/BusinessRequisites.svelte"
-  import BusinessListEmployees from "../../components/BusinessListEmployees.svelte"
-  import Icon from "../../components/Icon.svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import throttle from "lodash/throttle"
-  import debounce from "lodash/debounce"
-  import Button from "../../components/Button.svelte"
-
-  import Add from "../../components/icons/Add.svelte"
-
   import { page } from "$app/stores"
+  import { onMount, setContext } from "svelte"
+  import { mainStore } from "@/stores/global"
+  import { orderStore, addressStore } from "@/stores/order"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import debounce from "lodash/debounce"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import ActiveOrder from "@/components/ActiveOrder.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import OrderStoryCard from "@/components/OrderStoryCard.svelte"
+  import DeliveryAddressCard from "@/components/DeliveryAddressCard.svelte"
+  import AddAddress from "@/components/AddAddress.svelte"
+  import OutlineRadio from "@/components/OutlineRadio.svelte"
+  import ReportOrders from "@/components/ReportOrders.svelte"
+  import ReportAccounts from "@/components/ReportAccounts.svelte"
+  import ReportInvoice from "@/components/ReportInvoice.svelte"
+  import ReportReconciliations from "@/components/ReportReconciliations.svelte"
+  import BusinessRequisites from "@/components/BusinessRequisites.svelte"
+  import BusinessListEmployees from "@/components/BusinessListEmployees.svelte"
+  import Button from "@/components/Button.svelte"
 
-  export let activeOrders
-  export let deliveryAddresses
-  export let orderStories
-  export let cityMeta
-  export let recommendations
+  export let data
+  const activeOrders = data.activeOrders
+  const deliveryAddresses = data.deliveryAddresses
+  const orderStories = data.orderStories
+  const cityMeta = data.cityMeta
+  const recommendations = data.recommendations
 
   export let businessUser = false
 
@@ -322,14 +296,14 @@
   ]
 
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: false },
-    { name: "Бизнес-заказы", link: "profile/business", active: true },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: false },
+    { name: "Бизнес-заказы", link: "/profile/business", active: true },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
 
   let timeoutid
@@ -620,8 +594,7 @@
           <p class="mb-30">
             Добавляйте сотрудников, чтобы они могли заказывать цветы и подарки, оплачивая
             с вашего расчётного счёта. Можно объединять сотрудников в группы (например,
-            «Отдел продаж», «Бухгалтерия» <span class="whitespace-nowrap">и т. д.).</span
-            >
+            «Отдел продаж», «Бухгалтерия» <span class="whitespace-nowrap">и т. д.).</span>
           </p>
           <BusinessListEmployees
             bind:listEmployees

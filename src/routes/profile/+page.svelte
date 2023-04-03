@@ -1,48 +1,25 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        categories: json.catalog,
-        cityMeta: json.cityMeta,
-        activeOrders: json.activeOrders,
-        deliveryAddresses: json.deliveryAddresses,
-        orderStories: json.orderStories,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
   import { onMount, setContext } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import { orderStore, addressStore } from "../../stores/order.js"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import ActiveOrder from "../../components/ActiveOrder.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import OrderStoryCard from "../../components/OrderStoryCard.svelte"
-  import DeliveryAddressCard from "../../components/DeliveryAddressCard.svelte"
-  import AddAddress from "../../components/AddAddress.svelte"
-  import Icon from "../../components/Icon.svelte"
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import throttle from "lodash/throttle"
-  import debounce from "lodash/debounce"
-  import Button from "../../components/Button.svelte"
-  import Add from "../../components/icons/Add.svelte"
-
+  import { mainStore } from "@/stores/global"
+  import { orderStore, addressStore } from "@/stores/order"
   import { page } from "$app/stores"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import debounce from "lodash/debounce"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import ActiveOrder from "@/components/ActiveOrder.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import OrderStoryCard from "@/components/OrderStoryCard.svelte"
+  import DeliveryAddressCard from "@/components/DeliveryAddressCard.svelte"
+  import AddAddress from "@/components/AddAddress.svelte"
+  import Button from "@/components/Button.svelte"
 
-  export let activeOrders
-  export let deliveryAddresses
-  export let orderStories
-  export let cityMeta
-  export let recommendations
+  export let data
+
+  const activeOrders = data.activeOrders
+  const deliveryAddresses = data.deliveryAddresses
+  const orderStories = data.orderStories
+  const cityMeta = data.cityMeta
+  const recommendations = data.recommendations
 
   function removeAddress(id) {
     addressStore.removeAddress(id)
@@ -53,9 +30,7 @@
   })
 
   let addAddressVisible = false
-
   let currentMenuIndex = 0
-
   let ActiveOrderHeader
   let OrderHistoryHeader
   let DeliveryAddressesHeader
@@ -70,15 +45,15 @@
   ]
 
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: true },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: false },
-    { name: "Бизнес-заказы", link: "profile/business", active: false },
-    { name: "Магазин", link: "businessProfile", active: false },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: true },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: false },
+    { name: "Бизнес-заказы", link: "/profile/business", active: false },
+    { name: "Магазин", link: "/businessProfile", active: false },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
 
   let timeoutid
@@ -177,9 +152,7 @@
 <svelte:head>
   <title>Профиль</title>
   <meta name="description" content="PROFILE_DESCRIPTION" />
-
   <link rel="canonical" href={$page.url.hostname + $page.url.pathname} />
-
   <link
     rel="alternate"
     href={$page.url.hostname + $page.url.pathname}
@@ -194,19 +167,16 @@
     hreflang="en"
     title="English"
   />
-
   <meta
     name="keywords"
     content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
     Заказать цветы с доставкой в Мурманске, "
   />
-
   <meta name="geo.region" content="" />
   <meta name="geo.position" content="" />
   <meta name="geo.placename" content="" />
   <meta name="ICBM" content="" />
   <meta name="referrer" content="always" />
-
   <meta
     property="og:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
@@ -221,7 +191,6 @@
   <meta property="og:url" content="url" />
   <meta property="og:site_name" content="Розарио.Цветы" />
   <meta property="og:type" content="website" />
-
   <meta
     name="twitter:title"
     content="Надежная доставка цветов в Мурманске — Розарио.Цветы"

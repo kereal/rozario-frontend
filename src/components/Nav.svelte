@@ -10,7 +10,6 @@
   import HelpDrawer from "./HelpDrawer.svelte"
   import ShoppingCart from "./icons/ShoppingCart.svelte"
   import { goto } from "$app/navigation"
-  import { scrollToSmoothly } from "@/utils"
   import { fakeFetch } from "@/utils/http"
   import { mainStore } from "@/stores/global"
 
@@ -169,10 +168,7 @@
     </a>
     <nav class="flex-1 flex justify-center">
       <ul class="flex items-center">
-        <li
-          class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32
-          last:mr-0"
-        >
+        <li class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32 last:mr-0">
           <span><a href="/#mainCollection">Коллекции</a></span>
         </li>
         {#each navItems as item}
@@ -183,10 +179,12 @@
         <li
           bind:this={helpDrawerButton}
           on:click={toggleHelpDrawer}
-          class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32
-          last:mr-0"
+          class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32 last:mr-0"
         >
           <span>Помощь</span>
+        </li>
+        <li class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32 last:mr-0">
+          <span><a href="/profile">Профиль</a></span>
         </li>
       </ul>
     </nav>

@@ -1,37 +1,18 @@
-<script context="module">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(`index.json?city=${page.host[0]}&path=${page.path}`)
-      const json = await res.json()
-      return {
-        slug: page.slug,
-        path: page.path,
-        cityMeta: json.cityMeta,
-        recommendations: json.recommendations
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import ScrollSpy from "../../utils/scrollSpy.js"
-  import { onMount, afterUpdate, setContext } from "svelte"
-  import { mainStore } from "../../stores/global.js"
-  import { orderStore, addressStore } from "../../stores/order.js"
-  import Tabbar from "../../components/Tabbar.svelte"
-  import AsideNavigation from "../../components/AsideNavigation.svelte"
-  import Button from "../../components/Button.svelte"
-  import CustomCheckbox from "../../components/CustomCheckbox.svelte"
-  import CustomDropdown from "../../components/CustomDropdown.svelte"
-  import ModalDeleteAcc from "../../components/ModalDeleteAcc.svelte"
-  import ModalChangePhoto from "../../components/ModalChangePhoto.svelte"
-  import TelInput from "../../components/TelInput.svelte"
-  import ConfirmationModal from "../../components/ConfirmationModal.svelte"
+  import { page } from "$app/stores"
+  import { onMount, afterUpdate } from "svelte"
   import debounce from "lodash-es/debounce"
   import cloneDeep from "lodash/cloneDeep"
-  import { currTabStore, cartFormStore } from "../../stores/cart.js"
+  import ScrollSpy from "@/utils/scrollSpy"
+  import Tabbar from "@/components/Tabbar.svelte"
+  import AsideNavigation from "@/components/AsideNavigation.svelte"
+  import Button from "@/components/Button.svelte"
+  import CustomCheckbox from "@/components/CustomCheckbox.svelte"
+  import CustomDropdown from "@/components/CustomDropdown.svelte"
+  import ModalDeleteAcc from "@/components/ModalDeleteAcc.svelte"
+  import ModalChangePhoto from "@/components/ModalChangePhoto.svelte"
+  import TelInput from "@/components/TelInput.svelte"
+  import ConfirmationModal from "@/components/ConfirmationModal.svelte"
   export let miniBlob
 
   onMount(async () => {
@@ -50,7 +31,6 @@
     })
   })
 
-  export let path
   afterUpdate(() => {
     const setIndex = (e) => {
       currentMenuIndex = e.detail.index
@@ -63,7 +43,6 @@
     scrollSpy = new ScrollSpy(window, headers)
     window.addEventListener("scrollspy-activate", setIndex)
   })
-  import { page } from "$app/stores"
 
   export let userData = {
     name: "Rozario Shop",
@@ -124,13 +103,13 @@
   }
   export let recommendations
   const navlist = [
-    { name: "Мои заказы", link: "profile", active: false },
-    { name: "Избранное", link: "profile/favorites", active: false },
-    { name: "Мои купоны", link: "profile/coupons", active: false },
-    { name: "Мои события", link: "profile/events", active: false },
-    { name: "Помощь", link: "profile/help", active: false },
-    { name: "Настройки", link: "profile/settings", active: true },
-    { name: "Игры", link: "profile/games", active: false }
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: true },
+    { name: "Игры", link: "/profile/games", active: false }
   ]
   const menulist = [{ name: "Мои данные", index: 0 }]
 
