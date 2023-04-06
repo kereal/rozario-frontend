@@ -1,34 +1,18 @@
-<script context="module" xmlns="http://www.w3.org/1999/html">
-  export async function preload(page, session) {
-    try {
-      const res = await this.fetch(
-        `index.json?city=${page.host.split(".")[0]}&path=${page.path}`
-      )
-      const json = await res.json()
-      return {
-        cityMeta: json.cityMeta,
-        testimonials: json.testimonials
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-</script>
-
 <script>
-  import Button from "../components/Button.svelte"
-  import TextInput from "../components/TextInput.svelte"
-  import CustomCheckbox from "../components/CustomCheckbox.svelte"
-  import OutlineRadio from "../components/OutlineRadio.svelte"
-  import SelectLabel from "../components/SelectLabel.svelte"
-  import TelInput from "../components/TelInput.svelte"
-  import RegistrationRequisitesData from "../components/RegistrationRequisitesData.svelte"
+  import { onMount } from "svelte"
   import debounce from "lodash-es/debounce"
-  import { onMount, afterUpdate } from "svelte"
-  import HeaderBusinessRegistration from "../components/HeaderBusinessRegistration.svelte"
-  import WorkingHours from "../components/WorkingHours.svelte"
+  import Button from "@/components/Button.svelte"
+  import TextInput from "@/components/TextInput.svelte"
+  import CustomCheckbox from "@/components/CustomCheckbox.svelte"
+  import SelectLabel from "@/components/SelectLabel.svelte"
+  import TelInput from "@/components/TelInput.svelte"
+  import RegistrationRequisitesData from "@/components/RegistrationRequisitesData.svelte"
+  import HeaderBusinessRegistration from "@/components/HeaderBusinessRegistration.svelte"
+  import WorkingHours from "@/components/WorkingHours.svelte"
 
-  export let cityMeta
+  export let data
+  const cityMeta = data.cityMeta
+
   let mapMarkers = []
   const city_name = cityMeta.name
   export let markers = [
