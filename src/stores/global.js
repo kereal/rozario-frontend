@@ -1,22 +1,23 @@
 import { writable } from "svelte/store"
 
-export const mainStore = writable({
-  user: {
-    auth: false,
-    name: ""
-  },
-  currentCountry: { name: "Россия", flag: "russia", currency: "₽" },
-  currentCurrency: { currency: "₽", name: "rouble" },
-  favorites: [],
-  address: {
-    city: { name: "", locativus: "" },
-    street: "",
-    unknown: ""
-  },
-  time: ""
-})
+function createMainStore() {
+  const { subscribe, set, update } = writable({
+    user: {
+      auth: false,
+      name: ""
+    },
+    currentCountry: { name: "Россия", flag: "russia", currency: "₽" },
+    currentCurrency: { currency: "₽", name: "rouble" },
+    favorites: [],
+    address: {
+      city: { name: "", locativus: "" },
+      street: "",
+      unknown: ""
+    },
+    time: ""
+  })
 
-/*return {
+  return {
     subscribe,
     set,
     update,
@@ -79,7 +80,10 @@ export const mainStore = writable({
         data.favorites = data.favorites.filter((item) => item.id !== favorite.id)
         return data
       })
-  }*/
+  }
+}
+
+export const mainStore = createMainStore()
 
 export const uiStore = writable({
   currentSection: "Букеты",

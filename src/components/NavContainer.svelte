@@ -1,7 +1,8 @@
 <script>
-  import Nav from "./Nav.svelte"
-  import { orderStore } from "../stores/order.js"
   import { getStores } from "$app/stores"
+  import { orderStore } from "@/stores/order.js"
+  import Nav from "@/components/Nav.svelte"
+  import cities from "@/data/russian-cities.json"
 
   const { session } = getStores()
 
@@ -10,7 +11,7 @@
     { name: "Русский", flag: "russia", currency: "₽" }
   ]
 
-  let cityList = ["Москва", "Санкт-Петербург", "Мурманск", "Воронеж", "Казань"]
+  const cityList = [...new Set(cities.map((record) => record.name))]
 </script>
 
 <Nav {session} {orderStore} {countries} {cityList} />

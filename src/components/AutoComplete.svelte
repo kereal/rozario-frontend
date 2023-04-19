@@ -1,14 +1,12 @@
 <script>
   // TODO create autocomplete wrapper, and add type choose option.
   import { onMount, createEventDispatcher } from "svelte"
-  import { Autocomplete } from "../utils/autocomplete.js"
+  import { Autocomplete } from "@/utils/autocomplete.js"
   export let data = []
-  export let api = false
   export let className = ""
   export let inputValue = ""
 
   const initData = data.slice()
-
   const dispatch = createEventDispatcher()
 
   const styles = {
@@ -26,27 +24,17 @@
 
   async function handleInput(e) {
     autocomplete.currFocus = -1
-    if (inputValue.length > 1) {
-      if (api) {
-        const res = await fetch(`http://localhost:8000/autocomplete?text=${inputValue}`)
-        const json = await res.json()
-        data = json.resultList
-        return
-      }
-      data = data.filter((item, i) => {
-        return item.substring(0, inputValue.length) === inputValue
-      })
+    const query = e.target.value
+    if (query.length > 1) {
+      data = initData.filter((item) => item.toLowerCase().startsWith(query.toLowerCase()))
     }
-  }
-
-  function handleFocus() {
-    // resultList = data.slice(0, 5);
-    data = data
+    if (query.length === 0) data = initData
   }
 
   function handleKeydown(e) {
     autocomplete.inputKeydown(e, () => {
       dispatch("close")
+      console.log("close")
     })
   }
   function addActive(ul) {
@@ -74,7 +62,6 @@
       tabindex="0"
       class="placeholder-input {className}"
       bind:this={inputElement}
-      on:focus={handleFocus}
       on:keydown={handleKeydown}
       on:input={handleInput}
       bind:value={inputValue}

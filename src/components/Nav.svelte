@@ -1,17 +1,16 @@
 <script>
   import { onMount, afterUpdate, beforeUpdate } from "svelte"
-  import AutoComplete from "./AutoComplete.svelte"
-  import CustomDropdown from "./CustomDropdown.svelte"
-  import MapModal from "./MapModal.svelte"
-  import SignInModalNew from "./SignInModalNew.svelte"
-  import Search from "./Search.svelte"
-  import CountryDropdown from "./CountryDropdown.svelte"
-  import BurgerMenu from "./BurgerMenu.svelte"
-  import HelpDrawer from "./HelpDrawer.svelte"
-  import ShoppingCart from "./icons/ShoppingCart.svelte"
   import { goto } from "$app/navigation"
-  import { fakeFetch } from "@/utils/http"
   import { mainStore } from "@/stores/global"
+  import AutoComplete from "@/components/AutoComplete.svelte"
+  import CustomDropdown from "@/components/CustomDropdown.svelte"
+  import MapModal from "@/components/MapModal.svelte"
+  import SignInModalNew from "@/components/SignInModalNew.svelte"
+  import Search from "@/components/Search.svelte"
+  import CountryDropdown from "@/components/CountryDropdown.svelte"
+  import BurgerMenu from "@/components/BurgerMenu.svelte"
+  import HelpDrawer from "@/components/HelpDrawer.svelte"
+  import ShoppingCart from "@/components/icons/ShoppingCart.svelte"
 
   export let session = {}
   export let countries = []
@@ -20,7 +19,6 @@
 
   const navItems = [{ name: "Доставка", addr: "delivery" }]
   let screen = ""
-  const price = "2450р"
   let header
   let cityInput
   let cityDropdown
@@ -36,26 +34,25 @@
   let helpDrawerVisible = false
   let burgerIcon
   export let className = ""
-  let goToCollections
 
   async function selectCity(e) {
     mainStore.setAddressByName(e.detail.inputValue)
-    // TODO fetch city data
-    const r = await fakeFetch(`/api/cities?city=${$mainStore.address.city.name}`)
+    localStorage.setItem("selected_city", e.detail.inputValue)
     cityInput = ""
     $mainStore.address.street = ""
     cityDropdownVisible = false
     if (citySelectionButton)
       citySelectionButton.classList.remove("city-dropdown-button-active")
-    const url = new URL(window.location.href)
-    let host = url.hostname.split(".")
-    if (host.length > 1) {
-      host = r.subdomain + "." + host[host.length - 1]
-    } else {
-      host = r.subdomain + "." + url.hostname
-    }
-    url.host = host
-    goto(url.href)
+    // TODO: редирект на поддомен
+    // const url = new URL(window.location.href)
+    // let host = url.hostname.split(".")
+    // if (host.length > 1) {
+    //   host = r.subdomain + "." + host[host.length - 1]
+    // } else {
+    //   host = r.subdomain + "." + url.hostname
+    // }
+    // url.host = host
+    // goto(url.href)
   }
 
   function showCityDropdown() {
@@ -150,6 +147,7 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
+
 <header
   bind:this={header}
   id="header"
