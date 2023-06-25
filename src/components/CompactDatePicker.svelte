@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte"
   import { startOfMonth, endOfMonth, format, sub, add, isEqual, isAfter } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
   import IconButton from "./IconButton.svelte"
 
   import ArrowLeft from "./icons/ArrowLeft.svelte"

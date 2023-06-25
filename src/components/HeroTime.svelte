@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte"
   import { add, format, formatDistance, formatRelative, subDays } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
 
   const dispatch = createEventDispatcher()
 

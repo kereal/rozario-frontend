@@ -4,7 +4,7 @@
   import CustomDropdown from "./CustomDropdown.svelte"
   import OrderDetails from "./OrderDetails.svelte"
   import { format } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
 
   export let order
   export let flowerFreshnessRating = 4

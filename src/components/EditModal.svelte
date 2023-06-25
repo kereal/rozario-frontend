@@ -8,7 +8,7 @@
   import TextInput from "./TextInput.svelte"
   import CustomRadioButton from "./CustomRadioButton.svelte"
   import { format as fnsFormat, add } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
   import CustomDropdown from "./CustomDropdown.svelte"
   import TextArea from "./TextArea.svelte"
   import TelInputSmall from "./TelInputSmall.svelte"

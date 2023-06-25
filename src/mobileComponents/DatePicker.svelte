@@ -13,7 +13,7 @@
     isBefore,
     isEqual
   } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
   import startCase from "lodash-es/startCase"
   import IconButton from "./IconButton.svelte"
   import ArrowLeftSmall from "./icons/ArrowLeftSmall.svelte"

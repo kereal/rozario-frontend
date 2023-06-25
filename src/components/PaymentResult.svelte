@@ -1,7 +1,7 @@
 <script>
   import { orderStore } from "../stores/order.js"
   import { format } from "date-fns"
-  import { ru } from "date-fns/locale"
+  import ru from "date-fns/locale/ru/index"
   import DeliveryTimeDropdown from "./DeliveryTimeDropdown.svelte"
   import IconButton from "./IconButton.svelte"
   import LinkButton from "./LinkButton.svelte"
