@@ -98,13 +98,7 @@
           <span>{locativus}</span>
         </h1>
       </div>
-      <HeroInput
-        {occasionList}
-        {priceRangeList}
-        {personList}
-        {flowerList}
-        closeFinalDropdown={!visible}
-      />
+      <HeroInput {occasionList} {personList} {flowerList} />
     </div>
   </div>
 </div>

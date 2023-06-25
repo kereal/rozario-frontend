@@ -1,8 +1,3 @@
-# docker build -t rozario-frontend .
-# docker run -dp 3006:3006 --name rozario-frontend rozario-frontend
-# docker exec -it rozario-frontend ash
-
-
 FROM node:18-alpine AS build
 
 WORKDIR /app

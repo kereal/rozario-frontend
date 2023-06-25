@@ -1,14 +1,8 @@
 <script>
   import { createEventDispatcher, onMount } from "svelte"
   import { imask } from "svelte-imask"
-  import {
-    parsePhoneNumberFromString,
-    formatIncompletePhoneNumber,
-    getExampleNumber
-  } from "libphonenumber-js"
-  import { countryCodes } from "../data/countryCodes.js"
-
-  import ArrowLeft from "./icons/ArrowLeft.svelte"
+  import { countryCodes } from "@/data/countryCodes"
+  import ArrowLeft from "@/components/icons/ArrowLeft.svelte"
 
   export let id = ""
   export let ref = ""
@@ -22,6 +16,7 @@
   export let placeholder
   export let height = 35
   export let classNameInput = ";"
+  export let disabled = undefined
 
   let countryList
   let countrySelectButton
@@ -72,7 +67,7 @@
   }
 
   const phoneNumberOptions = {
-    mask: "000 000 00 00 00"
+    mask: "000 000 00 00"
   }
 
   function handleFocus() {
@@ -151,6 +146,7 @@
     rounded px-12 {classNameInput}"
     type="tel"
     {placeholder}
+    {disabled}
   />
   <ul
     bind:this={countryList}
@@ -187,7 +183,6 @@
   button {
     min-width: 115px;
   }
-
   .visible {
     display: block;
     top: 2.2rem;

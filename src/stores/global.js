@@ -1,4 +1,12 @@
 import { writable } from "svelte/store"
+import { browser } from "$app/environment"
+
+export const currentUser = writable(
+  browser && (localStorage.currentUser ? JSON.parse(localStorage.currentUser) : "")
+)
+if (browser) {
+  currentUser.subscribe((value) => (localStorage.currentUser = JSON.stringify(value)))
+}
 
 function createMainStore() {
   const { subscribe, set, update } = writable({

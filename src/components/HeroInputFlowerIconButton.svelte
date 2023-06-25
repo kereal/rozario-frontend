@@ -1,34 +1,32 @@
 <script>
-  import HeroInputIconButton from "./HeroInputIconButton.svelte";
-  import {mainStore, uiStore} from '../stores/global.js'
+  import HeroInputIconButton from "@/components/HeroInputIconButton.svelte"
+  import { mainStore, uiStore } from "@/stores/global"
 
-  let src;
-  let alt = "flower";
-  let start = false;
-  let borderR = false;
-  let borderL = false;
-  let text = "";
-  export let right = false;
-  export let id = '';
+  let src
+  let alt = "flower"
+  let borderR = false
+  let borderL = false
+  let text = ""
+  export let right = false
+  export let id = ""
 
   if ($mainStore.flower.kind) {
-    src = "flower-green.svg";
-    text = $mainStore.flower.kind;
-  } else if(right) {
-    src = "flower-gray.svg";
+    src = "flower-green.svg"
+    text = $mainStore.flower.kind
+  } else if (right) {
+    src = "flower-gray.svg"
   } else {
     src = "flower.svg"
   }
 
-  if(right) {
-      borderR = false
-      borderL = true
+  if (right) {
+    borderR = false
+    borderL = true
   }
 
   if (!right && $uiStore.heroInput.currentState !== "flower") {
-    borderR = true;
+    borderR = true
   }
-
 </script>
 
-<HeroInputIconButton id={id} on:click {start} {src} {alt} {borderR} {borderL} {text} />
+<HeroInputIconButton {id} on:click {src} {alt} {borderR} {borderL} {text} />

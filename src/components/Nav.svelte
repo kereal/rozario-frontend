@@ -2,6 +2,7 @@
   import { onMount, afterUpdate, beforeUpdate } from "svelte"
   import { goto } from "$app/navigation"
   import { mainStore } from "@/stores/global"
+  import { currentUser } from "@/stores/global"
   import AutoComplete from "@/components/AutoComplete.svelte"
   import CustomDropdown from "@/components/CustomDropdown.svelte"
   import MapModal from "@/components/MapModal.svelte"
@@ -181,9 +182,6 @@
         >
           <span>Помощь</span>
         </li>
-        <li class="cursor-pointer hover:text-gray-700 text-main mr-16 xl:mr-32 last:mr-0">
-          <span><a href="/profile">Профиль</a></span>
-        </li>
       </ul>
     </nav>
 
@@ -298,24 +296,22 @@
           </CustomDropdown>
         {/if}
       </div>
-      {#if session}
-        {#if !session.loggedin}
-          <button
-            on:click={openSignInModal}
-            class="hidden leading-none lg:inline-block h-32 text-sm
-            border border-gray-500 text-main rounded-full px-16 py-4"
-          >
-            Войти
-          </button>
-        {:else}
-          <a
-            href={`/profile?user=${session.user.email}`}
-            class="hidden leading-none lg:inline-block h-32 text-sm
-            border border-gray-500 text-main rounded-full px-16 py-4"
-          >
-            Профиль
-          </a>
-        {/if}
+      {#if $currentUser}
+        <a
+          href="/profile"
+          class="h-32 text-sm lg:inline-block align-middle
+          border border-gray-500 text-main rounded-full px-16 py-4"
+        >
+          Профиль
+        </a>
+      {:else}
+        <button
+          on:click={openSignInModal}
+          class="leading-none lg:inline-block h-32 text-sm
+          border border-gray-500 text-main rounded-full px-16 py-4"
+        >
+          Войти
+        </button>
       {/if}
     </div>
     <button

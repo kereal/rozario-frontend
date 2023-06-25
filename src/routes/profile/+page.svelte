@@ -1,8 +1,10 @@
 <script>
   import { onMount, setContext } from "svelte"
   import { mainStore } from "@/stores/global"
+  import { currentUser } from "@/stores/global"
   import { orderStore, addressStore } from "@/stores/order"
   import { page } from "$app/stores"
+  import { goto } from "$app/navigation"
   import ScrollSpy from "@/utils/scrollSpy"
   import debounce from "lodash/debounce"
   import Tabbar from "@/components/Tabbar.svelte"
@@ -35,6 +37,9 @@
   let OrderHistoryHeader
   let DeliveryAddressesHeader
   let containerElement
+  let timeoutid
+  let headers
+  let scrollSpy
 
   const photo = "flower-photo.png"
 
@@ -55,8 +60,6 @@
     { name: "Магазин", link: "/businessProfile", active: false },
     { name: "Игры", link: "/profile/games", active: false }
   ]
-
-  let timeoutid
 
   function goToHeader(e) {
     const index = parseInt(e.detail.header)
@@ -93,9 +96,10 @@
     })
   }
 
-  let headers
-
-  let scrollSpy
+  function logOut() {
+    currentUser.update((k) => (k = ""))
+    goto("/")
+  }
 
   onMount(() => {
     headers = [ActiveOrderHeader, OrderHistoryHeader, DeliveryAddressesHeader]
@@ -151,7 +155,6 @@
 
 <svelte:head>
   <title>Профиль</title>
-  <meta name="description" content="PROFILE_DESCRIPTION" />
   <link rel="canonical" href={$page.url.hostname + $page.url.pathname} />
   <link
     rel="alternate"
@@ -160,50 +163,6 @@
     hreflang="ru"
     title="Русский"
   />
-  <link
-    rel="alternate"
-    href={$page.url.hostname + $page.url.pathname}
-    type="text/html"
-    hreflang="en"
-    title="English"
-  />
-  <meta
-    name="keywords"
-    content="Доставка цветов в Мурманске, Цветы с доставкой в Мурманске,
-    Заказать цветы с доставкой в Мурманске, "
-  />
-  <meta name="geo.region" content="" />
-  <meta name="geo.position" content="" />
-  <meta name="geo.placename" content="" />
-  <meta name="ICBM" content="" />
-  <meta name="referrer" content="always" />
-  <meta
-    property="og:title"
-    content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
-  />
-  <meta
-    property="og:description"
-    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
-    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
-    банковской картой."
-  />
-  <meta property="og:image" content="ruka3.jpg" />
-  <meta property="og:url" content="url" />
-  <meta property="og:site_name" content="Розарио.Цветы" />
-  <meta property="og:type" content="website" />
-  <meta
-    name="twitter:title"
-    content="Надежная доставка цветов в Мурманске — Розарио.Цветы"
-  />
-  <meta
-    name="twitter:description"
-    content="Мы предлагаем надежный сервис доставки цветов к любому торжеству в
-    Мурманске. Оформить доставку цветов можно на сайте. Оплатить — наличными или
-    банковской картой."
-  />
-  <meta name="twitter:image" content="ruka3.jpg" />
-  <meta name="twitter:image:alt" content="Розарио.Цветы" />
-  <meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <div>
@@ -291,6 +250,12 @@
         >
           Добавить адрес доставки
         </Button>
+
+        <div class="mt-40">
+          <Button className="" size="full" textClass="text-base" on:click={logOut}>
+            Выйти
+          </Button>
+        </div>
       </div>
     </div>
     <div class="aside-nav-container">

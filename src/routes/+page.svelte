@@ -272,7 +272,6 @@
           buttonColor="bg-circlebtn"
           bind:itemsInRow={smilesInRow}
           itemClass=".smiles-carousel-item"
-          gap={flowerCarouselGap}
           totalitems={data.smiles?.length}
         >
           {#each data.smiles as smile, i}

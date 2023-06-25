@@ -9,32 +9,32 @@
 	},
 	"devDependencies": {
 		"@fullhuman/postcss-purgecss": "^5.0.0",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-node": "^1.2.3",
-		"@sveltejs/kit": "^1.15.7",
+		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/adapter-node": "^1.2.4",
+		"@sveltejs/kit": "^1.19.0",
 		"autoprefixer": "^10.4.14",
-		"cssnano": "^6.0.0",
-		"postcss": "^8.4.22",
-		"svelte": "^3.58.0",
+		"cssnano": "^6.0.1",
+		"postcss": "^8.4.24",
+		"svelte": "^3.59.1",
 		"tailwindcss": "^3.2.7",
-		"vite": "^4.2.2"
+		"vite": "^4.3.9"
 	},
 	"type": "module",
 	"dependencies": {
 		"calendarize": "^1.1.1",
 		"commander": "^10.0.1",
-		"core-js": "^3.30.1",
+		"core-js": "^3.31.0",
 		"croppie": "^2.6.5",
-		"date-fns": "^2.29.3",
-		"libphonenumber-js": "^1.10.28",
+		"date-fns": "^2.30.0",
+		"libphonenumber-js": "^1.10.30",
 		"lodash": "^4.17.21",
 		"lodash-es": "^4.17.21",
 		"nanoid": "^3.3.6",
 		"smoothscroll-polyfill": "^0.4.4",
 		"svelte-imask": "^1.2.0",
-		"svelte-preprocess": "^5.0.3",
+		"svelte-preprocess": "^5.0.4",
 		"svgo": "^3.0.2",
-		"swiper": "^9.2.3",
-		"xstate": "^4.37.1"
+		"swiper": "^9.3.2",
+		"xstate": "^4.37.2"
 	}
 }

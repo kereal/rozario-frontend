@@ -1,6 +1,6 @@
 <script>
-  import HeroInputIconButton from "./HeroInputIconButton.svelte"
-  import { HERO_INPUT_STATES } from "../data/constants.js"
+  import HeroInputIconButton from "@/components/HeroInputIconButton.svelte"
+  import { HERO_INPUT_STATES } from "@/data/constants"
 
   export let name = HERO_INPUT_STATES.OCCASION
   export let right = false
@@ -9,7 +9,6 @@
   export let currentState = "occasion"
 
   let src
-  const start = false
   let borderR = false
   let borderL = false
   let text = ""
@@ -40,4 +39,4 @@
   }
 </script>
 
-<HeroInputIconButton {id} on:click {start} {src} {alt} {borderR} {borderL} {text} />
+<HeroInputIconButton {id} on:click {src} {alt} {borderR} {borderL} {text} />
