@@ -13,7 +13,7 @@ export async function load({ fetch, params, url }) {
     )
 
     const json = await res.json()
-    const res1 = await fetch(`${API_URL}/rozmain${url.pathname}`)
+    const res1 = await fetch(`${API_URL}/api/rozmain${url.pathname}`)
     const solData = await res1.json()
 
     return {
