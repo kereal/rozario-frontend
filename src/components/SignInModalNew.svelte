@@ -101,8 +101,8 @@
       console.log(error)
     }
     loading = false
-    await tick()
-    document.getElementById("inputCodeSMS").focus()
+    // await tick()
+    // document.getElementById("inputCodeSMS").focus()
     return false
   }
 
