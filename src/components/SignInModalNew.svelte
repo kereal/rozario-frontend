@@ -1,24 +1,24 @@
 <script>
   import { currentUser } from "@/stores/global"
   import { APIFetch } from "@/utils/APIFetch"
-  import { onMount, createEventDispatcher, tick } from "svelte"
+  import { onMount, createEventDispatcher } from "svelte"
   import ModalSurface from "@/components/ModalSurface.svelte"
   import TelInput from "@/components/TelInput.svelte"
   import Button from "@/components/Button.svelte"
 
+  const waitSecons = 60
   let modalElement
   let focused = false
   let selectedType = "phone"
-  let seconds = 60
+  let seconds = waitSecons
   let inputCode = ""
-  let phoneValue
-  let emailValue
+  let phoneValue, emailValue
   let incorrectCode = false
   let error = false
   let letter = true
   let status = "active-main"
   let phoneValueError = false
-  let EmailValueError = false
+  let emailValueError = false
   let phoneForm
   let perishable_token
   let loading = false
@@ -101,12 +101,11 @@
       console.log(error)
     }
     loading = false
-    // await tick()
-    // document.getElementById("inputCodeSMS").focus()
     return false
   }
 
   function startTimer() {
+    seconds = waitSecons
     phoneForm = document.getElementById("signformphone")
     if (selectedType == "phone") {
       if (phoneValue.length > 15) {
@@ -132,7 +131,7 @@
       if (validateEmail(emailValue)) {
         requestAuth({ email: emailValue.replaceAll(" ", "") })
         letter = false
-        EmailValueError = false
+        emailValueError = false
         setTimeout(() => {
           status = "disabled-main"
           document.getElementById("inputCodeEmail").focus()
@@ -146,7 +145,7 @@
           }
         }, 1000)
       } else {
-        EmailValueError = true
+        emailValueError = true
       }
     }
   }
@@ -174,8 +173,10 @@
   $: if (phoneValue) {
     if (phoneValue.length > 15) {
       phoneForm = document.getElementById("signformphone")
-      phoneForm.classList.remove("incorrectCode")
-      phoneValueError = false
+      if (phoneForm) {
+        phoneForm.classList.remove("incorrectCode")
+        phoneValueError = false
+      }
     }
   }
 </script>
@@ -185,7 +186,7 @@
   bind:focused
   on:close-overlay={closeModal}
   on:close={closeModal}
-  css="width: 400px;height: 387px;padding:30px 24px;"
+  css="width:400px; height:387px; padding:30px 24px"
 >
   <div
     id="sign-in-modal"
@@ -232,10 +233,10 @@
         id="signformEmail"
         placeholder="Введите адрес эл.почты"
         bind:value={emailValue}
-        class:incorrectCode={EmailValueError}
+        class:incorrectCode={emailValueError}
       />
       <div class="forError">
-        <span class="hidden" class:error={EmailValueError}
+        <span class="hidden" class:error={emailValueError}
           >Некорректный адрес эл.почты</span
         >
       </div>

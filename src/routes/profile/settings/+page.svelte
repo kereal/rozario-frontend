@@ -13,6 +13,7 @@
   import ModalChangePhoto from "@/components/ModalChangePhoto.svelte"
   import TelInput from "@/components/TelInput.svelte"
   import ConfirmationModal from "@/components/ConfirmationModal.svelte"
+
   export let miniBlob
 
   onMount(async () => {
@@ -318,7 +319,7 @@
                     </div>
                   </div>
                 {:else}
-                  <div class="miniPhoto  w-full h-full">
+                  <div class="miniPhoto w-full h-full">
                     <div class="w-full h-full">
                       <img
                         src={values.selectedPhoto}
@@ -333,7 +334,7 @@
                   id="settings__photo_animate"
                   on:click={showModalPhoto}
                 >
-                  <div class="settings__photo_text ">
+                  <div class="settings__photo_text">
                     <span>Изменить</span>
                   </div>
                 </div>
@@ -379,8 +380,8 @@
           <div>
             <h3 class="actions__title">Оповещения об акциях и предложениях</h3>
             <p class="actions__text">
-              Подпипишитесь на уведомления и получите промокод на скидку.<br />Еженедельно
-              получайте полезные статьи, а также информацию о скидках и акциях
+              Подпишитесь на уведомления и получите промокод на скидку.<br />Еженедельно
+              получайте полезные статьи, а также информацию о скидках и акциях.
             </p>
             <ul>
               <li class="mb-16">
