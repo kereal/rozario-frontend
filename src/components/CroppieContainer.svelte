@@ -2,14 +2,17 @@
   import Button from "./Button.svelte"
   import { onMount } from "svelte"
   import Croppie from "croppie"
-  let contain
-  let newPhoto
-  let blob
+
   export let selected
   export let visible
   export let fullImage
   export let miniBlob
+
+  let newPhoto
   let zoom
+  let el
+  let vanilla
+
   function croppied() {
     miniBlob = vanilla.get()
     vanilla.result("blob").then(function (blob) {
@@ -37,9 +40,6 @@
     })
   }
 
-  let el
-  let vanilla
-
   onMount(async () => {
     activateCroppie(fullImage)
   })
@@ -57,7 +57,6 @@
   }
 
   let otherPhoto
-  let forNewOther
   $: if (otherPhoto) {
     let input = document.getElementById("fileOtherPhoto")
     let fReader = new FileReader()
@@ -82,9 +81,7 @@
   </div>
 </div>
 <div class="flex mt-24">
-  <Button textClass="text-base" size="md" id="blob" on:click={croppied}>
-    <span class="text-base font-semibold"> Сохранить </span>
-  </Button>
+  <Button textClass="text-base" size="md" on:click={croppied}>Применить</Button>
   <Button textClass="text-base" size="md" status="active-secondary" className="ml-30">
     <input
       type="file"
@@ -92,9 +89,7 @@
       accept="image/*,image/jpeg,image/jpg,image/png"
       bind:value={otherPhoto}
     />
-    <label for="fileOtherPhoto">
-      <span>Другое фото</span>
-    </label>
+    Другое фото
   </Button>
 </div>
 
@@ -102,35 +97,33 @@
   input[type="file"] {
     display: none;
   }
-  span {
-    cursor: poiner;
-  }
-  .minus {
-    position: absolute;
-    color: var(--gray-200);
-    font-size: 33px;
-    top: 342px;
-    left: 332px;
-    z-index: 1000;
-  }
+  .minus,
   .plus {
     position: absolute;
     color: var(--gray-200);
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .minus::selection,
+  .plus::selection {
+    background: transparent;
+  }
+  .minus {
+    font-size: 33px;
+    top: 342px;
+    left: 332px;
+  }
+  .plus {
+    font-size: 25px;
     top: 344px;
     left: 448px;
-    font-size: 25px;
-    z-index: 1000;
   }
-
   .CroppieContainer {
     overflow: hidden;
     padding-left: -10px !important;
   }
   .CroppieContainer__controller {
     display: flex;
-  }
-
-  .CroppieContainer__controller button {
   }
   :global(.cr-slider-wrap) {
     z-index: 999 !important;
@@ -151,7 +144,6 @@
     background: var(--gray-700);
     border-radius: 3px;
   }
-
   :global(input[type="range"]::-webkit-slider-thumb) {
     -webkit-appearance: none;
     border: none;

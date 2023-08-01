@@ -1,165 +1,184 @@
 <script>
-  import { createEventDispatcher } from "svelte"
-  import debounce from "lodash/debounce"
-  import ModalSurface from "./ModalSurface.svelte"
-  import ActionEmail from "./ActionEmail.svelte"
-  import TextInput from "./TextInput.svelte"
-  import Button from "./Button.svelte"
+  import { currentUser } from "@/stores/global"
+  import { APIFetch } from "@/utils/APIFetch"
+  import { onMount, createEventDispatcher } from "svelte"
+  import ModalSurface from "@/components/ModalSurface.svelte"
+  import TelInput from "@/components/TelInput.svelte"
+  import Button from "@/components/Button.svelte"
 
-  export let session
-
-  const svgSize = 24
-
+  const waitSecons = 60
   let modalElement
   let focused = false
-  let phoneValue = ""
-  let emailValue = ""
-  let emailCodeValue = ""
-  let smsValue = ""
-  let isValid
-  let signInEmailButtonStatus = "disabled-main"
-  let signInPhoneButtonStatus = "disabled-main"
-  let telInputStatus = "disabled"
-  let emailInputStatus = "disabled"
-
-  const STATE = {
-    PHONE: "phone",
-    EMAIL: "email"
-  }
-
-  const ACTION_STATE = {
-    DISABLED: "disabled",
-    ACTIVE: "active",
-    LOADING: "loading",
-    TIMER: "timer"
-  }
+  let selectedType = "phone"
+  let seconds = waitSecons
+  let inputCode = ""
+  let phoneValue, emailValue
+  let incorrectCode = false
+  let error = false
+  let letter = true
+  let status = "active-main"
+  let phoneValueError = false
+  let emailValueError = false
+  let phoneForm
+  let perishable_token
+  let loading = false
 
   const dispatch = createEventDispatcher()
-
-  let currentState = STATE.PHONE
-
-  function closeViaOverlay(e) {
-    if (modalElement && !modalElement.contains(e.target)) dispatch("close")
-  }
 
   function closeModal() {
     dispatch("close")
   }
-
-  const socials = ["Vk", "Facebook", "Ok", "Google"]
-
-  function getSmsCode() {
-    if (telInputStatus === ACTION_STATE.DISABLED) {
-      return
-    }
-    telInputStatus = ACTION_STATE.LOADING
-    setTimeout(() => {
-      telInputStatus = ACTION_STATE.TIMER
-    }, 1000)
-  }
-
-  async function getEmailCode() {
-    if (emailInputStatus === ACTION_STATE.DISABLED) {
-      return
-    }
-    emailInputStatus = ACTION_STATE.LOADING
-    setTimeout(() => {
-      emailInputStatus = ACTION_STATE.TIMER
-    }, 1000)
-    // console.log("emailValue", emailValue);
-    // try {
-    //   const response = await fetch("http://localhost:8000/getcode", {
-    //     method: "POST",
-    //     headers: {
-    //       Accept: "application/json",
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ email: emailValue }),
-    //   });
-    //   const json = await response.json();
-    //   console.log("json", json);
-    //   if (json.message === "ok" && json.code) {
-    //     window.localStorage.setItem("emailForSignIn", emailValue);
-    //     // TODO show message
-    //     console.log("json code =", json.code);
-    //   }
-    // } catch (e) {
-    //   console.log("error", e);
-    // }
-  }
-
   function handleFocus() {
     focused = true
   }
 
-  async function handleEmailSubmit() {
-    try {
-      const response = await fetch("login", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: emailValue, code: emailCodeValue })
-      })
-      const user = await response.json()
-      console.log("user", user)
-      if (user.loggedin) {
-        $session.loggedin = user.loggedin
-        $session.user = user.user
-        localStorage.setItem("refresh_token", user.refresh_token)
-        localStorage.removeItem("emailForSignIn")
-      } else {
-        $session.loggedin = false
-        $session.user = ""
-        localStorage.removeItem("emailForSignIn")
-      }
-      closeModal()
-    } catch (e) {}
-  }
-
   function changeAuthType() {
-    if (currentState === STATE.PHONE) {
-      currentState = STATE.EMAIL
-    } else {
-      currentState = STATE.PHONE
+    letter = true
+    if (selectedType == "phone") {
+      selectedType = "email"
+      setTimeout(() => {
+        status = "active-main"
+        document.getElementById("signformEmail").focus()
+      }, 100)
+    } else if (selectedType == "email") {
+      selectedType = "phone"
+      setTimeout(() => {
+        status = "active-main"
+        document.getElementById("signformphone").focus()
+      }, 100)
     }
   }
 
-  function telInputCompleted() {
-    console.log("telIputCompleted")
-    telInputStatus = ACTION_STATE.ACTIVE
+  function validateEmail(email) {
+    let re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(email)
   }
 
-  function telInputAccepted() {
-    telInputStatus = ACTION_STATE.DISABLED
-  }
-
-  function validateFormInput(e) {
-    const elem = document.querySelector(`#sign-in-modal .validation .${e.target.name}`)
-    if (!e.target.validity.valid) {
-      e.target.classList.add("error")
-      elem.classList.remove("invisible")
-      emailInputStatus = "disabled"
-    } else {
-      e.target.classList.remove("error")
-      elem.classList.add("invisible")
-      emailInputStatus = "active"
+  // отправляем номер или почту
+  const requestAuth = async (authData) => {
+    try {
+      const response = await APIFetch("/api/users/request_auth", {
+        method: "POST",
+        body: JSON.stringify({
+          user: {
+            ...authData
+          }
+        })
+      })
+      if (response.status === 200) {
+        const data = await response.json()
+        perishable_token = data.perishable_token
+        return
+      }
+      if (response.status === 422) {
+        // console.log(422)
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
-  function handleInvalid(e) {
-    e.preventDefault()
-    validateFormInput(e)
+  // отправляем код и токен
+  const auth = async (code, perishable_token) => {
+    loading = true
+    try {
+      const response = await APIFetch("/api/users/auth", {
+        method: "POST",
+        body: JSON.stringify({
+          user: {
+            confirmation_token: code,
+            perishable_token: perishable_token
+          }
+        })
+      })
+      if (response.status === 200) {
+        const data = await response.json()
+        currentUser.update((k) => (k = data))
+        return true
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    loading = false
+    return false
   }
 
-  $: signInEmailButtonStatus =
-    emailInputStatus === "timer" && emailCodeValue.length > 0
-      ? "active-main"
-      : "disabled-main"
+  function startTimer() {
+    seconds = waitSecons
+    phoneForm = document.getElementById("signformphone")
+    if (selectedType == "phone") {
+      if (phoneValue.length > 15) {
+        requestAuth({ phone: phoneValue.replaceAll(" ", "") })
+        letter = false
+        setTimeout(() => {
+          status = "disabled-main"
+          document.getElementById("inputCodeSMS").focus()
+        }, 100)
+        let inetvalId = setInterval(() => {
+          if (seconds != 0) {
+            seconds = seconds - 1
+          } else {
+            clearInterval(inetvalId)
+            status = "active-secondary"
+          }
+        }, 1000)
+      } else {
+        phoneValueError = true
+        phoneForm.classList.add("incorrectCode")
+      }
+    } else if (selectedType == "email") {
+      if (validateEmail(emailValue)) {
+        requestAuth({ email: emailValue.replaceAll(" ", "") })
+        letter = false
+        emailValueError = false
+        setTimeout(() => {
+          status = "disabled-main"
+          document.getElementById("inputCodeEmail").focus()
+        }, 100)
+        let inetvalId = setInterval(() => {
+          if (seconds != 0) {
+            seconds = seconds - 1
+          } else {
+            clearInterval(inetvalId)
+            status = "active-secondary"
+          }
+        }, 1000)
+      } else {
+        emailValueError = true
+      }
+    }
+  }
 
-  $: signInPhoneButtonStatus =
-    telInputStatus === "timer" && smsValue.length > 0 ? "active-main" : "disabled-main"
+  onMount(async () => {
+    setTimeout(() => {
+      document.getElementById("signformphone").focus()
+    }, 100)
+  })
+
+  $: if (inputCode && inputCode.length === 4) {
+    ;(async () => {
+      const auth_result = await auth(inputCode, perishable_token)
+      if (auth_result) {
+        closeModal()
+      } else {
+        incorrectCode = false
+        error = true
+      }
+    })()
+  } else {
+    incorrectCode = error = false
+  }
+
+  $: if (phoneValue) {
+    if (phoneValue.length > 15) {
+      phoneForm = document.getElementById("signformphone")
+      if (phoneForm) {
+        phoneForm.classList.remove("incorrectCode")
+        phoneValueError = false
+      }
+    }
+  }
 </script>
 
 <ModalSurface
@@ -167,7 +186,7 @@
   bind:focused
   on:close-overlay={closeModal}
   on:close={closeModal}
-  css="width: 400px;height: 387px;padding:30px 24px;"
+  css="width:400px; height:387px; padding:30px 24px"
 >
   <div
     id="sign-in-modal"
@@ -175,90 +194,102 @@
     class="bg-white h-full rounded-lg signin-modal"
   >
     <h2 class="headerText">Войти в аккаунт</h2>
-    {#if currentState === "phone"}
-      <!-- <div class="mb-16 flex">
-
-        <ActionTelInput
-          className="w-full"
-          id="SignInTelephone"
-          getFocus={true}
-          on:click={getSmsCode}
-          state={telInputStatus}
-          on:accept={telInputAccepted}
-          on:completed={telInputCompleted}
-          on:focus={handleFocus}
-          bind:value={phoneValue}
-        placeholder="номер телефона"/>
+    {#if selectedType == "phone"}
+      <TelInput
+        name="phone"
+        id="signformphone"
+        className="w-full"
+        required={true}
+        placeholder="Номер телефона"
+        bind:value={phoneValue}
+        height="44"
+      />
+      <div class="forError ml-64 pl-64">
+        <span class="hidden" class:error={phoneValueError}>Введите номер телефона</span>
       </div>
-      <div class="mb-16 w-full">
-        <TextInput
-          size="lg"
-          on:focus={handleFocus}
-          bind:value={smsValue}
-          className="w-full"
-          placeholder="Код из смс"
+      {#if !letter}
+        <input
           type="text"
-          name="sms" />
-      </div> -->
-      <div>
-        <button on:click|stopPropagation={changeAuthType} class="w-full">
-          <p class="changeMethod_text">войти с помощью эл. почты</p>
-        </button>
-      </div>
-      <Button size="lg" status={signInPhoneButtonStatus} className="w-full">Войти</Button>
-    {:else if currentState === "email"}
-      <form on:submit|preventDefault={handleEmailSubmit}>
-        <div class="mb-16 w-full">
-          <div class="validation">
-            <span class="error-text invisible email">Некорректный e-mail</span>
-          </div>
-          <ActionEmail
-            state={emailInputStatus}
-            id="SignInEmail"
-            getFocus={true}
-            required={true}
-            on:click={getEmailCode}
-            on:focus={handleFocus}
-            on:invalid={handleInvalid}
-            on:input={debounce(validateFormInput, 400)}
-            bind:value={emailValue}
-            className="w-full"
-            name="email"
-            placeholder="Введите e-mail"
-          />
+          class="mt-18"
+          placeholder="Код из SMS"
+          onkeypress="this.value = this.value.replace(/[^\d]/g,'');"
+          onkeyup="this.value = this.value.replace(/[^\d]/g,'');"
+          onkeydown="this.value = this.value.replace(/[^\d]/g,'');"
+          bind:value={inputCode}
+          id="inputCodeSMS"
+          maxlength="4"
+          class:incorrectCode
+          disabled={loading}
+        />
+        <div class="forError">
+          <span class="hidden" class:error>Неверный код подтверждения</span>
         </div>
-        <div class="mb-16 w-full">
-          <TextInput
-            size="lg"
-            on:focus={handleFocus}
-            className="w-full"
-            bind:value={emailCodeValue}
-            placeholder="Код из письма"
-            type="text"
-            name="sms"
-          />
-        </div>
-        <div class="text-main mb-24">
-          Или
-          <button
-            on:click|stopPropagation={changeAuthType}
-            class="hover:text-info hover:border-info border-b border-main border-dashed"
-          >
-            войти с помощью телефона
-          </button>
-        </div>
-        <Button size="lg" status={signInEmailButtonStatus} className="w-full">
-          Войти
-        </Button>
-      </form>
+      {/if}
     {/if}
-    <div class="text-gray-700 leading-tight mb-30 mt-12 text-ssm">
-      <div>Нажимая кнопку «Войти», вы принимаете условия</div>
-      <a href="useragreement" class="hover:text-gray-600 underline">
-        Пользовательского соглашения
-      </a>
+
+    {#if selectedType == "email"}
+      <input
+        type="email"
+        id="signformEmail"
+        placeholder="Введите адрес эл.почты"
+        bind:value={emailValue}
+        class:incorrectCode={emailValueError}
+      />
+      <div class="forError">
+        <span class="hidden" class:error={emailValueError}
+          >Некорректный адрес эл.почты</span
+        >
+      </div>
+      {#if !letter}
+        <input
+          type="text"
+          class="mt-18"
+          placeholder="Код из письма"
+          onkeypress="this.value = this.value.replace(/[^\d]/g,'');"
+          onkeyup="this.value = this.value.replace(/[^\d]/g,'');"
+          onkeydown="this.value = this.value.replace(/[^\d]/g,'');"
+          bind:value={inputCode}
+          id="inputCodeEmail"
+          maxlength="4"
+          class:incorrectCode
+          disabled={loading}
+        />
+        <div class="forError">
+          <span class="hidden" class:error>Неверный код подтверждения</span>
+        </div>
+      {/if}
+    {/if}
+    <button on:click={changeAuthType} class="w-full">
+      <p class="changeMethod_text">
+        войти с помощью {selectedType == "phone" ? "эл. почты" : "телефона"}
+      </p>
+    </button>
+    <div class="footer">
+      {#if letter}
+        <div class="footer__text">
+          <div>Нажимая кнопку «Далее», вы принимаете условия</div>
+          <a href="useragreement" class="useragreement hover:text-gray-600">
+            Пользовательского соглашения
+          </a>
+        </div>
+      {/if}
+      <div class="w-full">
+        <Button size="full" {status} on:click={() => startTimer()}>
+          <div class="effect">
+            {#if letter}Далее{/if}
+            {#if !letter}
+              {#if seconds == 0}
+                Получить код ещё раз
+              {:else}
+                <div class="a">
+                  Получить код ещё раз через 0:{seconds < 10 ? "0" : ""}{seconds}
+                </div>
+              {/if}
+            {/if}
+          </div>
+        </Button>
+      </div>
     </div>
-    {#if currentState === "phone"}{:else}{/if}
   </div>
 </ModalSurface>
 
@@ -275,6 +306,12 @@
     color: #1039c9;
     width: 100%;
     text-align: center;
+    margin-top: 34px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 24px;
+    width: calc(100% - 48px);
   }
   .signin-modal :global(.phone-input input) {
     width: 180px;
@@ -285,5 +322,67 @@
   }
   .error-text {
     @apply text-error;
+  }
+  input {
+    background: #ffffff;
+    border: 1px solid var(--gray-500);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: var(--color-main);
+    font-size: 15px;
+    height: 44px;
+    padding: 0 12px;
+    width: 100%;
+  }
+  input:focus {
+    background: #ffffff;
+    border: 1px solid var(--color-info);
+  }
+  .error {
+    display: block;
+    color: red;
+    font-weight: normal;
+    font-size: 13px;
+  }
+  .incorrectCode {
+    border-color: red !important;
+  }
+  .incorrectCode:focus {
+    border: 1px solid red;
+  }
+  .forError {
+    margin-top: 6px;
+    height: 10px;
+    margin-bottom: -16px;
+  }
+  .footer__text {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 140%;
+    color: var(--gray-700);
+    margin-bottom: 16px;
+  }
+  .useragreement:hover {
+    border-bottom: 1px solid var(--gray-600);
+  }
+
+  @keyframes anim {
+    0% {
+      opacity: 0;
+      filter: blur(38px);
+    }
+    10% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .a {
+    animation: anim 0.2s alternate;
+    animation-iteration-count: 1;
   }
 </style>

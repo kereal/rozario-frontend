@@ -8,6 +8,8 @@ if (browser) {
   currentUser.subscribe((value) => (localStorage.currentUser = JSON.stringify(value)))
 }
 
+export const loading = writable(false)
+
 function createMainStore() {
   const { subscribe, set, update } = writable({
     user: {

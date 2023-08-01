@@ -1,24 +1,20 @@
 <script>
   import { createEventDispatcher } from "svelte"
   import { onMount } from "svelte"
-  import cloneDeep from "lodash/cloneDeep"
   import throttle from "lodash/throttle"
-  import CustomDropdown from "../components/CustomDropdown.svelte"
-  import DropdownLinkList from "../components/DropdownLinkList.svelte"
+  import CustomDropdown from "@/components/CustomDropdown.svelte"
+  import DropdownLinkList from "@/components/DropdownLinkList.svelte"
 
   export let menulist = [{ index: 0 }]
   export let className = ""
   export let currentMenuIndex = menulist[0].index
   export let pos
-
   export let bigPadding = false
 
   let moreDropdownVisible = false
   let moreDropdownElement
   let moreDropdownButton
-
   let selectedItem = "Еще"
-
   let buttons
   let buttonsWidth
   let maxWidth
@@ -126,7 +122,7 @@
     ) {
       selectedItem = "Еще"
     } else {
-      selectedItem = menulist[currentMenuIndex].name
+      selectedItem = menulist[currentMenuIndex]?.name
     }
     setTimeout(() => {
       let dropdownWidth = 0
@@ -164,7 +160,7 @@
 <svelte:window on:resize={throttledResize} />
 <nav
   style={pos}
-  class="{className} z-20 border-t border-right-left-clr bg-white flex justify-between border-bottom-clr border-b border-r border-l justify-between "
+  class="{className} z-20 border-t border-right-left-clr bg-white flex justify-between border-bottom-clr border-b border-r border-l justify-between"
   id="navTabbar"
   class:bigPadding
 >
@@ -264,7 +260,6 @@
     width: 100%;
     overflow: hidden;
   }
-
   li {
     height: 63px;
     box-sizing: border-box;
@@ -272,21 +267,6 @@
   #ulTabbar {
     margin-left: -16px;
   }
-  @media (max-width: 1300px) {
-    nav {
-      @apply px-44;
-    }
-  }
-
-  @media (min-width: 1301px) {
-    li button {
-      @apply px-16;
-    }
-    #ulTabbar {
-      margin-left: -14px;
-    }
-  }
-
   .dropDown {
     width: 100%;
     max-height: 300px;
@@ -315,5 +295,19 @@
   }
   .bigPadding {
     @apply px-80;
+  }
+
+  @media (max-width: 1300px) {
+    nav {
+      @apply px-44;
+    }
+  }
+  @media (min-width: 1301px) {
+    li button {
+      @apply px-16;
+    }
+    #ulTabbar {
+      margin-left: -14px;
+    }
   }
 </style>

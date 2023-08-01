@@ -6,7 +6,7 @@
 
   export let id = ""
   export let ref = ""
-  export let value = ""
+  export let value
   export let required = undefined
   export let minLength = undefined
   export let maxLength = undefined

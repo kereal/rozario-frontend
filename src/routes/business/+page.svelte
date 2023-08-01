@@ -8,7 +8,7 @@
   import Testimonial from "@/components/Testimonial.svelte"
   import ReadySolution from "@/components/ReadySolution.svelte"
   import Slider from "@/components/Slider.svelte"
-  import SignInModalNew from "@/components/SignInModalNew.svelte"
+  import SignInModal from "@/components/SignInModal.svelte"
 
   let signInModalVisible = false
   function closeSignInModal() {
@@ -751,7 +751,7 @@
 </div>
 
 {#if signInModalVisible}
-  <SignInModalNew {session} on:close={closeSignInModal} />
+  <SignInModal {session} on:close={closeSignInModal} />
 {/if}
 
 <style>

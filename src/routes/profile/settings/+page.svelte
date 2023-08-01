@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores"
   import { onMount, afterUpdate } from "svelte"
-  import debounce from "lodash-es/debounce"
+  import { currentUser } from "@/stores/global"
   import cloneDeep from "lodash/cloneDeep"
   import ScrollSpy from "@/utils/scrollSpy"
   import Tabbar from "@/components/Tabbar.svelte"
@@ -14,7 +14,47 @@
   import TelInput from "@/components/TelInput.svelte"
   import ConfirmationModal from "@/components/ConfirmationModal.svelte"
 
-  export let miniBlob
+  export let recommendations
+  export let userData = $currentUser
+
+  let values = cloneDeep(userData)
+  if (values) values.avatar_url = ""
+  let avatar = values.avatar_url || "/miniPhoto1.png"
+  //let avatar = ""
+  let moreDropdownVisible = false
+  let moreDropdownButton
+  let showModalDeleteButton = false
+  let ModalPhoto = false
+  let ModalChangeData = false
+  let currentMenuIndex = 0
+  let MyDetails
+  let Alerts
+  let timeoutid
+  let headers
+  let scrollSpy
+  let changed = false
+
+  const errorText = {
+    name: {
+      valueMissing: "Введите имя"
+    },
+    phone: {
+      valueMissing: "Введите номер телефона"
+    },
+    email: {
+      typeMismatch: "Неверный формат е-mail"
+    }
+  }
+  const navlist = [
+    { name: "Мои заказы", link: "/profile", active: false },
+    { name: "Избранное", link: "/profile/favorites", active: false },
+    { name: "Мои купоны", link: "/profile/coupons", active: false },
+    { name: "Мои события", link: "/profile/events", active: false },
+    { name: "Помощь", link: "/profile/help", active: false },
+    { name: "Настройки", link: "/profile/settings", active: true },
+    { name: "Игры", link: "/profile/games", active: false }
+  ]
+  const menulist = [{ name: "Мои данные", index: 0 }]
 
   onMount(async () => {
     headers = [MyDetails, Alerts]
@@ -23,10 +63,10 @@
       currentMenuIndex = e.detail.index
     }
     window.addEventListener("scrollspy-activate", setIndex)
-    let dynamicMask = IMask(document.getElementById("email-mask-settings"), {
+    IMask(document.getElementById("email-mask-settings"), {
       mask: /^\S*@?\S*$/
     })
-    let dateMask = IMask(document.getElementById("date_mask_settings"), {
+    IMask(document.getElementById("date_mask_settings"), {
       mask: Date,
       lazy: false
     })
@@ -44,75 +84,6 @@
     scrollSpy = new ScrollSpy(window, headers)
     window.addEventListener("scrollspy-activate", setIndex)
   })
-
-  export let userData = {
-    name: "Rozario Shop",
-    email: "example@rambler.ru",
-    BirthDay: "18.10.1999",
-    tel: "9021377173",
-    selectedPhoto: "initials",
-    push: " ",
-    sms: "",
-    email: ""
-  }
-
-  let values = cloneDeep(userData)
-  let moreDropdownVisible = false
-  let moreDropdownElement
-  let moreDropdownButton
-  let showModalDeleteButton = false
-  let ModalPhoto = false
-  let ModalChangeData = false
-  let currentMenuIndex = 0
-  let MyDetails
-  let Alerts
-  let timeoutid
-  let headers
-  let scrollSpy
-  let changed = false
-  export let fullImage
-  const errorText = {
-    name: {
-      valueMissing: "Введите имя"
-    },
-    phone: {
-      valueMissing: "Введите номер телефона"
-    },
-    email: {
-      typeMismatch: "Неверный формат е-mail"
-    }
-  }
-
-  function validateFormInput(e) {
-    const elem = document.querySelector(`#form-user-data .validation .${e.target.name}`)
-    if (e.target.validity.valueMissing) {
-      e.target.classList.add("error")
-      elem.classList.remove("invisible")
-      elem.textContent = errorText[e.target.name].valueMissing
-    } else if (e.target.validity.typeMismatch) {
-      e.target.classList.add("error")
-      elem.classList.remove("invisible")
-      elem.textContent = errorText[e.target.name].typeMismatch
-    } else {
-      e.target.classList.remove("error")
-      elem.classList.add("invisible")
-    }
-  }
-  function handleInvalid(e) {
-    e.preventDefault()
-    validateFormInput(e)
-  }
-  export let recommendations
-  const navlist = [
-    { name: "Мои заказы", link: "/profile", active: false },
-    { name: "Избранное", link: "/profile/favorites", active: false },
-    { name: "Мои купоны", link: "/profile/coupons", active: false },
-    { name: "Мои события", link: "/profile/events", active: false },
-    { name: "Помощь", link: "/profile/help", active: false },
-    { name: "Настройки", link: "/profile/settings", active: true },
-    { name: "Игры", link: "/profile/games", active: false }
-  ]
-  const menulist = [{ name: "Мои данные", index: 0 }]
 
   function showDelete() {
     moreDropdownVisible = !moreDropdownVisible
@@ -146,7 +117,6 @@
       document.getElementById("settings__photo_animate").style.display = "block"
     }
   }
-
   function confirmChange() {
     userData = values
     ModalChangeData = false
@@ -155,32 +125,13 @@
   function closeDeleteModal() {
     ModalChangeData = false
   }
-
-  $: if (values) {
-    if (
-      values.name != userData.name ||
-      values.tel != userData.tel ||
-      values.email != userData.email ||
-      values.BirthDay != userData.BirthDay ||
-      values.selectedPhoto != userData.selectedPhoto ||
-      values.sms != userData.sms ||
-      values.push != userData.push ||
-      values.email != userData.email
-    ) {
-      changed = true
-    }
-  }
-
   function beforeUnload(e) {
     if (
       values.name != userData.name ||
-      values.tel != userData.tel ||
+      values.phone != userData.phone ||
       values.email != userData.email ||
-      values.BirthDay != userData.BirthDay ||
-      values.selectedPhoto != userData.selectedPhoto ||
-      values.sms != userData.sms ||
-      values.push != userData.push ||
-      values.email != userData.email
+      values.dob != userData.dob ||
+      values.notifications != userData.notifications
     ) {
       var e = e || window.event
       var myMessage = "Вы действительно хотите покинуть страницу, не сохранив данные?"
@@ -190,6 +141,18 @@
       }
       console.log(e, "event")
       return myMessage
+    }
+  }
+
+  $: if (values) {
+    if (
+      values.name != userData.name ||
+      values.phone != userData.phone ||
+      values.email != userData.email ||
+      values.dob != userData.dob ||
+      values.notifications != userData.notifications
+    ) {
+      changed = true
     }
   }
 </script>
@@ -256,6 +219,7 @@
   <meta name="twitter:image:alt" content="Розарио.Цветы" />
   <meta name="twitter:card" content="summary" />
 </svelte:head>
+
 <div class="flex setiings">
   <div class="w-full">
     <Tabbar
@@ -265,6 +229,7 @@
       {currentMenuIndex}
       {menulist}
     />
+
     <div class="settings__content">
       <div>
         <h2 data-scrollspy bind:this={MyDetails}>Мои данные</h2>
@@ -309,26 +274,9 @@
                 </CustomDropdown>
               {/if}
             </button>
-
             <div on:mouseover={animate} on:mouseout={animate} class="relative">
               <div class="settings__photo flex">
-                {#if values.selectedPhoto == "initials"}
-                  <div class="miniPhoto initials w-full h-full">
-                    <div>
-                      <span>RF</span>
-                    </div>
-                  </div>
-                {:else}
-                  <div class="miniPhoto w-full h-full">
-                    <div class="w-full h-full">
-                      <img
-                        src={values.selectedPhoto}
-                        alt="avatar"
-                        class="w-full h-full"
-                      />
-                    </div>
-                  </div>
-                {/if}
+                <img src={avatar} alt="avatar" class="miniPhoto w-full h-full" />
                 <div
                   class="settings__photo_change flex w-full absolute content__perspective"
                   id="settings__photo_animate"
@@ -348,26 +296,20 @@
                 </div>
                 <div class="settings__input">
                   <span>Дата рождения</span>
-                  <input
-                    type="text"
-                    id="date_mask_settings"
-                    bind:value={values.BirthDay}
-                  />
+                  <input type="text" id="date_mask_settings" bind:value={values.dob} />
                 </div>
                 <div class="settings__input">
                   <span class="mb-8">Номер телефона</span>
                   <TelInput
-                    on:invalid={handleInvalid}
                     name="phone"
                     id="cart-form-phone"
                     className="w-full"
                     required={true}
-                    on:input={debounce(validateFormInput, 400)}
-                    bind:value={values.tel}
+                    bind:value={values.phone}
                   />
                 </div>
                 <div class="settings__input">
-                  <span>E-mail</span>
+                  <span>Эл. почта</span>
                   <input
                     type="email"
                     id="email-mask-settings"
@@ -383,38 +325,40 @@
               Подпишитесь на уведомления и получите промокод на скидку.<br />Еженедельно
               получайте полезные статьи, а также информацию о скидках и акциях.
             </p>
-            <ul>
-              <li class="mb-16">
-                <CustomCheckbox
-                  style="font-size: 14px;"
-                  value="Push"
-                  className="text-main"
-                  id="Push"
-                  label="Push-уведомления"
-                  bind:check={values.push}
-                />
-              </li>
-              <li class="mb-16">
-                <CustomCheckbox
-                  style="font-size: 14px;"
-                  value="sms"
-                  className="text-main"
-                  id="sms"
-                  label="SMS"
-                  bind:check={values.sms}
-                />
-              </li>
-              <li>
-                <CustomCheckbox
-                  style="font-size: 14px;"
-                  value="email"
-                  className="text-main"
-                  id="email"
-                  label="Электронная почта"
-                  bind:check={values.email}
-                />
-              </li>
-            </ul>
+            {#if values.notifications}
+              <ul>
+                <li class="mb-16">
+                  <CustomCheckbox
+                    style="font-size: 14px;"
+                    value="Push"
+                    className="text-main"
+                    id="Push"
+                    label="Push-уведомления"
+                    bind:check={values.notifications.push}
+                  />
+                </li>
+                <li class="mb-16">
+                  <CustomCheckbox
+                    style="font-size: 14px;"
+                    value="sms"
+                    className="text-main"
+                    id="sms"
+                    label="SMS"
+                    bind:check={values.notifications.sms}
+                  />
+                </li>
+                <li>
+                  <CustomCheckbox
+                    style="font-size: 14px;"
+                    value="email"
+                    className="text-main"
+                    id="email"
+                    label="Электронная почта"
+                    bind:check={values.notifications.email}
+                  />
+                </li>
+              </ul>
+            {/if}
           </div>
           <div class="buttons flex ml-100">
             <Button
@@ -456,12 +400,7 @@
   <ModalDeleteAcc bind:visible={showModalDeleteButton} />
 {/if}
 {#if ModalPhoto}
-  <ModalChangePhoto
-    bind:visible={ModalPhoto}
-    bind:selected={values.selectedPhoto}
-    bind:fullImage
-    bind:miniBlob
-  />
+  <ModalChangePhoto bind:visible={ModalPhoto} bind:selected={avatar} />
 {/if}
 {#if ModalChangeData}
   <ConfirmationModal
@@ -503,7 +442,6 @@
     justify-content: space-between;
     min-width: 542px;
   }
-
   .settings__photo {
     clip-path: circle(50% at center center);
     text-align: center;
@@ -517,10 +455,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 115%;
-    color: var(--color-main);
     background: #cbf2ff;
   }
   .settings__photo_change {
@@ -564,7 +498,6 @@
   .settings__inputs {
     margin-left: 5.1%;
   }
-
   .settings__input input {
     background: #ffffff;
     border: 1px solid var(--gray-500);
@@ -577,11 +510,9 @@
     padding: 0 12px;
     width: 100%;
   }
-
   .settings__input:nth-child(odd) {
     margin-right: 5.1%;
   }
-
   .settings__input input:focus {
     background: #ffffff;
     border: 1px solid var(--color-info);
@@ -657,9 +588,6 @@
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
   }
-  .initials {
-    left: 35px;
-  }
   @media (max-width: 1482px) {
     .settings__input {
       width: 275px;
@@ -683,7 +611,6 @@
       width: 300px;
     }
   }
-
   @media (max-width: 1312px) {
     .settings__input {
       width: 275px;
@@ -704,7 +631,6 @@
       margin-top: 40px;
     }
   }
-
   @media (max-width: 1255px) {
     .settings__content {
       padding: 24px 44px;
@@ -722,7 +648,6 @@
       padding-top: 30px;
     }
   }
-
   @media (max-width: 1000px) {
     .actions__title {
       margin-top: 12px;

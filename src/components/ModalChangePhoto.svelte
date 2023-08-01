@@ -1,45 +1,17 @@
 <script>
-  import { fade } from "svelte/transition"
   import { createEventDispatcher } from "svelte"
-  import Portal from "./Portal.svelte"
-  import IconButton from "./IconButton.svelte"
-  import ModalSelecteMiniPhoto from "./ModalSelecteMiniPhoto.svelte"
-  import ModalLoadDoPhoto from "./ModalLoadDoPhoto.svelte"
-  import Button from "./Button.svelte"
-  import { onMount } from "svelte"
-  import Croppie from "croppie"
+  import { fade } from "svelte/transition"
+  import IconButton from "@/components/IconButton.svelte"
+  import ModalSelecteMiniPhoto from "@/components/ModalSelecteMiniPhoto.svelte"
+  import Button from "@/components/Button.svelte"
 
-  let modalElement
   export let visible
   export let selected
-  export let fullImage
-  export let miniBlob
-  export let modalSelecteMiniPhoto
-  export let photos = [
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png",
-    "./miniPhoto1.png"
-  ]
 
-  let selectedReason = "Не планирую больше совершать покупки"
+  let modalElement
   let selectedItem = "Текущее"
-  let modalErrorLoad = false
-  let modalMaxPhoto = false
-  let changePhoto__menu_selectedItem = false
-  let el
   let vanilla
   let newPhoto
-  let photoFile
-  let zoom
   const dispatch = createEventDispatcher()
 
   function closeViaOverlay(e) {
@@ -58,53 +30,10 @@
       visible = false
     })
   }
-
-  function activateCroppie(url) {
-    el = document.getElementById("CroppieContainer__croppieFirst")
-    vanilla = new Croppie(el, {
-      viewport: { width: 350, height: 350, type: "circle" },
-      boundary: { width: 350, height: 350 },
-      enableExif: true
-    })
-    vanilla.bind({
-      url: url,
-      points: miniBlob.points
-    })
-  }
-  function minus() {
-    zoom = vanilla.get().zoom
-    zoom = zoom - 0.1
-    vanilla.bind({
-      url: fullImage,
-      zoom: zoom
-    })
-  }
-  function plus() {
-    zoom = vanilla.get().zoom
-    zoom = zoom + 0.1
-    vanilla.bind({
-      url: fullImage,
-      zoom: zoom
-    })
-  }
-  onMount(async () => {
-    if (selected != "initials" && selected != "./miniPhoto1.png") {
-      activateCroppie(fullImage)
-    } else if (selected == "./miniPhoto1.png")
-      el = document.getElementById("CroppieContainer__croppieFirst")
-    vanilla = new Croppie(el, {
-      viewport: { width: 350, height: 350, type: "circle" },
-      boundary: { width: 350, height: 350 },
-      enableExif: true
-    })
-    vanilla.bind({
-      url: "./miniPhoto1.png"
-    })
-  })
 </script>
 
 <div transition:fade on:click={closeViaOverlay} class="overlay">
-  <div bind:this={modalElement} class="modal relative bg-white h-full rounded ">
+  <div bind:this={modalElement} class="modal relative bg-white h-full rounded">
     <div class="close-button">
       <IconButton on:click={closeModal} status="close" />
     </div>
@@ -117,15 +46,6 @@
           </label>
           <input
             type="radio"
-            id="changePhoto_avatar"
-            bind:group={selectedItem}
-            value="Выбрать аватар"
-          />
-          <label for="changePhoto_avatar" class="flex items-center">
-            <li class="changePhoto__menu_item">Выбрать аватар</li>
-          </label>
-          <input
-            type="radio"
             id="changePhoto_loadPhoto"
             bind:group={selectedItem}
             value="Загрузить фото"
@@ -133,104 +53,32 @@
           <label for="changePhoto_loadPhoto" class="flex items-center">
             <li class="changePhoto__menu_item">Загрузить фото</li>
           </label>
-          <input
-            type="radio"
-            id="changePhoto_doPhoto"
-            bind:group={selectedItem}
-            value="Сделать фото"
-          />
-          <label for="changePhoto_doPhoto" class="flex items-center">
-            <li class="changePhoto__menu_item">Сделать фото</li>
-          </label>
         </ul>
       </div>
       <div class="changePhoto__content">
         {#if selectedItem == "Текущее"}
-          <div class="mt-40">
-            {#if selected == "initials"}
-              <div class="thisPhoto">
-                <div>
-                  <span class="letters">RF</span>
-                </div>
-              </div>
-            {:else}
-              <div class="CroppieContainer">
-                <div
-                  class="CroppieContainer__croppie"
-                  id="CroppieContainer__croppieFirst"
-                >
-                  <div class="CroppieContainer__controller">
-                    <span class="minus" on:click={minus}>-</span><span
-                      class="plus"
-                      on:click={plus}>+</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="flex mt-24">
-                <Button textClass="text-base" size="md" id="blob" on:click={croppied}>
-                  <span class="text-base font-semibold"> Сохранить </span>
-                </Button>
-                <Button
-                  textClass="text-base"
-                  size="md"
-                  status="active-secondary"
-                  className="ml-24"
-                  on:click={closeModal}
-                >
-                  <span>Отменить</span>
-                </Button>
-              </div>
-            {/if}
-          </div>
-        {/if}
-        {#if selectedItem == "Выбрать аватар"}
-          <div class="flex gradient-shadow_top " />
-          <div class="photos custom-scrollbar">
-            <div
-              class="miniPhoto mb-20 {selected == 'initials' ? 'miniPhotoSelected' : ''}"
-              on:click={() => {
-                selected = "initials"
-              }}
-            >
-              <div>
-                <div>RF</div>
-              </div>
+          <div class="m-40 ml-0">
+            <div class="thisPhoto">
+              <img src={selected} alt="avatar" class="w-full h-full" />
             </div>
-            {#each photos as photo, i}
-              <div
-                class="miniPhoto mb-20 {i == photos.length - 1
-                  ? 'mb-24'
-                  : ''} {selected == photo ? 'miniPhotoSelected' : ''}"
-                on:click={() => {
-                  selected = photo
-                }}
+            <div class="flex mt-24">
+              <Button textClass="text-base" size="md" on:click={false}>
+                <span class="text-base font-semibold">Удалить</span>
+              </Button>
+              <Button
+                textClass="text-base"
+                size="md"
+                status="active-secondary"
+                className="ml-24"
+                on:click={closeModal}
               >
-                <div>
-                  <div>
-                    <img src={photo} alt={photo} />
-                  </div>
-                </div>
-              </div>
-            {/each}
+                <span>Отменить</span>
+              </Button>
+            </div>
           </div>
-          <div class="mt-24">
-            <Button size="md" textClass="text-base" on:click={closeModal}>
-              <span class="text-base font-semibold"> Сохранить </span>
-            </Button>
-          </div>
-          <div class="flex gradient-shadow " />
         {/if}
         {#if selectedItem == "Загрузить фото"}
-          <ModalSelecteMiniPhoto
-            bind:selected
-            bind:visible
-            bind:fullImage
-            bind:miniBlob
-          />
-        {/if}
-        {#if selectedItem == "Сделать фото"}
-          <ModalLoadDoPhoto />
+          <ModalSelecteMiniPhoto bind:selected bind:visible />
         {/if}
       </div>
     </div>
@@ -319,15 +167,6 @@
     color: var(--gray-600);
     margin-top: 12px;
   }
-  .photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 392px;
-    overflow-y: scroll;
-    padding-right: 24px;
-  }
-
   .miniPhoto {
     width: 104px;
     height: 104px;
@@ -354,31 +193,6 @@
   .miniPhotoSelected {
     border: 3px solid var(--color-info-light);
   }
-  .gradient-shadow {
-    -webkit-box-shadow: inset 0px -25px 14px -5px rgb(255, 255, 255);
-    -moz-box-shadow: inset 0px -25px 14px -5px rgb(255, 255, 255);
-    box-shadow: inset 0px -50px 29px -9px rgb(255, 255, 255);
-    height: 55px;
-    width: calc(424px - 10px);
-    position: absolute;
-    left: 184px;
-    bottom: 73px;
-    transition: all 0.5s ease-out;
-    opacity: 1;
-  }
-  .gradient-shadow_top {
-    -webkit-box-shadow: inset 0px 25px 14px 5px rgb(255, 255, 255);
-    -moz-box-shadow: inset 0px 25px 14px 5px rgb(255, 255, 255);
-    box-shadow: inset 0px 40px 25px -14px rgb(255, 255, 255);
-    height: 40px;
-    width: calc(424px - 10px);
-    position: absolute;
-    left: 184px;
-    top: 0px;
-    transition: all 0.5s ease-out;
-    opacity: 1;
-    z-index: 2;
-  }
   .miniPhoto:hover {
     border: 3px solid var(--color-info);
   }
@@ -390,40 +204,26 @@
     height: 350px;
     background: #cbf2ff;
     clip-path: circle(50% at center center);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    border: 3px solid #cbf2ff;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 115%;
-    letter-spacing: -0.03em;
-    color: var(--color-main);
     transition: all 0.2s ease-out;
   }
   .thisPhoto img {
     width: 350px;
     height: 350px;
   }
-
   input[type="radio"] {
     display: none;
   }
-
   input:checked + label {
     font-weight: 600;
     font-size: 15px;
     background: var(--color-accent);
   }
-  input[type="radio"] label {
-    width: 184px;
-    height: 40px;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 135%;
-    color: var(--color-main);
-    padding-left: 24px;
+  input[type="radio"] + label {
+    cursor: pointer;
   }
   .CroppieContainer {
     overflow: hidden;
@@ -432,7 +232,6 @@
   .CroppieContainer__controller {
     display: flex;
   }
-
   .CroppieContainer__controller button {
   }
   :global(.cr-slider-wrap) {
@@ -454,7 +253,6 @@
     background: var(--gray-700);
     border-radius: 3px;
   }
-
   :global(input[type="range"]::-webkit-slider-thumb) {
     -webkit-appearance: none;
     border: none;

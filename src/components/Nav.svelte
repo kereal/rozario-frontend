@@ -3,10 +3,11 @@
   import { goto } from "$app/navigation"
   import { mainStore } from "@/stores/global"
   import { currentUser } from "@/stores/global"
+  import { loadCurrentUser } from "@/utils/auth"
   import AutoComplete from "@/components/AutoComplete.svelte"
   import CustomDropdown from "@/components/CustomDropdown.svelte"
   import MapModal from "@/components/MapModal.svelte"
-  import SignInModalNew from "@/components/SignInModalNew.svelte"
+  import SignInModal from "@/components/SignInModal.svelte"
   import Search from "@/components/Search.svelte"
   import CountryDropdown from "@/components/CountryDropdown.svelte"
   import BurgerMenu from "@/components/BurgerMenu.svelte"
@@ -133,6 +134,7 @@
   })
 
   onMount(async () => {
+    loadCurrentUser()
     // const aCollections = document.getElementById("collections")
     // goToCollections = () => {
     //   // aCollections.scrollIntoView({alignToTop: true, behavior: 'smooth'})
@@ -347,7 +349,7 @@
     <MapModal {session} on:close={closeMapModal} />
   {/if}
   {#if signInModalVisible}
-    <SignInModalNew {session} on:close={closeSignInModal} />
+    <SignInModal {session} on:close={closeSignInModal} />
   {/if}
   {#if searchVisible}
     <Search buttonRef={searchButton} on:close={closeSearch} />
